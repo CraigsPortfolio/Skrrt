@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="./css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="./src/fullclip.js"></script>
+</head>
+<body>
+  <section class="container">
+    <div class="fullBackground">
+      <div class="topnav">
+      <button id="all_keys" title="View all of the keys in this tab">All Keys</button>
+      <button id="availableKeys" title="View all of the keys that are currently available">Available Keys</button>
+      <button id="usedKeys" title="View all of the keys that are currently in use">Used Keys</button>
+    </div>
+    </div>
+    <h2 class="caption">Skrrt.</h2>
+  </section>
+
+
+    <script>
+    $('.fullBackground').fullClip({
+      images: ['./images/111.jpg', './images/222.jpg', './images/main.jpg'],
+      transitionTime: 2000,
+      wait: 5000
+    });
+    </script>
+</body>
+</html>

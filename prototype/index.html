@@ -21,11 +21,6 @@
 	<link rel="stylesheet" href="css/animate.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 
-	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="./src/fullclip.js"></script>
-
-
 
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -64,7 +59,7 @@
 
 
 
-	<!-- Banner Section old design, might remove
+	<!-- Banner Section
 
 	<div class="banner">
 		<div class="banner_background" style="background-image:url(img/banner_image_2.jpg)"></div>
@@ -79,7 +74,7 @@
 	 -->
 
 <!-- Other Banner -->
-	<section class="hero-banner-section set-bg" >
+	<section class="hero-banner-section set-bg" data-setbg="img/banner_image_2.jpg">
 		<div class="container h-100">
 			<div class="hero-banner-content text-white">
 				<div class="row">
@@ -92,20 +87,12 @@
 
 			</div>
 
-
 		</div>
 	</section>
 	<!--Other Banner End-->
 
+	<!--changing Image Section -->
 
-<!-- Script used to make the images change -->
-	<script>
-	$('.fullBackground').fullClip({
-		images: ['./img/banner_image_2.jpg', './img/banner_image_3.jpg', './img/banner_image_4.jpg'],
-		transitionTime: 2000,
-		wait: 5000
-	});
-	</script>
 
 	<!-- Features section -->
 	<section class="features-section spad">

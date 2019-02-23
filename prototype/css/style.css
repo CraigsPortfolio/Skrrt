@@ -686,17 +686,45 @@ ol {
 	transform: scale(0.8);
 }
 
-
 /*------------------
-  Hero section
+  changing image section
 ---------------------*/
 
-.hero-section {
+
+#changing-images{
+    margin: 50px auto;
+    position: relative;
+    width: 240px;
+    height: 240px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#changing-images > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+
+/*------------------
+  changing image section end
+---------------------*/
+
+
+
+/*------------------
+  hero-banner section
+---------------------*/
+
+.hero-banner-section {
 	height: 835px;
 	overflow: hidden;
 }
 
-.hero-content {
+.hero-banner-content {
 	display: -ms-flex;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -713,26 +741,27 @@ ol {
 	animation-duration:2s;
 }
 
-.hero-content h2 {
+.hero-banner-content h2 {
+	color: #f27348;
 	font-size: 90px;
 	font-weight: 600;
 	margin-bottom: 10px;
 	line-height: 1;
 }
 
-.hero-content P {
+.hero-banner-content P {
 	font-size: 18px;
 	line-height: 1.7;
 	margin-bottom: 40px;
 }
 
-.hero-rocket {
+.hero-banner-rocket {
 	position: absolute;
 	bottom: 8px;
 	right: -198px;
 }
 
-.hero-rocket img {
+.hero-banner-rocket img {
 	position: relative;
 	-webkit-animation: rocket 2s linear infinite;
 	animation: rocket 2s linear infinite;
@@ -783,6 +812,8 @@ ol {
 		bottom: 20px;
 	}
 }
+
+
 
 /* ----------------
    Domain search
@@ -1112,6 +1143,8 @@ ol {
   Footer section
 ---------------------*/
 
+
+
 .footer-section {
 	background: #6C605B;
 	overflow: hidden;
@@ -1176,6 +1209,8 @@ ol {
   Responsive
 ---------------------*/
 
+
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1175px;
@@ -1185,7 +1220,7 @@ ol {
 /* Medium screen : 992px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-	.hero-rocket {
+	.hero-banner-rocket {
 		width: 500px;
 	}
 	.pricing-plan .pricing-body {
@@ -1210,7 +1245,7 @@ ol {
 		font-size: 15px;
 		margin-left: 20px;
 	}
-	.hero-rocket {
+	.hero-banner-rocket {
 		display: none;
 	}
 	.feature-item.fi-center-top .ft-icon {
@@ -1318,7 +1353,7 @@ ol {
 		border-top: 1px solid #efefef;
 		padding: 13px 35px;
 	}
-	.hero-rocket {
+	.hero-banner-rocket {
 		display: none;
 	}
 	.feature-item.fi-center-top .ft-icon {
@@ -1343,7 +1378,7 @@ ol {
 	.footer-widget {
 		margin-bottom: 40px;
 	}
-	.hero-content h2 {
+	.hero-banner-content h2 {
 		font-size: 50px;
 		margin-bottom: 30px;
 	}
@@ -1394,7 +1429,7 @@ ol {
 /* Medium Mobile :480px. */
 
 @media only screen and (min-width: 576px) and (max-width: 766px) {
-	.hero-section {
+	.hero-banner-section {
 		height: 600px;
 	}
 }
@@ -1408,10 +1443,10 @@ ol {
 	.section-title h2 {
 		font-size: 35px;
 	}
-	.hero-section {
+	.hero-banner-section {
 		height: 750px;
 	}
-	.hero-content h2 {
+	.hero-banner-content h2 {
 		font-size: 40px;
 		margin-bottom: 30px;
 	}

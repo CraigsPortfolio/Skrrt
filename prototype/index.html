@@ -21,6 +21,11 @@
 	<link rel="stylesheet" href="css/animate.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="./src/fullclip.js"></script>
+
+
 
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -57,7 +62,9 @@
 	</header>
 	<!-- Header section end -->
 
-	<!-- Banner Section -->
+
+
+	<!-- Banner Section old design, might remove
 
 	<div class="banner">
 		<div class="banner_background" style="background-image:url(img/banner_image_2.jpg)"></div>
@@ -69,7 +76,36 @@
 		</div>
 	</div>
 
-	<!-- Banner Section End -->
+	 -->
+
+<!-- Other Banner -->
+	<section class="hero-banner-section set-bg" >
+		<div class="container h-100">
+			<div class="hero-banner-content text-white">
+				<div class="row">
+					<div class="col-lg-6 pr-0">
+						<h2>Skrrt.</h2>
+						<p>We plan your route and take your car details to calculate the optimum price for you to charge for a lift. </p>
+						<a href="main.html" class="site-btn" >Plan your route</a>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</section>
+	<!--Other Banner End-->
+
+
+<!-- Script used to make the images change -->
+	<script>
+	$('.fullBackground').fullClip({
+		images: ['./img/banner_image_2.jpg', './img/banner_image_3.jpg', './img/banner_image_4.jpg'],
+		transitionTime: 2000,
+		wait: 5000
+	});
+	</script>
 
 	<!-- Features section -->
 	<section class="features-section spad">
@@ -129,26 +165,8 @@
 
 
 
-	<!-- Hero section -->
-	<!-- Might remove -->
-	<section class="hero-section set-bg" data-setbg="img/bg2.jpg">
-		<div class="container h-100">
-			<div class="hero-content text-white">
-				<div class="row">
-					<div class="col-lg-6 pr-0">
-						<h2>Skrrt.</h2>
-						<p>We plan your route and take your car details to calculate the optimum price for you to charge for a lift. </p>
-						<a href="main.html" class="site-btn" >Plan your route</a>
-					</div>
-				</div>
 
-			</div>
-
-		</div>
-	</section>
-
-
-
+	<!--changing Image Section end -->
 
 	<!-- Map section -->
 	<!--Need to change the names here -->

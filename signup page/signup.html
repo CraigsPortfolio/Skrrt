@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="bg">
+      <div class="form">
+        <div class="head" class="signup">
+          <div onclick="swap(this);" data-tab="login" class="login-tab">
+            Login
+          </div>
+          <div onclick="swap(this);" data-tab="signup" class="signup-tab">
+            Signup
+          </div>
+        </div>
+        <div class="body" id="form-body">
+          <div class="login">
+            <div class="form-row">
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
+              <button>Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script>
+
+        function swap(referTo) {
+          if(referTo.getAttribute("data-tab") == "login"){
+            document.getElementById('form-body').classList.remove('active');
+            referTo.parentNode.classList.remove('signup');
+          } else {
+            document.getElementById('form-body').classList.add('active');
+            referTo.parentNode.classList.add('signup');
+          }
+        }
+      </script>
+
+  </body>
+
+
+
+
+
+
+
+
+
+</html>

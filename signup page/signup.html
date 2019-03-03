@@ -1,49 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Sign up</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <div class="bg">
-      <div class="form">
-        <div class="head" class="signup">
-          <div onclick="swap(this);" data-tab="login" class="login-tab">
-            Login
-          </div>
-          <div onclick="swap(this);" data-tab="signup" class="signup-tab">
-            Signup
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="bg">
+
+    <div class="container">
+
+      <div class="details">Details</div>
+      <div class="car-info">Car Details</div>
+      <div class="location">Location</div>
+
+       <div class="details-form">
+          <input type="text" placeholder="First name" class="input"><br />
+          <input type="text" placeholder="Last name" class="input"><br />
+          <input type="text" placeholder="E-mail address" class="input"><br />
+          <input type="text" placeholder="Choose a Username" class="input"><br />
+          <input type="password" placeholder="Choose a Password" class="input"><br />
+          <div class="btn" id="personal-details">Next</div>
+       </div>
+
+      <div class="car-info-form">
+          <input type="text" placeholder="Make" class="input"><br />
+          <input type="password" placeholder="Model" class="input"><br />
+          <input type="password" placeholder="Year" class="input"><br />
+          <div class="btn" id="car-details">Next</div>
+       </div>
+
+       <div class="location-form">
+           <input type="text" placeholder="Postcode" class="input"><br />
+           <input type="password" placeholder="House number \ name" class="input"><br />
+           <input type="password" placeholder="City" class="input"><br />
+           <div class="btn" id="confirm">Sign up</div>
         </div>
-        <div class="body" id="form-body">
-          <div class="login">
-            <div class="form-row">
-              <input type="email" placeholder="Email">
-              <input type="password" placeholder="Password">
-              <button>Login</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
 
+  </div>
 
-    <script>
 
-        function swap(referTo) {
-          if(referTo.getAttribute("data-tab") == "login"){
-            document.getElementById('form-body').classList.remove('active');
-            referTo.parentNode.classList.remove('signup');
-          } else {
-            document.getElementById('form-body').classList.add('active');
-            referTo.parentNode.classList.add('signup');
-          }
-        }
-      </script>
+  <script>
+  $(".car-info-form").hide();
+  $(".location-form").hide();
+  $(".car-info").css("background", "#c4c4c4");
+  $(".location").css("background", "#c4c4c4");
 
-  </body>
+  $(".car-info").click(function(){
+    $(".details-form").hide();
+    $(".car-info-form").show();
+    $(".location-form").hide();
+    $(".details").css("background", "#c4c4c4");
+    $(".location").css("background", "#c4c4c4");
+    $(".car-info").css("background", "#fff");
+  });
+
+  $(".details").click(function(){
+    $(".details-form").show();
+    $(".car-info-form").hide();
+    $(".location-form").hide();
+    $(".car-info").css("background", "#c4c4c4");
+    $(".location").css("background", "#c4c4c4");
+    $(".details").css("background", "#fff");
+  });
+
+  $(".location").click(function(){
+    $(".details-form").hide();
+    $(".car-info-form").hide();
+    $(".location-form").show();
+    $(".car-info").css("background", "#c4c4c4");
+    $(".details").css("background", "#c4c4c4");
+    $(".location").css("background", "#fff");
+  });
+
+  $(".btn").click(function(){
+    $(".input").val("");
+  });
+
+  </script>
+
+
+</body>
 
 
 

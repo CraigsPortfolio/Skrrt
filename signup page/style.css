@@ -1,32 +1,23 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-/*
-.bg{
-  background-image: url("./banner_image_2.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-*/
 
-body{
+body {
   background-image: url("./banner_image_2.jpg");
-  height: 100%;
+  */ height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   user-select: none;
 }
 
-.container{
+.container {
   width: 450px;
   margin: 30px auto;
 }
 
-.details, .car-info, .location{
+.details, .car-info, .location {
   width: 150px;
   background: #fff;
   float: left;
@@ -37,7 +28,7 @@ body{
   text-transform: uppercase;
 }
 
-.details-form, .car-info-form, .location-form{
+.details-form, .car-info-form, .location-form {
   background: #fff;
   padding: 40px;
   clear: both;
@@ -46,7 +37,7 @@ body{
   height: 600px;
 }
 
-.input{
+.input {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -58,11 +49,11 @@ body{
   transform: all 0.5s ease;
 }
 
-.input:focus{
+.input:focus {
   border: 2px solid #f17e06;
 }
 
-.btn{
+.btn {
   width: 100%;
   background: #f17e06;
   height: 60px;
@@ -76,7 +67,19 @@ body{
   margin-bottom: 30px;
 }
 
-span a{
+span a {
   text-decoration: none;
   color: #000;
+}
+
+#validate1 label.error {
+  color: red;
+}
+
+#validate2 label.error {
+  color: red;
+}
+
+#validate3 label.error {
+  color: red;
 }

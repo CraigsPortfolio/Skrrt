@@ -7,7 +7,7 @@
 	<meta name="keywords" content="lift, taxi, Uber, sharing, car, money, fuel, map, route">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/icon.png" rel="shortcut icon"/>
+	<link href="img/icon.ico" rel="shortcut icon"/>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,18 +38,18 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<a href="./index.html" class="site-logo"><img src="./img/logo.png" alt=""></a>
-
-
+			
+		
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
 		<div class="nav-warp">
 			<div class="user-panel">
-				<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+				<a href="#">Login</a> /
+				<a href="#">Register</a>
 			</div>
 			<ul class="main-menu">
 				<li><a href="main.html">Home</a></li>
-				<li><a href="#">Plan a journey</a></li>
 				<li><a href="#">About us</a></li>
 			</ul>
 		</div>
@@ -57,68 +57,10 @@
 	<!-- Header section end -->
 
 
-<!-- Login Pop-up Section-->
-
-	<div id="id01" class="modal">
-
-	  <form class="modal-content animate" action="/action_page.php">
-	    <div class="imgcontainer">
-	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-	      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-	    </div>
-
-	    <div class="container">
-	      <label for="uname"><b>Username</b></label>
-	      <input type="text" placeholder="Enter Username" name="uname" required>
-
-	      <label for="psw"><b>Password</b></label>
-	      <input type="password" placeholder="Enter Password" name="psw" required>
-
-	      <button type="submit">Login</button>
-	      <label>
-	        <input type="checkbox" checked="checked" name="remember"> Remember me
-	      </label>
-	    </div>
-
-	    <div class="container" style="background-color:#f1f1f1">
-	      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-	      <span class="psw">Forgot <a href="#">password?</a></span>
-	    </div>
-	  </form>
-	</div>
-
-	<script>
-	// Get the modal
-	var modal = document.getElementById('id01');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-	</script>
-
-
-
-	<!-- Banner Section
-
-	<div class="banner">
-		<div class="banner_background" style="background-image:url(img/banner_image_2.jpg)"></div>
-		<div class="banner_content">
-			<div class="banner_content_inner">
-				<div class="banner_text_large">Skrrt.</div>
-				<div class="banner_text_small">Never Drive Alone</div>
-			</div>
-		</div>
-	</div>
-
-	 -->
-
-<!-- Other Banner -->
-	<section class="hero-banner-section set-bg" data-setbg="img/banner_image_2.jpg">
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="img/bg2.jpg">
 		<div class="container h-100">
-			<div class="hero-banner-content text-white">
+			<div class="hero-content text-white">
 				<div class="row">
 					<div class="col-lg-6 pr-0">
 						<h2>Skrrt.</h2>
@@ -126,14 +68,12 @@
 						<a href="main.html" class="site-btn" >Plan your route</a>
 					</div>
 				</div>
-
+				
 			</div>
-
+			
 		</div>
 	</section>
-	<!--Other Banner End-->
-
-	<!--changing Image Section -->
+	<!-- Hero section end -->
 
 
 	<!-- Features section -->
@@ -142,7 +82,7 @@
 			<div class="section-title">
 				<img src="./img/car.png" alt="#">
 				<p>Making lifts easy</p>
-				<h2>What do we do?</h2>
+				<h2>What we can do</h2>
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6 feature-item">
@@ -195,10 +135,15 @@
 
 
 
-	<!--changing Image Section end -->
 
-	<!-- Map section -->
-	<!--Need to change the names here -->
+	
+
+
+	
+
+
+
+	<!-- Banner section -->
 	<section class="banner-section set-bg" data-setbg="img/map-banner.jpg">
 		<div class="container">
 			<div class="row">
@@ -212,11 +157,11 @@
 			</div>
 		</div>
 	</section>
-	<!-- Map section end -->
+	<!-- Banner section end -->
 
 
 
-
+	
 
 
 	<!-- Footer section -->

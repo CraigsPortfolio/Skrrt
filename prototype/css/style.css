@@ -663,6 +663,10 @@ span.psw {
 	z-index: 99;
 }
 
+.Header-section a:visited{
+	color:#FFFFFF;
+}
+
 .site-logo {
 	display: inline-block;
 	margin-left: 50px;
@@ -1217,7 +1221,7 @@ span.psw {
 }
 
 .footer-top-section {
-	background: #200545;
+	background: #0000;
 }
 
 .footer-widget .fw-title {
@@ -1295,7 +1299,7 @@ span.psw {
 
 
 .footer-section {
-	background: #6C605B;
+	background: #000000;
 	overflow: hidden;
 	padding: 20px 0px;
 }

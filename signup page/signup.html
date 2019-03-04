@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title>Sign up</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./login.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -25,76 +25,24 @@
           <input type="text" placeholder="E-mail address" class="input"><br />
           <input type="text" placeholder="Choose a Username" class="input"><br />
           <input type="password" placeholder="Choose a Password" class="input"><br />
-          <div class="btn" id="personal-details">Next</div>
+          <div class="btn" id="personal-details_btn">Next</div>
        </div>
 
       <div class="car-info-form">
           <input type="text" placeholder="Make" class="input"><br />
           <input type="password" placeholder="Model" class="input"><br />
           <input type="password" placeholder="Year" class="input"><br />
-          <div class="btn" id="car-details">Next</div>
+          <div class="btn" id="car-details_btn">Next</div>
        </div>
 
        <div class="location-form">
            <input type="text" placeholder="Postcode" class="input"><br />
            <input type="password" placeholder="House number \ name" class="input"><br />
            <input type="password" placeholder="City" class="input"><br />
-           <div class="btn" id="confirm">Sign up</div>
+           <div class="btn" id="confirm_btn">Sign up</div>
         </div>
 
     </div>
-
   </div>
-
-
-  <script>
-  $(".car-info-form").hide();
-  $(".location-form").hide();
-  $(".car-info").css("background", "#c4c4c4");
-  $(".location").css("background", "#c4c4c4");
-
-  $(".car-info").click(function(){
-    $(".details-form").hide();
-    $(".car-info-form").show();
-    $(".location-form").hide();
-    $(".details").css("background", "#c4c4c4");
-    $(".location").css("background", "#c4c4c4");
-    $(".car-info").css("background", "#fff");
-  });
-
-  $(".details").click(function(){
-    $(".details-form").show();
-    $(".car-info-form").hide();
-    $(".location-form").hide();
-    $(".car-info").css("background", "#c4c4c4");
-    $(".location").css("background", "#c4c4c4");
-    $(".details").css("background", "#fff");
-  });
-
-  $(".location").click(function(){
-    $(".details-form").hide();
-    $(".car-info-form").hide();
-    $(".location-form").show();
-    $(".car-info").css("background", "#c4c4c4");
-    $(".details").css("background", "#c4c4c4");
-    $(".location").css("background", "#fff");
-  });
-
-  $(".btn").click(function(){
-    $(".input").val("");
-  });
-
-  </script>
-
-
 </body>
-
-
-
-
-
-
-
-
-
 </html>

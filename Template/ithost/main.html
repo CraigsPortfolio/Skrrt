@@ -14,13 +14,12 @@
 
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/flaticon.css"/>
 	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
 	<link rel="stylesheet" href="css/animate.css"/>
-
+	<link rel="stylesheet" href="css/style.css"/>
 
 
 	<!--[if lt IE 9]>
@@ -28,58 +27,9 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 </head>
 
 <body>
-
-
-
-
-
-<div id="id01" class="modal">
-
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -88,18 +38,19 @@ window.onclick = function(event) {
 	<!-- Header section -->
 	<header class="header-section">
 		<a href="./index.html" class="site-logo"><img src="./img/logo.png" alt=""></a>
-
-
+			
+		
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
 		<div class="nav-warp">
-			<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+			<div class="user-panel">
+				<a href="#">Login</a> /
+				<a href="#">Register</a>
 			</div>
 			<ul class="main-menu">
-				<li><a href="main.html">Home</a></li>
-				<li><a href="#">Plan a journey</a></li>
-				<li><a href="#">About us</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="index.html">About us</a></li>
 			</ul>
 		</div>
 	</header>
@@ -107,7 +58,7 @@ window.onclick = function(event) {
 
 
 	<!-- Hero section -->
-	<section class="hero-section set-bg" data-setbg="img/555.jpg"over;>
+	<section class="hero-section set-bg" data-setbg="img/555.jpg"over;">
 		<div class="container h-100">
 			<div class="hero-content text-white">
 				<div class="row">
@@ -115,10 +66,10 @@ window.onclick = function(event) {
 						<h2>Plan your journey</h2>
 						<p>Use the map to plan your journey. </p>
 						<a href="#2" class="site-btn">Next</a>
-
+						
 					</div>
 				</div>
-
+				
 			</div>
 		</div>
 	</section>
@@ -133,12 +84,12 @@ window.onclick = function(event) {
 						<h2>Enter your registration number</h2>
 						<p>This will help us decide your fuel consumption. </p>
 <a href="#3" class="site-btn">Next</a>
-
+						
 					</div>
 				</div>
-
+				
 			</div>
-
+			
 		</div>
 	</section>
 	<!-- Hero section end -->
@@ -153,12 +104,12 @@ window.onclick = function(event) {
 						<h2>How many people will be travelling with you?</h2>
 						<p>We will help you decide the price per person. </p>
 <a href="#4" class="site-btn">Next</a>
-
+						
 					</div>
 				</div>
-
+				
 			</div>
-
+			
 		</div>
 	</section>
 	<!-- Hero section end -->
@@ -171,12 +122,12 @@ window.onclick = function(event) {
 						<h2>What is your postcode?</h2>
 						<p>This will help us find the local fuel prices. </p>
 <a href="#5" class="site-btn">Get Recommendation</a>
-
+						
 					</div>
 				</div>
-
+				
 			</div>
-
+			
 		</div>
 	</section>
 	<!-- Hero section end -->
@@ -190,31 +141,31 @@ window.onclick = function(event) {
 						<h2>Our recommendation</h2>
 						<p>Your planned route and price </p>
 						<a href="#5" class="site-btn">Save Recommendation</a>
-
+						
 					</div>
 				</div>
-
+				
 			</div>
-
+			
 		</div>
 	</section>
 	<!-- Hero section end -->
 
 
+	
 
 
 
 
 
+	
+
+
+	
 
 
 
-
-
-
-
-
-
+	
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">

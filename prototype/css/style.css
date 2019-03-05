@@ -183,7 +183,6 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-	float: right;
 	background: #f27348;
 	color: #fff;
 	margin-left: 30px;
@@ -243,17 +242,17 @@ span.psw {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: hidden; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: #c3c5c9; /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
   padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #c3c5c9;
   margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 400px; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */

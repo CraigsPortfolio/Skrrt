@@ -7,20 +7,19 @@
 	<meta name="keywords" content="lift, taxi, Uber, sharing, car, money, fuel, map, route">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/icon.ico" rel="shortcut icon"/>
+	<link href="img/icon.png" rel="shortcut icon"/>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/flaticon.css"/>
 	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
 	<link rel="stylesheet" href="css/animate.css"/>
-
+	<link rel="stylesheet" href="css/style.css"/>
 
 
 	<!--[if lt IE 9]>
@@ -28,58 +27,9 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 </head>
 
 <body>
-
-
-
-
-
-<div id="id01" class="modal">
-
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -94,7 +44,8 @@ window.onclick = function(event) {
 			<i class="fa fa-bars"></i>
 		</div>
 		<div class="nav-warp">
-			<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+			<div class="user-panel">
+				<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
 			</div>
 			<ul class="main-menu">
 				<li><a href="main.html">Home</a></li>
@@ -106,14 +57,63 @@ window.onclick = function(event) {
 	<!-- Header section end -->
 
 
+
+	<!-- Login Pop-up Section-->
+
+		<div id="id01" class="modal">
+
+		  <form class="modal-content animate" action="/action_page.php">
+		    <div class="imgcontainer">
+		      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+		    </div>
+
+		    <div class="container">
+		      <label for="uname"><b>Username</b></label>
+		      <input type="text" placeholder="Enter Username" name="uname" required>
+
+		      <label for="psw"><b>Password</b></label>
+		      <input type="password" placeholder="Enter Password" name="psw" required>
+
+		      <button type="submit">Login</button>
+		      <label>
+		        <input type="checkbox" checked="checked" name="remember"> Remember me
+		      </label>
+		    </div>
+
+		    <div class="container" style="background-color:#f1f1f1">
+		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		      <span class="psw">Forgot <a href="#">password?</a></span>
+		    </div>
+		  </form>
+		</div>
+
+
+		<script>
+		// Get the modal
+		var modal = document.getElementById('id01');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+		</script>
+
+		<!-- Login Pop-up Section End-->
+
+
 	<!-- Hero section -->
-	<section class="hero-section set-bg" data-setbg="img/555.jpg"over;>
+	<section class="hero-section set-bg" data-setbg="img/banner_image_5.jpg"over;>
 		<div class="container h-100">
 			<div class="hero-content text-white">
 				<div class="row">
 					<div class="col-lg-6 pr-0">
 						<h2>Plan your journey</h2>
 						<p>Use the map to plan your journey. </p>
+
+
 						<a href="#2" class="site-btn">Next</a>
 
 					</div>

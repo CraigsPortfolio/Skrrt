@@ -209,17 +209,23 @@ button:hover {
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+  margin: 12px 0 12px 0;
+  position: center;
+
 }
 
 img.avatar {
-  width: 40%;
+	height: 100px;
+	width: 100px;
   border-radius: 50%;
 }
 
 .container {
   padding: 16px;
+}
+
+.container input:focus{
+	border: 2px solid #e57436;
 }
 
 span.psw {
@@ -236,7 +242,7 @@ span.psw {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
@@ -245,9 +251,9 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -839,32 +845,59 @@ span.psw {
 	transform: scale(0.8);
 }
 
-/*------------------
-  changing image section
----------------------*/
-
-
-#changing-images{
-    margin: 50px auto;
-    position: relative;
-    width: 240px;
-    height: 240px;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-#changing-images > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-}
 
 
 /*------------------
-  changing image section end
+  hero-section
 ---------------------*/
+
+.hero-section {
+	height: 100%;
+	overflow: hidden;
+}
+
+.hero-content {
+	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100%;
+	position: relative;
+	animation-name:slide-in-blurred-left;
+	animation-duration:2s;
+}
+
+.hero-content h2 {
+	color: #f27348;
+	font-size: 90px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	line-height: 1;
+}
+
+.hero-content P {
+	font-size: 18px;
+	line-height: 1.7;
+	margin-bottom: 40px;
+}
+
+.hero-rocket {
+	position: absolute;
+	bottom: 8px;
+	right: -198px;
+}
+
+.hero-rocket img {
+	position: relative;
+	-webkit-animation: rocket 2s linear infinite;
+	animation: rocket 2s linear infinite;
+}
 
 
 
@@ -873,7 +906,7 @@ span.psw {
 ---------------------*/
 
 .hero-banner-section {
-	height: 835px;
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -919,6 +952,8 @@ span.psw {
 	-webkit-animation: rocket 2s linear infinite;
 	animation: rocket 2s linear infinite;
 }
+
+
 
 @-webkit-keyframes rocket {
 	0% {
@@ -1376,6 +1411,9 @@ span.psw {
 	.hero-banner-rocket {
 		width: 500px;
 	}
+	.hero-rocket {
+		width: 500px;
+	}
 	.pricing-plan .pricing-body {
 		padding: 54px 45px 52px;
 	}
@@ -1399,6 +1437,9 @@ span.psw {
 		margin-left: 20px;
 	}
 	.hero-banner-rocket {
+		display: none;
+	}
+	.hero-rocket {
 		display: none;
 	}
 	.feature-item.fi-center-top .ft-icon {
@@ -1509,6 +1550,9 @@ span.psw {
 	.hero-banner-rocket {
 		display: none;
 	}
+	.hero-rocket {
+		display: none;
+	}
 	.feature-item.fi-center-top .ft-icon {
 		-webkit-transform: scale(1);
 		-ms-transform: scale(1);
@@ -1585,6 +1629,9 @@ span.psw {
 	.hero-banner-section {
 		height: 600px;
 	}
+	.hero-section {
+		height: 600px;
+	}
 }
 
 /* Small Mobile :320px. */
@@ -1600,6 +1647,13 @@ span.psw {
 		height: 750px;
 	}
 	.hero-banner-content h2 {
+		font-size: 40px;
+		margin-bottom: 30px;
+	}
+	.hero-section {
+		height: 750px;
+	}
+	.hero-content h2 {
 		font-size: 40px;
 		margin-bottom: 30px;
 	}

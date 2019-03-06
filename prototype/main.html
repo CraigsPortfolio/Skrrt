@@ -106,33 +106,37 @@
 		<div class="container h-100">
 			<div class="hero-content text-white">
 				<div class="row">
-					<div class="col-lg-6 pr-0">
 						<h2>Plan your journey</h2>
-						<p>Use the map to plan your journey. </p>
-						<input type="text" placeholder="Starting Location" name="start-location" required>
-						<input type="text" placeholder="End Location" name="end-location" required>
-						<input type="text" placeholder="Registration Plate" name="registration-plate">
+						<p>Enter infromatione bellow to allow use to calculate your journey. </p>
+						<input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
+						<input id="user-input" type="text" placeholder="End Location" name="end-location" required>
+						<input id="user-input" type="text" placeholder="Registration Plate" name="registration-plate">
+						<a href="" class="site-btn">Calculate</a>
+						<a href="#2" class="site-btn">More</a>
 
-						<div id="googleMap" style="width:100%;height:400px;"></div>
+						</div>
+
+
+						<div id="googleMap"></div>
 
 						<script>
 						function myMap() {
 						var mapProp= {
-						  center:new google.maps.LatLng(51.508742,-0.120850),
-						  zoom:5,
+						  center:new google.maps.LatLng(57.119647,-2.139528),
+						  zoom:13,
 						};
 						var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 						}
 						</script>
 
-						<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
 
 
 
 
-						<a href="#2" class="site-btn">Next</a>
 
-					</div>
+
+
 				</div>
 
 			</div>

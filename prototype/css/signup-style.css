@@ -1,0 +1,85 @@
+/** {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./banner_image_2.jpg");
+   height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+}*/
+
+.signup-container {
+  width: 450px;
+  margin: 30px auto;
+}
+
+.details, .car-info, .location {
+  width: 150px;
+  background: #fff;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.details-form, .car-info-form, .location-form {
+  background: #fff;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 600px;
+}
+
+.input2 {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+
+.input:focus {
+  border: 2px solid #f17e06;
+}
+
+.btn {
+  width: 100%;
+  background: #f17e06;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+span a {
+  text-decoration: none;
+  color: #000;
+}
+
+#validate1 label.error {
+  color: red;
+}
+
+#validate2 label.error {
+  color: red;
+}
+
+#validate3 label.error {
+  color: red;
+}

@@ -751,7 +751,7 @@ span.psw {
 .banner_content
 {
 	position: absolute;
-	top: 46%;
+	top: 10%;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);

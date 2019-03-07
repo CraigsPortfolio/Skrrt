@@ -54,6 +54,7 @@ body {
 }
 
 .btn {
+  text-align: center;
   width: 100%;
   background: #f17e06;
   height: 60px;
@@ -70,6 +71,11 @@ body {
 span a {
   text-decoration: none;
   color: #000;
+}
+
+.idNext {
+    top: 10px;
+    position: relative;
 }
 
 #validate1 label.error {

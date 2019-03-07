@@ -48,9 +48,9 @@
 				<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
 			</div>
 			<ul class="main-menu">
-				<li><a href="main.html">Home</a></li>
-				<li><a href="#">Plan a journey</a></li>
+				<li><a href="main.html">Plan a journey</a></li>
 				<li><a href="index.html">About us</a></li>
+				<li><a href="register.html">Register</a></li>
 			</ul>
 		</div>
 	</header>
@@ -191,22 +191,35 @@
 
 
 	<!-- Hero section Calculated Journey -->
-	<section class="hero-section set-bg" data-setbg="img/banner_image_5.jpg"over;>
-		<div class="container h-100" id="1">
+	<section class="hero-section set-bg" data-setbg="img/banner_image_4.jpg"over;>
+		<div class="container h-100" id="3">
 			<div class="hero-content text-white">
-				<div class="row">
-						<h2>Plan your journey</h2>
-						<p>Enter infromatione bellow to allow use to calculate your journey. </p>
-						<input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
-						<input id="user-input" type="text" placeholder="End Location" name="end-location" required>
-						<input id="user-input" type="text" placeholder="Registration Plate" name="registration-plate">
-						<a href="" class="site-btn">Calculate</a>
-						<a href="#2" class="site-btn">More Options</a>
+				<div class="row" id="bigRow">
+						<h2>Your Journey.</h2>
+						<p>Below is the calculated cost of you Journey, thanks for using Skrrt.</p>
+						<div id="calculatedRow">
+							<h3>Starting location:</h3>
+							<h3 id="calculatedH3">Aberdeen</h3>
+						</div>
+						<div id="calculatedRow">
+							<h3>End location:</h3>
+							<h3 id="calculatedH3">Dundee</h3>
+						</div>
+						<div id="calculatedRow">
+							<h3>Total Cost:</h3>
+							<h3 id="calculatedH3">£79.14</h3>
+						</div>
+						<div id="calculatedRow">
+							<h3>Starting location:</h3>
+							<h3 id="calculatedH3" style="padding-botto: 50px;">£26.38</h3>
+						</div>
+						<a href="" class="site-btn">Save Journey</a>
+						<a href="#1" class="site-btn">New Journey</a>
 
 						</div>
 
 
-						<div id="googleMap"></div>
+						<div id="googleMap2"></div>
 
 						<script>
 						function myMap() {
@@ -214,7 +227,7 @@
 						  center:new google.maps.LatLng(57.119647,-2.139528),
 						  zoom:13,
 						};
-						var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+						var map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
 						}
 						</script>
 
@@ -240,19 +253,19 @@
 
 
 
+
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
 			<ul class="footer-menu">
-				<li><a href="#">Home</a></li>
+				<li><a href="main.html">Home</a></li>
 				<li><a href="index.html">About us</a></li>
 			</ul>
-			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website was made using a template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+
 		</div>
 	</footer>
 	<!-- Footer top section end -->
+
 
 
 	<!--====== Javascripts & Jquery ======-->

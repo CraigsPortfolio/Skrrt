@@ -251,7 +251,10 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
   background-color: #c3c5c9;
-  margin: 10% auto 15n% auto; /* 5% from the top, 15% from the bottom and centered */
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 400px; /* Could be more or less, depending on screen size */
 }
@@ -990,6 +993,27 @@ span.psw {
 
 
 /* Deailed Journey Section End */
+
+/* Calculated Journey Section */
+
+#bigRow {
+	width: 900px;
+}
+
+#calculatedRow > h3 {
+	display: inline-block;
+	width: 300px;
+}
+
+#calculatedH3 {
+	padding-left: 40px;
+}
+
+#googleMap2 {
+	width: 600px;
+	height: 500px;
+	float: right;
+}
 
 /* Journey Planer Section End */
 

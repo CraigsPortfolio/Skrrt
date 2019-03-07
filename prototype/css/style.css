@@ -729,13 +729,15 @@ span.psw {
 	border-radius: 14px;
 }
 
-.user-panel:hover {
-	background: #ef8967; 
-}
+
 
 .user-panel button {
 	color: #fff;
 
+}
+
+.user-panel:hover {
+	background: #ef8967;
 }
 
 .user-panel a {

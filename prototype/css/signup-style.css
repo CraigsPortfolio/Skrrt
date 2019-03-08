@@ -1,22 +1,10 @@
-/** {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-image: url("./banner_image_2.jpg");
-   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  user-select: none;
-}*/
-
+/* making sure that the container is in the middle */
 .signup-container {
   width: 450px;
   margin: 63px auto;
 }
 
+/* css to allign the tabs next to each other and to also alter their appearance */
 .details, .car-info, .location {
   width: 150px;
   background: #fff;
@@ -28,6 +16,7 @@ body {
   text-transform: uppercase;
 }
 
+/* css to align the contents of each tab and to alter their appearance */
 .details-form, .car-info-form, .location-form {
   background: #fff;
   padding: 40px;
@@ -37,6 +26,7 @@ body {
   height: 600px;
 }
 
+/* editing all of the input appearances */
 .input {
   width: 100%;
   padding: 20px;
@@ -49,10 +39,12 @@ body {
   transform: all 0.5s ease;
 }
 
+/* highlights the border of the input once clicked */
 .input:focus {
   border: 2px solid #f17e06;
 }
 
+/* editing the appearance and location of the button */
 .btn {
   text-align: center;
   width: 100%;

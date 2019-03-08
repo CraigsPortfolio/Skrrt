@@ -239,7 +239,6 @@ span.psw {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 40%;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
@@ -249,13 +248,19 @@ span.psw {
   padding-top: 60px;
 }
 
+#login-form {
+	margin: auto;
+
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #c3c5c9;
 	position: absolute;
-	display: flex;
+	display: inline-block;
+	left: 40%;
 	flex-direction: column;
-  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 10% auto 15% auto; /* 10% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 400px; /* Could be more or less, depending on screen size */
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-//on load hide the Car info and Location forms.
+  //on load hide the Car info and Location forms.
   $(".car-info-form").hide();
   $(".location-form").hide();
   $(".car-info").css("background", "#c4c4c4");
@@ -40,8 +40,8 @@ $(document).ready(function() {
   $("#personal-details_btn").click(function() {
     if (validate1.valid() === true) {
       $(".car-info").click();
-     } else {
-       console.log("Please supply correct information"); //logs when incorrect user input is entered
+    } else {
+      console.log("Please supply correct information"); //logs when incorrect user input is entered
     }
   });
 
@@ -50,8 +50,8 @@ $(document).ready(function() {
   $("#car-details_btn").click(function() {
     if (validate2.valid() === true) {
       $(".location").click();
-     } else {
-       console.log("Please supply correct information"); //logs when incorrect user input is entered
+    } else {
+      console.log("Please supply correct information"); //logs when incorrect user input is entered
     }
   });
 
@@ -72,9 +72,9 @@ $(document).ready(function() {
       var f10 = $("input[name=field10]").val();
       var f11 = $("input[name=field11]").val();
 
-      alert("Welcome " + f1 );
-     } else {
-       console.log("Please supply correct information"); //logs when incorrect user input is entered
+      alert("Welcome " + f1);
+    } else {
+      console.log("Please supply correct information"); //logs when incorrect user input is entered
     }
   });
 

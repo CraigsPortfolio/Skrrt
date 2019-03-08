@@ -105,12 +105,10 @@
 			<div class="hero-content text-white">
 				<div class="row">
 						<h2>Plan your journey</h2>
-						<p>Enter infromatione bellow to allow use to calculate your journey. </p>
+						<p>Please enter the locations that you will be travelling to and from. </p>
 						<input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
 						<input id="user-input" type="text" placeholder="End Location" name="end-location" required>
-						<input id="user-input" type="text" placeholder="Registration Plate" name="registration-plate">
-						<a href="" class="site-btn">Calculate</a>
-						<a href="#2" class="site-btn">More Options</a>
+						<a href="#2" class="site-btn">Select Veihcle</a>
 
 						</div>
 
@@ -134,10 +132,24 @@
 	</section>
 
 
-<!-- Hero section More Detailed Journey-->
+<!-- Hero section Add car-->
 
-	<section class="hero-section set-bg" data-setbg="img/banner_image.jpg"over;>
-		<div class="container h-100" id="2">
+<section class="hero-section set-bg" data-setbg="img/banner_image.jpg"over;>
+	<div class="container h-100" id="2">
+		<div class="hero-content text-white">
+			<div class="row">
+					<h2>Car.</h2>
+					<p>Use the box below to input your veihcles registration plate. Please press more deatils to add in more details about your car.</p>
+					<input id="user-input" type="text" placeholder="Registration Plate" name="registration-plate">
+					<a href="#4" class="site-btn">Select Passengers</a>
+					<a href="#3" class="site-btn">More Details</a>
+
+</section>
+
+<!-- hero banner more details -->
+
+	<section class="hero-section set-bg" data-setbg="img/banner_image_3.jpg"over;>
+		<div class="container h-100" id="3">
 			<div class="hero-content text-white">
 				<div class="row">
 						<h2>Details.</h2>
@@ -159,40 +171,45 @@
 								<option value="12">Volvo</option>
 							</select>
 							<h5>Model:</h5>
-							<input id="user-input" type="text" placeholder="" name="end-location" required>
-							<h5>User Entry:</h5>
-							<input id="user-input" type="text" placeholder="" name="registration-plate">
-							<a href="#3" class="site-btn">Calculate</a>
+							<input id="user-input" type="text" placeholder="" name="model" required>
+							<h5>Transmition:</h5>
+							<input id="user-input" type="text" placeholder="" name="transition">
+							<h5>Engine Capacity:</h5>
+							<input id="user-input" type="text" placeholder="" name="engine-capacity">
+							<a href="#4" class="site-btn">Select Passenger</a>
 						</div>
 
-		<div class="row">
-
-			<h5>User Entry:</h5>
-			<input id="user-input" type="text" placeholder="" name="registration-plate">
-			<div class="number-line">
-				<h5>Number of Passengers:</h5>
-				<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
-			</div>
-			<div class="slidecontainer" id="passender-amount">
-  			<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-			</div>
-			<h5>User Entry:</h5>
-			<input id="user-input" type="text" placeholder="" name="registration-plate">
-			<h5>User Entry:</h5>
-			<input id="user-input" type="text" placeholder="" name="registration-plate">
-			<h5>User Entry:</h5>
-			<input id="user-input" type="text" placeholder="" name="registration-plate">
-
-		</div>
 	</section>
 
 	<!-- Hero section end -->
+
+	<!-- Hero Section Passengers -->
+
+	<section class="hero-section set-bg" data-setbg="img/banner_image_1.jpg"over;>
+		<div class="container h-100" id="4">
+			<div class="hero-content text-white">
+				<div class="row">
+						<h2>Passengers.</h2>
+						<p>Select a number below to choose how many people will be traveling on your journey.</p>
+						<div class="number-line">
+							<h5>Number of Passengers:</h5>
+							<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+						</div>
+						<div class="slidecontainer" id="passender-amount">
+							<input type="range" min="1" max="10" class="slider" id="myRange">
+						</div>
+						<a href="#5" class="site-btn">Calculate Journey</a>
+
+
+	</section>
+
+
 
 
 
 	<!-- Hero section Calculated Journey -->
 	<section class="hero-section set-bg" data-setbg="img/banner_image_4.jpg"over;>
-		<div class="container h-100" id="3">
+		<div class="container h-100" id="5">
 			<div class="hero-content text-white">
 				<div class="row" id="bigRow">
 						<h2>Your Journey.</h2>
@@ -236,19 +253,6 @@
 			</div>
 		</div>
 	</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

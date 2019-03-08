@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -86,18 +86,6 @@
 	  </form>
 	</div>
 
-	<script>
-	// Get the modal
-	var modal = document.getElementById('id01');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-	</script>
-
 
 
 <!-- Other Banner -->
@@ -109,7 +97,15 @@
 						<h2>Skrrt.</h2>
 						<p>We plan your route and take your car details to calculate the optimum price for you to charge for a lift. </p>
 						<a href="main.html" class="site-btn" >Plan your route</a>
+
 					</div>
+					<a href="#2">
+					<div class="mousey">
+
+						<div class="scroller">
+						</div>
+					</div>
+				</a>
 				</div>
 
 			</div>
@@ -122,7 +118,7 @@
 
 
 	<!-- Features section -->
-	<section class="features-section spad">
+	<section class="features-section spad" id="2">
 		<div class="container">
 			<div class="section-title">
 				<img src="./img/car.png" alt="#">
@@ -198,6 +194,7 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/modal.js"></script>
 
 	</body>
 </html>

@@ -2,16 +2,27 @@
 <html lang="zxx">
 <head>
 	<title>Skrrt. - Never drive alone again</title>
+
+	<!--Metadata-->
 	<meta charset="UTF-8">
 	<meta name="description" content="Lift price calculator">
 	<meta name="keywords" content="lift, taxi, Uber, sharing, car, money, fuel, map, route">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
+
+	<!-- Tab Icon -->
 	<link href="img/icon.png" rel="shortcut icon"/>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+	<!--Scripts-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/detailsSwitch.js"></script>
+	<script src="js/map.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
+	<script src="js/showRecommendation.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/scroll.js"></script>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -86,21 +97,11 @@
 	  </form>
 	</div>
 
-	<script>
-	// Get the modal
-	var modal = document.getElementById('id01');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-	</script>
 
 
-	<!-- Hero section Basic Journey -->
-	<section class="hero-section set-bg" data-setbg="img/banner_image_5.jpg"over;>
+
+	<!-- Journey Section-->
+	<section class="hero-section set-bg" data-setbg="img/banner_image_5.jpg" >
 		<div class="container h-100" id="1">
 			<div class="hero-content text-white">
 				<div class="row">
@@ -108,52 +109,46 @@
 						<p>Please enter the locations that you will be travelling to and from. </p>
 						<input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
 						<input id="user-input" type="text" placeholder="End Location" name="end-location" required>
-						<a href="#2" class="site-btn">Select Veihcle</a>
+						<a href="#2" class="site-btn">Next Section</a>
 
 						</div>
 
 
 						<div id="googleMap"></div>
 
-						<script>
-						function myMap() {
-						var mapProp= {
-						  center:new google.maps.LatLng(57.119647,-2.139528),
-						  zoom:13,
-						};
-						var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-						}
-						</script>
-
-						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
 				</div>
 			</div>
-		</div>
+
 	</section>
+<!--Journey Section End-->
 
+<!-- Fuel Price Section-->
 
-<!-- Hero section Add car-->
-
-<section class="hero-section set-bg" data-setbg="img/banner_image.jpg"over;>
+<section class="hero-section set-bg" id="pcode-sec" data-setbg="img/banner_image.jpg">
 	<div class="container h-100" id="2">
 		<div class="hero-content text-white">
 			<div class="row">
-					<h2>Car.</h2>
-					<p>Use the box below to input your veihcles registration plate. Please press more deatils to add in more details about your car.</p>
-					<input id="user-input" type="text" placeholder="Registration Plate" name="registration-plate">
-					<a href="#4" class="site-btn">Select Passengers</a>
-					<a href="#3" class="site-btn">More Details</a>
+					<h2>Fuel Prices</h2>
+					<p>Enter your postcode so we can find the fuel prices in your area.</p>
+					<input id="user-input" type="text" placeholder="Postcode" name="registration-plate">
+					<a href="#3" class="site-btn">Next Section</a>
+			</div>
+		</div>
+	</div>
+
 
 </section>
+<!-- Fuel Price Section End-->
 
-<!-- hero banner more details -->
+<!-- Car Section -->
 
-	<section class="hero-section set-bg" data-setbg="img/banner_image_3.jpg"over;>
+	<section class="hero-section set-bg" data-setbg="img/banner_image_3.jpg">
 		<div class="container h-100" id="3">
 			<div class="hero-content text-white">
 				<div class="row">
-						<h2>Details.</h2>
-						<p>Feel free to enter more details about your vehicle or journey below. This will allow us to calculate your journey cost more accuratley.</p>
+						<h2>Car Details</h2>
+						<p>We need more information about your car to determine costs. Please enter your registration below or enter your details manually. </p>
+						<div id="man-car">
 						<h5>Manufacturer:</h5>
 							<select id="manufacturerSelect">
 								<option value="0">Select manufacturer:</option>
@@ -172,88 +167,96 @@
 							</select>
 							<h5>Model:</h5>
 							<input id="user-input" type="text" placeholder="" name="model" required>
-							<h5>Transmition:</h5>
+							<h5>Transmission:</h5>
 							<input id="user-input" type="text" placeholder="" name="transition">
 							<h5>Engine Capacity:</h5>
 							<input id="user-input" type="text" placeholder="" name="engine-capacity">
-							<a href="#4" class="site-btn">Select Passenger</a>
 						</div>
-
+						<div id="reg-car">
+							<h5>Enter your registration.</h5>
+							<input id="user-input" type="text" placeholder="" name="registration" required>
+						</div>
+							<a href="#4" class="site-btn">Next Section</a>
+							<a href="#nothing" id="switchbtn" onClick="regSwitch()" class="site-btn">Enter Manually</a>
+					</div>
+				</div>
+</div>
 	</section>
+	<!--Car section End-->
 
-	<!-- Hero section end -->
+	<!--Passengers Section-->
 
-	<!-- Hero Section Passengers -->
-
-	<section class="hero-section set-bg" data-setbg="img/banner_image_1.jpg"over;>
+	<section class="hero-section set-bg" data-setbg="img/banner_image_1.jpg">
 		<div class="container h-100" id="4">
 			<div class="hero-content text-white">
 				<div class="row">
-						<h2>Passengers.</h2>
+						<h2>Passengers</h2>
 						<p>Select a number below to choose how many people will be traveling on your journey.</p>
 						<div class="number-line">
-							<h5>Number of Passengers:</h5>
-							<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
-						</div>
-						<div class="slidecontainer" id="passender-amount">
-							<input type="range" min="1" max="10" class="slider" id="myRange">
-						</div>
-						<a href="#5" class="site-btn">Calculate Journey</a>
+							<h5 id="demo">Number of Passengers:</h5>
 
+						</div>
+						<div id="user-input" class="slidecontainer">
+
+			  <input type="range" min="1" max="7" value="1" class="slider" id="myRange">
+						</div>
+
+						<a href="#5" id="recbtn" onClick="showRecommendation()" class="site-btn">Calculate Journey</a>
+				</div>
+				</div>
+				</div>
 
 	</section>
+<!--Passenger Section End-->
 
 
 
 
-
-	<!-- Hero section Calculated Journey -->
-	<section class="hero-section set-bg" data-setbg="img/banner_image_4.jpg"over;>
+	<!--Calculated Journey -->
+	<section id="recommendation" class="hero-section set-bg" data-setbg="img/banner_image_4.jpg">
 		<div class="container h-100" id="5">
 			<div class="hero-content text-white">
 				<div class="row" id="bigRow">
-						<h2>Your Journey.</h2>
-						<p>Below is the calculated cost of you Journey, thanks for using Skrrt.</p>
-						<div id="calculatedRow">
+						<h2>Your Journey</h2>
+						<p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
+						<div class="calculatedRow">
 							<h3>Starting location:</h3>
-							<h3 id="calculatedH3">Aberdeen</h3>
+							<h3 class="calculatedH3">Aberdeen</h3>
 						</div>
-						<div id="calculatedRow">
+						<div class="calculatedRow">
 							<h3>End location:</h3>
-							<h3 id="calculatedH3">Dundee</h3>
+							<h3 class="calculatedH3">Dundee</h3>
 						</div>
-						<div id="calculatedRow">
-							<h3>Total Cost:</h3>
-							<h3 id="calculatedH3">£79.14</h3>
+						<div class="calculatedRow">
+							<h3>Vehicle Reg:</h3>
+							<h3 class="calculatedH3">SK1 RRT</h3>
 						</div>
-						<div id="calculatedRow">
-							<h3>Starting location:</h3>
-							<h3 id="calculatedH3" style="padding-botto: 50px;">£26.38</h3>
+						<div class="calculatedRow">
+							<h3>No. Of Passengers:</h3>
+							<h3 class="calculatedH3">4</h3>
 						</div>
-						<a href="" class="site-btn">Save Journey</a>
-						<a href="#1" class="site-btn">New Journey</a>
+						<div class="calculatedRow">
+							<h3>Cost Of Fuel:</h3>
+							<h3 class="calculatedH3">£45.43</h3>
+						</div>
+						<div class="calculatedRow">
+							<h3>Recommendation:</h3>
+							<h3 class="calculatedH3">£20/pp</h3>
+						</div>
+						<a href="#nothing" class="site-btn">Save Journey</a>
+						<a href="" class="site-btn">New Journey</a>
 
 						</div>
 
 
 						<div id="googleMap2"></div>
 
-						<script>
-						function myMap() {
-						var mapProp= {
-						  center:new google.maps.LatLng(57.119647,-2.139528),
-						  zoom:13,
-						};
-						var map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
-						}
-						</script>
 
-						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
+
 				</div>
 			</div>
-		</div>
 	</section>
-
+<!--Calculated Journey Section End-->
 
 
 
@@ -279,6 +282,8 @@
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/dropdown.js"></script>
-
+	<script src="js/slider.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
 	</body>
 </html>

@@ -36,8 +36,8 @@ $(document).ready(function() {
   $("#personal-details_btn").click(function() {
     if (validate1.valid() === true) {
       $(".car-info").click();
-    } else {
-      alert("Please supply correct information");
+    // } else {
+    //   alert("Please supply correct information");
     }
   });
 
@@ -45,8 +45,8 @@ $(document).ready(function() {
   $("#car-details_btn").click(function() {
     if (validate2.valid() === true) {
       $(".location").click();
-    } else {
-      alert("Please supply correct information");
+    // } else {
+    //   alert("Please supply correct information");
     }
   });
 
@@ -66,9 +66,9 @@ $(document).ready(function() {
       var f10 = $("input[name=field10]").val();
       var f11 = $("input[name=field11]").val();
 
-      alert(f1 + "" + f2 + "" + f3 + "" + f4 + "" + f5 + "" + f6 + "" + f7 + "" + f8 + "" + f9 + "" + f10 + "" + f11);
-    } else {
-      alert("Please supply correct information");
+      alert("Welcome " + f1 );
+    // } else {
+    //   alert("Please supply correct information");
     }
   });
 

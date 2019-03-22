@@ -5,7 +5,7 @@ app.get('/', function(req, res){
   res.sendFile('index.html', {root: __dirname });
 });
 app.get('/main', function(req, res){
-  res.sendFile('public/main.html', {root: __dirname });
+  res.sendFile('/main.html', {root: __dirname });
 });
 
 app.listen(8080);

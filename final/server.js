@@ -3,6 +3,6 @@ var app = express();
 app.use(express.static('final'));
 app.get('/', function(req, res){
   res.sendFile('main.html', {root: __dirname });
-  res.sendFile('style.css', {root: __dirname });
+  res.sendFile('css/style.css', {root: __dirname });
 });
 app.listen(8080);

@@ -14,20 +14,7 @@
 
   <!-- Header section -->
   <header class="header-section">
-    <a href="./index.html" class="site-logo"><img src="./img/logo.png" alt=""></a>
-    <div class="nav-switch">
-      <i class="fa fa-bars"></i>
-    </div>
-    <div class="nav-warp">
-      <div class="user-panel">
-        <a href="#nothing" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-      </div>
-      <ul class="main-menu">
-        <li><a href="main.html">Plan a journey</a></li>
-        <li><a href="index.html">About us</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
-    </div>
+    <% include ../partials/header%>
   </header>
   <!-- Header section end -->
 
@@ -37,7 +24,7 @@
       <form class="modal-content animate" action="/action_page.php">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <img src="./img/avatar_image.jpg" alt="Avatar" class="avatar">
+          <img src="/img/avatar_image.jpg" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
@@ -61,7 +48,7 @@
   </div>
 
   <!-- Journey Section-->
-  <section class="hero-section set-bg" data-setbg="img/banner_image_5.jpg">
+  <section class="hero-section set-bg" data-setbg="/img/banner_image_5.jpg">
     <div class="container h-100" id="1">
       <div class="hero-content text-white">
         <div class="row">
@@ -78,7 +65,7 @@
   <!--Journey Section End-->
 
   <!-- Fuel Price Section-->
-  <section class="hero-section set-bg" id="pcode-sec" data-setbg="img/banner_image.jpg">
+  <section class="hero-section set-bg" id="pcode-sec" data-setbg="/img/banner_image.jpg">
     <div class="container h-100" id="2">
       <div class="hero-content text-white">
         <div class="row">
@@ -93,7 +80,7 @@
   <!-- Fuel Price Section End-->
 
   <!-- Car Section -->
-  <section class="hero-section set-bg" data-setbg="img/banner_image_3.jpg">
+  <section class="hero-section set-bg" data-setbg="/img/banner_image_3.jpg">
     <div class="container h-100" id="3">
       <div class="hero-content text-white">
         <div class="row">
@@ -136,7 +123,7 @@
   <!--Car section End-->
 
   <!--Passengers Section-->
-  <section class="hero-section set-bg" data-setbg="img/banner_image_1.jpg">
+  <section class="hero-section set-bg" data-setbg="/img/banner_image_1.jpg">
     <div class="container h-100" id="4">
       <div class="hero-content text-white">
         <div class="row">
@@ -156,7 +143,7 @@
   <!--Passenger Section End-->
 
   <!--Calculated Journey -->
-  <section id="recommendation" class="hero-section set-bg" data-setbg="img/banner_image_4.jpg">
+  <section id="recommendation" class="hero-section set-bg" data-setbg="/img/banner_image_4.jpg">
     <div class="container h-100" id="5">
       <div class="hero-content text-white">
         <div class="row" id="bigRow">

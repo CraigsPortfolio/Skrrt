@@ -7,9 +7,9 @@ app.get('/', function(req, res) {
  res.render('pages/index');
 });
 
-app.get('/main', function(req, res) {
- res.render('pages/main');
-});
+// app.get('/main', function(req, res) {
+//  res.render('pages/main');
+// });
 
 
 app.listen(8080);

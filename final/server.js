@@ -37,4 +37,4 @@ app.get('/goLogin', function(req, res) {
  alert("Username = " + result[i].username);
  }
  res.send(output);
- })
+});

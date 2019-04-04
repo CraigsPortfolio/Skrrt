@@ -26,7 +26,7 @@ const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
 
 //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
-app.use(session({ secret: 'example' }));
+//app.use(session({ secret: 'example' }));
 
 app.use(bodyParser.urlencoded({
   extended: true

@@ -39,7 +39,7 @@ var db;
 
 //this is our connection to the mongo db, ts sets the variable db as our database
 MongoClient.connect(url, function(err, database) {
-  if (err) throw err;
+  //if (err) throw err;
   db = database;
   app.listen(8080);
   console.log('listening on 8080');
@@ -51,7 +51,7 @@ app.post('/dologin', function(req, res) {
   var pword = req.body.pword;
 
   db.collection('people').findOne({"login.username":uname}, function(err, result) {
-    if (err) throw err;//if there is an error, throw the error
+  //  if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index

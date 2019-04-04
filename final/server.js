@@ -21,7 +21,7 @@ app.listen(8080);
 console.log('8080 is the magic port');
 
 app.post('/dologin', function(req, res) {
-  console.log(JSON.stringify(req.body))
+  console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
   var pword = req.body.pword;
 

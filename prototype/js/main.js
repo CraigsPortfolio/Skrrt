@@ -86,3 +86,9 @@ $(window).on('load', function() {
 	});
 
 })(jQuery);
+
+//sidebar animation to come out and close
+ $('.sidebarBtn').click(function(){
+   $('.sidebar').toggleClass('active');
+   $('.sidebarBtn').toggleClass('toggle');
+ });

@@ -97,3 +97,7 @@ app.get('/logout', function(req, res) {
   req.session.destroy();
   res.redirect('/');
 });
+
+app.use(function (req, res, next) {
+  res.status(404).redirect('/404');
+})

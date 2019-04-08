@@ -111,6 +111,25 @@
     </div>
   </div>
 
+  <h3>Add a User</h3>
+  <h4>
+  if you need to generate a fake user you can do it at <a href="https://randomuser.me/">https://randomuser.me/</a>
+  </h4>
+  <!-- submits to our /adduser route. -->
+  <form action="/adduser" method="POST">
+    <label>Name</label>
+    <input type="text" placeholder="first" name="fname">
+    <input type="text" placeholder="last"  name="surname">
+    </br><label>Login</label>
+    <input type="email" placeholder="me@example.com"    name="email">
+    <input type="text" placeholder="username"     name="username">
+    <input type="password" placeholder="password"  name="password">
+  </br><label>Car</label>
+      <input type="text" placeholder="make"     name="make">
+      <input type="text" placeholder="model"    name="model">
+      <input type="text" placeholder="year" name="year">
+    </br><button type="submit">Submit</button>
+  </form>
   <footer class="footer-section">
     <% include ../partials/footer %>
   </footer>

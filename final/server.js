@@ -72,7 +72,7 @@ var datatostore = {
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
-  var uname = req.body.username;
+  var uname = req.body.uname;
   var pword = req.body.password;
 
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {

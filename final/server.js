@@ -1,6 +1,16 @@
 var express = require('express');
 var app = express();
 
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/profiles";
+app.use(express.static('public'))
+var db;
+MongoClient.connect(url, function(err, database){
+ if(err) throw err;
+ db = database;
+ app.listen(8080);
+});
+
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
@@ -28,13 +38,3 @@ app.get('/goLogin', function(req, res) {
 
 app.listen(8080);
 console.log('8080 is the magic port');
-
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/profiles";
-app.use(express.static('public'))
-var db;
-MongoClient.connect(url, function(err, database){
- if(err) throw err;
- db = database;
- app.listen(8080);
-});

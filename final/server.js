@@ -43,25 +43,18 @@ app.get('/register', function(req, res) {
 app.listen(8080);
 console.log('8080 is the magic port');
 
-app.post('/adduser', function(req, res) {
-  // //check we are logged in
-  // if(!req.session.loggedin){res.redirect('/login');return;}
+app.post('/dologin', function(req, res) {
+  console.log(JSON.stringify(req.body))
+  var uname = req.body.uname;
+  var pword = req.body.pword;
 
-  //we create the data string from the form components that have been passed in
-
-var datatostore = {
-"fname":req.body.fname,
-"surname":req.body.surname,
-"email":req.body.email,
-"login":{"username":req.body.uname,"password":req.body.pword},
-"car":{"make":req.body.make,"model":req.body.model,"year":req.body.year}}
-
-
-//once created we just run the data string against the database and all our new data will be saved/
-  db.collection('profiles').save(datatostore, function(err, result) {
-    if (err) throw err;
-    console.log('saved to database')
-    //when complete redirect to the index
-    res.redirect('/')
-  })
+  db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error
+    //if there is no result, redirect the user back to the login system as that username must not exist
+    if(!result){res.redirect('/login');return}
+    //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
+    if(result.login.pword == pword){ alert(result.login.pword); req.session.loggedin = true; res.redirect('/') }
+    //otherwise send them back to login
+    else{res.redirect('/login')}
+  });
 });

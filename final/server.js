@@ -28,7 +28,7 @@ MongoClient.connect(url, function(err, database) {
 
 
 app.get('/', function(req, res) {
- res.render('pages/main');
+ res.render('pages/index');
 });
 
 // app.get('/login', function(req, res) {

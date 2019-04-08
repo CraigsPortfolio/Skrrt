@@ -31,9 +31,9 @@ app.get('/', function(req, res) {
  res.render('pages/index');
 });
 
-app.get('/login', function(req, res) {
- res.render('partials/login');
-});
+// app.get('/login', function(req, res) {
+//  res.render('partials/login');
+// });
 
 app.get('/main', function(req, res) {
  res.render('pages/main');
@@ -86,6 +86,6 @@ app.post('/dologin', function(req, res) {
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; res.redirect('/') }
     //otherwise send them back to login
-    else{console.log("INCORRECT"); res.redirect('/login')}
+    else{console.log("INCORRECT"); }
   });
 });

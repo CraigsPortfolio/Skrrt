@@ -7,6 +7,10 @@ const bodyParser = require('body-parser'); //npm install body-parser
 
 // //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({
+    secret: 'keyboard cat',
+    name: cookie_name,
+    store: sessionStore, // connect-mongo session store
+    proxy: true,
     resave: true,
     saveUninitialized: true
 }));

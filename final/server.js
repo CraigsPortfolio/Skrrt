@@ -39,6 +39,11 @@ app.get('/register', function(req, res) {
  res.render('pages/register');
 });
 
+app.get('/adduser', function(req, res) {
+ res.render('pages/main');
+});
+
+
 app.post('/adduser', function(req, res) {
   //check we are logged in
   if(!req.session.loggedin){res.redirect('/login');return;}

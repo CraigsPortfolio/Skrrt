@@ -99,5 +99,5 @@ app.get('/logout', function(req, res) {
 });
 
 app.use(function (req, res, next) {
-  res.status(404).redirect('pages/404');
+  res.status(404).render('pages/404');
 })

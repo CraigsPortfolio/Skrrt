@@ -15,56 +15,51 @@
 
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/flaticon.css" />
   <link rel="stylesheet" href="css/animate.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" /> -->
   <link rel="stylesheet" href="css/profile.css" />
-
-
 
 </head>
 
-<body onload="checkCookie()">
+<body>
+  <div class="wrapper">
+    <div class="user-profile">
+      <img class="avatar" src="./img/banner_image_7.jpg">
 
-  <!-- Header section -->
-  <header class="header-section">
-    <a href="./index.html" class="site-logo"><img src="./img/logo.png" alt=""></a>
-
-
-    <div class="nav-switch">
-      <i class="fa fa-bars"></i>
-    </div>
-    <div class="nav-warp">
-      <div class="user-panel">
-        <a href="#nothing" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+      <div class="username">Firstname Surname</div>
+      <div class="bio">
+        Enter your biography here
       </div>
-      <ul class="main-menu">
-        <li><a href="main.html">Plan a journey</a></li>
-        <li><a href="index.html">About us</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
     </div>
-  </header>
 
-
-<div class="user-profile">
-  <img class="avatar" src="./img/avatar_image.jpg" alt="Ash" />
-  <div class="username">Username</div>
-  <div class="description">
-    Enter your biography here
-  </div>
-  <div class="nav12">
-  <ul>
-    <li><a href="#home">Saved journeys</a></li>
-    <li><a href="#news">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-
-</div>
-</div>
-
-
+    <nav class="navigation">
+      <ul class="mainmenu">
+        <li><a href="">Car Details</a>
+          <div class="submenu">
+          <h1>Make:</h1>
+          <h1>Model:</h1>
+          <h1>Year:</h1>
+          <button type="button">Edit car details</button>
+          </div>
+        </li>
+        <li><a href="">Saved Journeys</a>
+          <div class="submenu">
+          <h1>All journeys:</h1>
+          <button type="button">Edit journeys</button>
+          </div>
+        </li>
+        <li><a href="">Location Details</a>
+          <div class="submenu">
+          <h1>House number:</h1>
+          <h1>City:</h1>
+          <h1>Postcode:</h1>
+          <button type="button">Edit location details</button>
+          </div>
+        </li>
+        <li><a href="">Reviews</a></li>
+      </ul>
+    </nav>
 </body>

@@ -1,66 +1,124 @@
-.title-pen {
-  color: #333;
-  text-align: center;
+/*wrapper that keeps text in the middle of the page*/
+.wrapper {
+  margin: 0 auto;
+  width: 800px;
+  overflow: hidden;
 }
-.title-pen span {
-  color: #55acee;
+.wrapper{
+  background-color: #dbdbdb;
+  margin-bottom: 40px;
+  border-radius: 12px;
 }
-
-.user-profile {
-  margin: auto;
-  margin-top: 200px;
-	width: 800px;
-  height: 800px;
-  background: #fff;
-  border-radius: 4px;
+.wrapper{
+  margin-top:10px;
 }
 
-.user-profile  .username {
-  margin: auto;
-  margin-top: -144px;
-  margin-left: 220px;
-  color: #658585;
-  font-size: 32px;
-}
-
-.user-profile > .description {
-  margin: auto;
-  margin-top: 21px;
-  margin-left: 220px;
-  width: 224px;
-  color: #c0c5c5;
-  font-size: 16px;
-}
-.user-profile > img.avatar {
-	padding: 11px;
+.avatar {
+  padding: 11px;
   margin-left: 4px;
   margin-top: 4px;
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
   border-radius: 288px;
 }
 
-.nav12{
-  margin-top: 100px;
+.username {
+  margin: auto;
+  margin-left:200px;
+  margin-top: -150px;
+  color: #658585;
+  font-size: 32px;
+  font-family: "varela round", sans-serif;
 }
-.nav12 > ul {
-  list-style-type: none;
-  margin: 0;
+
+.bio {
+  margin: auto;
+  display: inline-block;
+  margin-left: 200px;
+  margin-top: 20px;
+  color: #e76043;
+  font-size: 16px;
+  font-family: "varela round", sans-serif;
+}
+
+
+/* define a fixed width for the entire menu */
+.navigation {
+  width: 80%;
+  margin-top: 150px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
   padding: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-
+  margin: 0;
 }
 
-.nav12 > li a {
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
   display: block;
-  color: #000;
-  padding: 25px 50px;
+  margin-top: 10px;
+  background-color: #CCC;
   text-decoration: none;
+  padding: 10px;
+  color: #000;
+  font-size: 20px;
+  font-family: "varela round", sans-serif;
+  text-align: center;
 }
 
-/* Change the link color on hover */
-.nav12 > li a:hover {
-  background-color: #555;
-  color: white;
+.mainmenu h1 {
+  font-family: "varela round", sans-serif;
+}
+
+.mainmenu button{
+  display: block;
+  margin: 0 auto;
+  background: #f27348;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 17px;
+  border-radius: 14px;
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: #999;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #666;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
 }

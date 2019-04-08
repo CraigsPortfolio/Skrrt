@@ -50,8 +50,8 @@
               <input type="text" placeholder="First name" class="input" name="fname"><br />
               <input type="text" placeholder="Last name" class="input" name="surname"><br />
               <input type="text" placeholder="E-mail address" class="input" name="email"><br />
-              <input type="text" placeholder="Choose a Username" class="input" name="uname"><br />
-              <input type="password" placeholder="Choose a Password" class="input" name="pword"><br />
+              <input type="text" placeholder="Choose a Username" class="input" name="username"><br />
+              <input type="password" placeholder="Choose a Password" class="input" name="password"><br />
               <div class="btn" id="personal-details_btn">
                 <p class="idNext">Next</p>
               </div>
@@ -83,22 +83,7 @@
     </div>
   </div>
 
-  <h3>Add a User</h3>
-  <!-- submits to our /adduser route. -->
-  <form action="/adduser" method="POST">
-    <label>Name</label>
-    <input type="text" placeholder="first" name="fname">
-    <input type="text" placeholder="last"  name="surname">
-    </br><label>Login</label>
-    <input type="email" placeholder="me@example.com"    name="email">
-    <input type="text" placeholder="username"     name="username">
-    <input type="password" placeholder="password"  name="password">
-  </br><label>Car</label>
-      <input type="text" placeholder="make"     name="make">
-      <input type="text" placeholder="model"    name="model">
-      <input type="text" placeholder="year" name="year">
-    </br><button type="submit">Submit</button>
-  </form>
+
   <footer class="footer-section">
     <% include ../partials/footer %>
   </footer>

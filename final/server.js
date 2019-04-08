@@ -98,6 +98,14 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+app.get('/', function(req, res){
+   res.cookie('visited', 'yep').send('cookie set'); //Sets name = express
+});
+
+
 app.use(function (req, res, next) {
   res.status(404).render('pages/404');
 })

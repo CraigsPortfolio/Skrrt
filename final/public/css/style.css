@@ -162,6 +162,7 @@ ol {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e1779', endColorstr='#0a0228', GradientType=1);
   /* IE6-9 */
+  pointer-events: none;
 }
 
 /*------------------

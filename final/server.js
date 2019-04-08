@@ -120,8 +120,6 @@ app.use(function (req, res, next) {
   next(); // <-- important!
 });
 
-// let static middleware do its job
-app.use(express.static(__dirname + '/public'));
 
 app.use(function (req, res, next) {
   res.status(404).render('pages/404');

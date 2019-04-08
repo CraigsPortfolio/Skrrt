@@ -77,7 +77,7 @@ var datatostore = {
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
   var uname = req.body.uname;
-  var pword = req.body.password;
+  var pword = req.body.pword;
 
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error

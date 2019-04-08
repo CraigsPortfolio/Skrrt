@@ -19,33 +19,7 @@
   <!-- Header section end -->
 
   <!-- Login Pop-up Section-->
-  <div id="id01" class="modal">
-    <div id="login-form">
-      <form class="modal-content animate" action="/action_page.php">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <img src="/img/avatar_image.jpg" alt="Avatar" class="avatar">
-        </div>
-
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input id="uname" type="text" placeholder="Enter Username" name="uname" required>
-
-          <label for="psw"><b>Password</b></label>
-          <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
-
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-
-        <div class="container" style="background-color:#c3c5c9">
-          <span class="psw">Make an <a href="register.html">account?</a></span>
-        </div>
-      </form>
-    </div>
-  </div>
+  <%include ../partials/login%>
 
   <!-- Journey Section-->
   <section class="hero-section set-bg" data-setbg="/img/banner_image_5.jpg">

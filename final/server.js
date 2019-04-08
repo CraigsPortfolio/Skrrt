@@ -26,7 +26,7 @@ app.get('/register', function(req, res) {
  res.render('pages/register');
 });
 
-app.get('/goLogin', function(req, res) {
+app.get('/doLogin', function(req, res) {
  db.collection('quotes').find().toArray(function(err, result) {
  if (err) throw err;
  for (var i = 0; i < result.length; i++) {

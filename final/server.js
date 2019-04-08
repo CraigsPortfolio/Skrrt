@@ -102,7 +102,7 @@ var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.get('/', function(req, res){
-   res.cookie('visited', 'yep').send('cookie set'); //Sets name = express
+   res.cookie('name', 'visited').send('cookie set'); //Sets name = express
 });
 
 

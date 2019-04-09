@@ -17,7 +17,6 @@ function initialize() {
     }
   });
   directionsDisplay.setMap(map);
-  directionsDisplay.setMap(map2);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
   autoComp();
   // ____________________________________________________________________________

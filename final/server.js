@@ -37,6 +37,7 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
  res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
+ console.log()
 });
 
 app.post('/main', function(req, res){
@@ -47,14 +48,10 @@ app.post('/main', function(req, res){
   console.log(req.body.carDetails);
   console.log(req.body.passengers);
 
+  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
+
   res.json({ ok: true });
 });
-
-
-app.get('/addSugg', function(req, res){
-  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
-})
-
 
 app.get('/register', function(req, res) {
  res.render('pages/register');
@@ -115,29 +112,12 @@ var datatostore = {
 });
 
 app.post('/addcar', function(req, res) {
-  //check we are logged in
-//  if(!req.session.loggedin){res.redirect('/login');return;}
-
-  //we create the data string from the form components that have been passed in
-
-var datatostore = {
-"make":req.body.make,
-"model":req.body.model,
-"year":req.body.year,
-"reg":req.body.reg,
-"mpg":req.body.mpg,
-"ftype":req.body.ftype
-}
-
-
-//once created we just run the data string against the database and all our new data will be saved/
-  db.collection('profiles').car.save(datatostore, function(err, result) {
-    if (err) throw err;
-    console.log('saved to database')
-    //when complete redirect to the index
-    currentUser=datatostore.login.username;
-    res.redirect('/profile')
-  })
+ var query = { login.username: currentUser };
+ var newvalues = { $set: {"car":{"make":req.body.make,"model":req.body.model,"year":req.body.year, "mpg":req.body.mpg, "ftype":req.body.ftype, "reg":req.body.reg} }};
+ db.collection('quotes').updateOne(query,newvalues, function(err, result) {
+ if (err) throw err;
+ res.redirect('/');
+ });
 });
 
 //the dologin route detasl with the data from the login screen.

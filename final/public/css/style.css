@@ -796,13 +796,18 @@ span.psw {
   display: block;
 }
 
-.input-boxes{
+#Start{
+  width: 400px;
+  display: block;
+}
+
+#End{
   width: 400px;
   display: block;
 }
 
 #map {
-  width: 40%;
+  width: 50%;
   height: 500px;
   float: right;
 }

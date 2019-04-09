@@ -13,7 +13,7 @@ $('#sub1').click(function() {
 	return false;
 });
 
-$('#fuelPrice').click(function() {
+$('#recbtn').click(function() {
 	calculateJourney();
 	return false;
 });

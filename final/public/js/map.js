@@ -90,7 +90,7 @@ function calculateJourney(){
   // document.getElementById("vehicleDetail").value = carDetails;
   // document.getElementById("noPassengers").value = passSlider;
   // document.getElementById("fuelPrice").value = fuelPrice;
-  document.getElementById("startDest").innerHTML = "startDest";
+  document.getElementById("startDest").innerHTML = startDest;
 
   $("startDest").html(startDest);
   $("endDest").html(endDest);

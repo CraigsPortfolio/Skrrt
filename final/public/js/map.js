@@ -1,8 +1,6 @@
 function initialize() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
-  var directionsService2 = new google.maps.DirectionsService;
-  var directionsDisplay2 = new google.maps.DirectionsRenderer;
   var options = {
     zoom: 13,
     center: {
@@ -15,8 +13,6 @@ function initialize() {
   var map2 = new google.maps.Map(document.getElementById('map2'), options);
   directionsDisplay.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
-  directionsDisplay.setMap(map2);
-  calculateAndDisplayRoute(directionsService2, directionsDisplay2);
   autoComp();
   // ____________________________________________________________________________
 }

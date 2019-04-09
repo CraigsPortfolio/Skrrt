@@ -69,18 +69,16 @@ function T() {
   };
   directionsService.route(directionsRequest, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
+      distance = response['routes'][0]['legs'][0]['distance']['value'];
       $.post('/main', {
         distance: response['routes'][0]['legs'][0]['distance']['value']
       });
-      var distance = response['routes'][0]['legs'][0]['distance']['value'];
-      alert(distance)
       window.location.href = "/main#2";
     } else
       alert("F")
   })
 }
 
-function test(){
-  var x = T();
-  alert(x)
+function calculateJourney(){
+  alert(distance);
 }

@@ -9,7 +9,12 @@
 'use strict';
 
 $('#sub1').click(function() {
-	test();
+	T();
+	return false;
+});
+
+$('#fuelPrice').click(function() {
+	calculateJourney();
 	return false;
 });
 

@@ -77,7 +77,7 @@ function T() {
 }
 
 function calculateJourney(){
-  alert("hey"):
+  alert("hey");
   var startDest = document.getElementById("Start").value;
   var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;

@@ -77,11 +77,15 @@ function T() {
 }
 
 function calculateJourney(){
+  var startDest = document.getElementById("Start").value;
+  var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;
   var carDetails = document.getElementById("reg-box").value;
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
   $.post('/main', {
+    Start: startDest,
+    End: endDest,
     distance: distance,
     fuelPrice: fuelPrice,
     carDetails: carDetails,

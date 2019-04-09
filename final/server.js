@@ -57,7 +57,7 @@ app.get('/profile', function(req, res) {
     first=result.login.fname;
   });
 
- res.render('pages/profile', {first:first});
+ res.render('pages/profile', {First:first});
 });
 
 app.get('/journey', function(req, res) {

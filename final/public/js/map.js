@@ -80,7 +80,7 @@ function T() {
 }
 
 
-F(){
+function F(){
   var x = T();
-  alert(x)
+  alert(x);
 }

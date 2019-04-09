@@ -114,6 +114,32 @@ var datatostore = {
   })
 });
 
+app.post('/addcar', function(req, res) {
+  //check we are logged in
+//  if(!req.session.loggedin){res.redirect('/login');return;}
+
+  //we create the data string from the form components that have been passed in
+
+var datatostore = {
+"make":req.body.make,
+"model":req.body.model,
+"year":req.body.year,
+"reg":req.body.reg,
+"mpg":req.body.mpg,
+"ftype":req.body.ftype;
+}
+
+
+//once created we just run the data string against the database and all our new data will be saved/
+  db.collection('profiles').car.save(datatostore, function(err, result) {
+    if (err) throw err;
+    console.log('saved to database')
+    //when complete redirect to the index
+    currentUser=datatostore.login.username;
+    res.redirect('/profile')
+  })
+});
+
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {

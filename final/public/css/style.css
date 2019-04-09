@@ -796,6 +796,11 @@ span.psw {
   display: block;
 }
 
+.input-boxes{
+  width: 400px;
+  display: block;
+}
+
 #googleMap {
   width: 50%;
   height: 500px;

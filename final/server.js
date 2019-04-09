@@ -46,6 +46,7 @@ app.post('/main', function(req, res){
   console.log(req.body.fuelPrice);
   console.log(req.body.carDetails);
   console.log(req.body.passengers);
+  console.log();
 
   res.json({ ok: true });
 });

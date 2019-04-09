@@ -70,6 +70,10 @@ app.get('/journey', function(req, res) {
  res.render('pages/journey');
 });
 
+app.get('/newcar', function(req, res) {
+ res.render('pages/newcar');
+});
+
 app.get('/garage', function(req, res) {
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error

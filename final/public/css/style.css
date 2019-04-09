@@ -796,7 +796,17 @@ span.psw {
   display: block;
 }
 
-#googleMap {
+#Start{
+  width: 400px;
+  display: block;
+}
+
+#End{
+  width: 400px;
+  display: block;
+}
+
+#map {
   width: 50%;
   height: 500px;
   float: right;

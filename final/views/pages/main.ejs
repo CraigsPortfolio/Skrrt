@@ -6,7 +6,7 @@
   <% include ../partials/headScripts %>
 </head>
 
-<body>
+<body onload=initialize()>
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
@@ -28,11 +28,11 @@
         <div class="row">
           <h2>Plan your journey</h2>
           <p>Please enter the locations that you will be travelling to and from. </p>
-          <input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
-          <input id="user-input" type="text" placeholder="End Location" name="end-location" required>
+          <input id="Start" class="input-boxes" type="text" placeholder="Starting Location" name="start-location" value="Aberdeen, UK" required>
+          <input id="End" class="input-boxes" type="text" placeholder="End Location" name="end-location" value="Dundee, UK" required>
           <a href="#2" class="site-btn">Next Section</a>
         </div>
-        <div id="googleMap"></div>
+        <div id="map"></div>
       </div>
     </div>
   </section>
@@ -150,7 +150,7 @@
           <a href="#nothing" class="site-btn">Save Journey</a>
           <a href="" class="site-btn">New Journey</a>
         </div>
-        <div id="googleMap2"></div>
+        <div id="map2"></div>
       </div>
     </div>
   </section>
@@ -161,7 +161,6 @@
 
   <% include ../partials/footerScripts %>
   <script src="js/slider.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
 
 </body>
 </html>

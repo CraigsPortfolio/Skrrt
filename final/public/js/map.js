@@ -79,10 +79,11 @@ function T() {
 function calculateJourney(){
   var fuelPrice = document.getElementById("fuelPrice").value;
   var carDetails = document.getElementById("reg-box").value;
-  var passSlider = document.getElementById('sliderVal').value;
+  var passSlider = document.getElementById('myRange').innerHTML;
   $.post('/main', {
     distance: distance,
+    fuelPrice: fuelPrice,
     carDetails: carDetails,
-    passengers: passSlider 
+    passengers: passSlider
   });
 }

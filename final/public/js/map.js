@@ -60,6 +60,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }
 
 function T() {
+  alert("hey")
   var directionsService = new google.maps.DirectionsService();
   var directionsRequest = {
     origin: document.getElementById("Start").value,

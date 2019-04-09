@@ -58,9 +58,8 @@ app.get('/profile', function(req, res) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result.fname);
     first=result.fname;
+    res.render('pages/profile', {First:first});
   });
-
- res.render('pages/profile', {First:first});
 });
 
 app.get('/journey', function(req, res) {

@@ -18,6 +18,8 @@ function initialize() {
 }
 
 function autoComp(){
+  var coor1;
+  var coor2;
   var input = document.getElementById('Start');
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
@@ -44,6 +46,8 @@ function autoComp(){
 
 function C(){
   var x = autoComp()
+  alert(x);
+  alert(x[0]);
   console.log(x[0]);
   $.post('/main', {
     lat: 'xxx@example.com',

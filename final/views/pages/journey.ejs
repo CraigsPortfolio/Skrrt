@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <% include ../partials/head %>
+  <% include ../partials/headScripts %>
+</head>
+
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<% include ../partials/profileHeader %>
+	</header>
+	<!-- Header section end -->
+
+  <!--Calculated Journey -->
+  <section id="saved" class="hero-section set-bg" data-setbg="img/saved-bg.jpg">
+    <div class="container h-100" id="5">
+      <div class="hero-content text-white">
+        <div class="row" id="bigRow">
+            <h2>Saved Journeys</h2>
+            <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
+            <div class="calculatedRow">
+              <h3>Starting location:</h3>
+              <h3 class="calculatedH3">Aberdeen</h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>End location:</h3>
+              <h3 class="calculatedH3">Dundee</h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>Vehicle Reg:</h3>
+              <h3 class="calculatedH3">SK1 RRT</h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>No. Of Passengers:</h3>
+              <h3 class="calculatedH3">4</h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>Cost Of Fuel:</h3>
+              <h3 class="calculatedH3">£45.43</h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>Recommendation:</h3>
+              <h3 class="calculatedH3">£20/pp</h3>
+            </div>
+            <a href="#nothing" class="site-btn">Delete Journey</a>
+            <a href="" class="site-btn">Next Journey</a>
+
+            </div>
+
+
+            <div id="googleMap2"></div>
+
+
+
+        </div>
+      </div>
+  </section>
+  <!--Calculated Journey Section End-->
+
+
+
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<% include ../partials/footer %>
+	</footer>
+	<!-- Footer top section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<% include ../partials/footerScripts %>
+
+	</body>
+</html>

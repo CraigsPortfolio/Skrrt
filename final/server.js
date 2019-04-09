@@ -53,7 +53,6 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-  var uname = "Craigybaeb";
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result.fname);
@@ -95,7 +94,8 @@ var datatostore = {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
-    res.redirect('/')
+    currentUser=result.login.username;
+    res.redirect('/profile')
   })
 });
 
@@ -109,7 +109,7 @@ app.post('/dologin', function(req, res) {
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
-    //if(!result){res.redirect('/login');return}
+    if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; currentUser=result.login.username; res.redirect('/profile') }
     //otherwise send them back to login

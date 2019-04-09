@@ -39,9 +39,12 @@ function autoComp(){
     var coor2 = placeLat2.toString()+ "," + placeLng2.toString();
     initialize();
   });
+  return [coor1,coor2]
 }
 
 function C(){
+  var x = autoComp()
+  console.log(x[0]);
   $.post('/main', {
     lat: 'xxx@example.com',
     long: 'xyx@example.com'

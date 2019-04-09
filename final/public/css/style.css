@@ -812,6 +812,12 @@ span.psw {
   float: right;
 }
 
+#map2 {
+  width: 50%;
+  height: 500px;
+  float: right;
+}
+
 #recommendation {
   display: none;
 }

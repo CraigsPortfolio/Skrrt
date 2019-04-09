@@ -84,15 +84,22 @@ function calculateJourney(){
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
 
-  document.getElementById("startDest").value = startDest;
-  document.getElementById("endDest").value = endDest;
-  document.getElementById("vehicleDetail").value = carDetails;
-  document.getElementById("noPassengers").value = passSlider;
-  document.getElementById("fuelPrice").value = fuelPrice;
+  // document.getElementById("startDest").value = startDest;
+  // document.getElementById("endDest").value = endDest;
+  // document.getElementById("vehicleDetail").value = carDetails;
+  // document.getElementById("noPassengers").value = passSlider;
+  // document.getElementById("fuelPrice").value = fuelPrice;
+
+  $("startDest").html(startDest);
+  $("endDest").html(endDest);
+  $("vehicleDetail").html(carDetails);
+  $("noPassengers").html(passSlider);
+  $("fuelPrice").html(fuelPrice);
 
   var recommendedCost = ((((distance / 100)*vehicleDetail)*fuelPrice)*1.20)/passSlider
 
-  document.getElementById("recommendedPrice").value = recommendedCost;
+  // document.getElementById("recommendedPrice").value = recommendedCost;
+  $("recommendedPrice").html(recommendedCost);
 
 
   // $.post('/main', {

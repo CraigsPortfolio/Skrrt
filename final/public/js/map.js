@@ -77,7 +77,7 @@ function T() {
 }
 
 function calculateJourney(){
-  alert("hey");
+  alert("hey::::::");
   var startDest = document.getElementById("Start").value;
   var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;
@@ -90,6 +90,7 @@ function calculateJourney(){
   // document.getElementById("vehicleDetail").value = carDetails;
   // document.getElementById("noPassengers").value = passSlider;
   // document.getElementById("fuelPrice").value = fuelPrice;
+  document.getElementById("yourH1_element_Id").innerHTML = "startDest";
 
   $("startDest").html(startDest);
   $("endDest").html(endDest);

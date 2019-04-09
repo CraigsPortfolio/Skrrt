@@ -72,11 +72,15 @@ function T() {
       $.post('/main', {
         distance: response['routes'][0]['legs'][0]['distance']['value']
       });
-      $.post('/main', {
-        fuelPrice: 30.0
-      });
       window.location.href = "/main#2";
+      return response['routes'][0]['legs'][0]['distance']['value'];
     } else
       alert("F")
   })
+}
+
+
+F(){
+  var x = T();
+  alert(x)
 }

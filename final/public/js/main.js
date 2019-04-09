@@ -13,6 +13,10 @@ $('#sub1').click(function() {
 	return false;
 });
 
+$('#recbtn').click(function() {
+	F();
+	return false;
+});
 
 $(window).on('load', function() {
 	/*------------------

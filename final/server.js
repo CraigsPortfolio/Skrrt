@@ -36,8 +36,8 @@ app.get('/', function(req, res) {
 // });
 
 app.get('/main', function(req, res) {
- res.render('pages/main');
- console.log(req.body.Start)
+ res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
+ console.log()
 });
 
 app.post('/main', function(req, res){
@@ -130,8 +130,7 @@ app.post('/dologin', function(req, res) {
 app.get('/logout', function(req, res) {
   req.session.loggedin = false;
   req.session.destroy();
-  currentUser="";
-  res.redirect('/main');
+  res.redirect('/');
 });
 
 app.use(function (req, res, next) {

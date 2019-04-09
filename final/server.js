@@ -70,7 +70,10 @@ app.get('/journey', function(req, res) {
 });
 
 app.get('/garage', function(req, res) {
- res.render('pages/garage');
+  db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error
+    res.render('pages/garage', {make:result.car.make, model:result.car.model});
+  });
 });
 
 app.get('/adduser', function(req, res) {

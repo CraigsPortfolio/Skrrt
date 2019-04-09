@@ -73,14 +73,13 @@ function T() {
         distance: response['routes'][0]['legs'][0]['distance']['value']
       });
       window.location.href = "/main#2";
-      return response['routes'][0]['legs'][0]['distance']['value'];
     } else
       alert("F")
   })
+  return response['routes'][0]['legs'][0]['distance']['value'];
 }
 
-
-function F(){
+function test(){
   var x = T();
-  alert(x);
+  alert(x)
 }

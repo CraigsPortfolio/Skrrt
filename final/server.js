@@ -56,10 +56,10 @@ app.get('/profile', function(req, res) {
   var test = "test";
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    first=result.login.fname;
+    first=result.fname;
   });
 
- res.render('pages/profile', {First:test});
+ res.render('pages/profile', {First:first});
 });
 
 app.get('/journey', function(req, res) {

@@ -69,9 +69,11 @@ function T() {
   };
   directionsService.route(directionsRequest, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-      // alert(response['routes'][0]['legs'][0]['distance']['value']);
       $.post('/main', {
         distance: response['routes'][0]['legs'][0]['distance']['value']
+      });
+      $.post('/main', {
+        fuelPrice: 30.0
       });
       window.location.href = "/main#2";
     } else

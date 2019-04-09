@@ -80,6 +80,7 @@ function T() {
 }
 
 function test(){
+  alert("tet")
   var x = T();
   alert(x)
 }

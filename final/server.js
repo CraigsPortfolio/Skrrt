@@ -52,7 +52,8 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   var first = "";
-  db.collection('profiles').findOne({"login.username":"Craigybaeb"}, function(err, result) {
+  var uname = "Craigybaeb";
+  db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     first=result.login.fname;
   });

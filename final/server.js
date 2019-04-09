@@ -41,8 +41,7 @@ app.get('/main', function(req, res) {
 });
 
 app.post('/main', function(req, res){
-  console.log(req.body.lat);
-  console.log(req.body.long);
+  console.log(req.body.distance);
   res.json({ ok: true });
 });
 

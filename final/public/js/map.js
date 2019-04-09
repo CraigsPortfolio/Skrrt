@@ -18,8 +18,8 @@ function initialize() {
 }
 
 function autoComp(){
-  var coor1;
-  var coor2;
+  var coor1 = 0;
+  var coor2 = 1;
   var input = document.getElementById('Start');
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {

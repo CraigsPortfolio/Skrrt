@@ -92,7 +92,7 @@ var datatostore = {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
-    res.redirect('/')
+    res.redirect('/profile')
   })
 });
 

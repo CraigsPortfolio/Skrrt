@@ -64,7 +64,7 @@ app.post('/main', function(req, res){
 });
 
 app.get('/addSugg', function(req, res) {
-  alert(start)
+  console.log(start)
  res.render('pages/main', {Start:start, End:end, Distance:distance, fuelPrice:fuelPrice, carDetails:carDetails, Passengers:passengers})
 });
 

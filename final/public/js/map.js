@@ -8,7 +8,16 @@ function initialize() {
       lng: -2.1408
     }
   });
+
+  var map2 = new google.maps.Map(document.getElementById('map2'), {
+    zoom: 13,
+    center: {
+      lat: 57.1185,
+      lng: -2.1408
+    }
+  });
   directionsDisplay.setMap(map);
+  directionsDisplay.setMap(map2);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
   autoComp();
   // ____________________________________________________________________________

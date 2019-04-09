@@ -125,7 +125,8 @@ app.post('/dologin', function(req, res) {
 app.get('/logout', function(req, res) {
   req.session.loggedin = false;
   req.session.destroy();
-  res.redirect('/');
+  currentUser="";
+  res.redirect('/main');
 });
 
 app.use(function (req, res, next) {

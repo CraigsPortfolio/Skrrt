@@ -56,7 +56,7 @@ app.get('/profile', function(req, res) {
   var test = "test";
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    alert(result);
+    console.log(result);
     first=result.fname;
   });
 

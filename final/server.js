@@ -36,7 +36,7 @@ app.get('/', function(req, res) {
 // });
 
 app.get('/main', function(req, res) {
- res.render('pages/main');
+ res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
  console.log()
 });
 

@@ -9,7 +9,7 @@
 'use strict';
 
 $('#sub1').click(function() {
-	T();
+	test();
 	return false;
 });
 

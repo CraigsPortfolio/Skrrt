@@ -37,14 +37,18 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
  res.render('pages/main');
-
+ console.log()
 });
 
 app.post('/main', function(req, res){
+  console.log(req.body.Start);
+  console.log(req.body.End);
   console.log(req.body.distance);
   console.log(req.body.fuelPrice);
   console.log(req.body.carDetails);
   console.log(req.body.passengers);
+
+
   res.json({ ok: true });
 });
 

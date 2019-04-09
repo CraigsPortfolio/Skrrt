@@ -50,7 +50,13 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
- res.render('pages/profile');
+  var first = "";
+  db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error
+    first=result.login.fname;
+  });
+});
+ res.render('pages/profile', {first:first});
 });
 
 app.get('/journey', function(req, res) {

@@ -45,7 +45,7 @@ app.get('/', function(req, res) {
 app.get('/main', function(req, res) {
  res.render('pages/main');
  console.log(req.body.Start)
- res.render('pages/main', {Start:start, End:end, Distance:distance, fuelPrice:fuelPrice, carDetails:carDetails, Passengers:passengers})
+ res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
 });
 
 app.post('/main', function(req, res){

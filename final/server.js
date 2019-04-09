@@ -94,7 +94,7 @@ var datatostore = {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
-    currentUser=result.login.username;
+    currentUser=datatostore.login.username;
     res.redirect('/profile')
   })
 });

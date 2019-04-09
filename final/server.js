@@ -56,7 +56,7 @@ app.get('/profile', function(req, res) {
     if (err) throw err;//if there is an error, throw the error
     first=result.login.fname;
   });
-});
+
  res.render('pages/profile', {first:first});
 });
 

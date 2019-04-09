@@ -139,7 +139,7 @@ var datatostore = {
 "year":req.body.year,
 "reg":req.body.reg,
 "mpg":req.body.mpg,
-"ftype":req.body.ftype;
+"ftype":req.body.ftype
 }
 
 

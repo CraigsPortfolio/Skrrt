@@ -44,18 +44,6 @@ function autoComp(){
   return [coor1,coor2]
 }
 
-function C(){
-  var x = autoComp()
-  alert(x);
-  alert(x[0]);
-  console.log(x[0]);
-  $.post('/main', {
-    lat: 'xxx@example.com',
-    long: 'xyx@example.com'
-  });
-  window.location.href = "/main#2";
-}
-
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
@@ -69,4 +57,24 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       window.alert('Directions request failed due to ' + status);
     }
   });
+}
+
+function T() {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsRequest = {
+    origin: document.getElementById("Start").value,
+    destination: document.getElementById("End").value,
+    travelMode: google.maps.DirectionsTravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.METRIC
+  };
+  directionsService.route(directionsRequest, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      alert(response['routes'][0]['legs'][0]['distance']['value']);
+      $.post('/main', {
+        distance: response['routes'][0]['legs'][0]['distance']['value']
+      });
+      window.location.href = "/main#2";
+    } else
+      alert("F")
+  })
 }

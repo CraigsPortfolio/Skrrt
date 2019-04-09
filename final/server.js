@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient; //npm install mongodb@2.2.32
 const url = "mongodb://localhost:27017/profiles";
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
-
+var currentUser = "";
 // //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({ secret: 'example' }));
 
@@ -52,7 +52,7 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   var uname = "Craigybaeb";
-  db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
+  db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result.fname);
     first=result.fname;
@@ -109,7 +109,7 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; res.redirect('/profile') }
+    if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; currentUser=result.login.username; res.redirect('/profile') }
     //otherwise send them back to login
     else{console.log("INCORRECT"); }
   });

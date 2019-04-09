@@ -5,13 +5,6 @@ const url = "mongodb://localhost:27017/profiles";
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
 var currentUser = "";
-var start = "";
-var end = "";
-var distance = "";
-var fuelPrice = "";
-var carDetails = "";
-var passengers = "";
-
 // //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({ secret: 'example' }));
 
@@ -43,31 +36,19 @@ app.get('/', function(req, res) {
 // });
 
 app.get('/main', function(req, res) {
- res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
- console.log()
+ res.render('pages/main');
+ console.log(req.body.Start)
 });
 
-// app.post('/main', function(req, res){
-//   console.log(req.body.Start);
-//   console.log(req.body.End);
-//   console.log(req.body.distance);
-//   console.log(req.body.fuelPrice);
-//   console.log(req.body.carDetails);
-//   console.log(req.body.passengers);
-//   start = req.body.Start;
-//   end = req.body.End;
-//   distance = req.body.distance;
-//   fuelPrice = req.body.fuelPrice;
-//   carDetails = req.body.carDetails;
-//   passengers = req.body.passengers;
-//
-//   res.json({ ok: true });
-// });
+app.post('/main', function(req, res){
+  console.log(req.body.Start);
+  console.log(req.body.End);
+  console.log(req.body.distance);
+  console.log(req.body.fuelPrice);
+  console.log(req.body.carDetails);
+  console.log(req.body.passengers);
 
-
-app.get('/addSugg', function(req, res){
-  res.render('pages/main', {Start:start, End:end, Distance:distance, fuelPrice:fuelPrice, carDetails:carDetails, Passengers:passengers})
-})
+  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
 
   res.json({ ok: true });
 });
@@ -130,9 +111,6 @@ var datatostore = {
   })
 });
 
-
-
-
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {
@@ -156,7 +134,8 @@ app.post('/dologin', function(req, res) {
 app.get('/logout', function(req, res) {
   req.session.loggedin = false;
   req.session.destroy();
-  res.redirect('/');
+  currentUser="";
+  res.redirect('/main');
 });
 
 app.use(function (req, res, next) {

@@ -43,7 +43,8 @@ function autoComp(){
 
 function C(){
   $.post('/main', {
-    address: 'xxx@example.com'
+    lat: 'xxx@example.com',
+    long: 'xyx@example.com'
   });
   window.location.href = "http://harvard-navy-8080.codio.io/main#2";
 }

@@ -74,10 +74,10 @@ function T() {
       });
       var distance = response['routes'][0]['legs'][0]['distance']['value'];
       window.location.href = "/main#2";
+      return distance
     } else
       alert("F")
   })
-  return distance
 }
 
 function test(){

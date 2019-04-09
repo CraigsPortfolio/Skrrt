@@ -83,12 +83,24 @@ function calculateJourney(){
   var carDetails = document.getElementById("reg-box").value;
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
-  $.post('/main', {
-    Start: startDest,
-    End: endDest,
-    distance: distance,
-    fuelPrice: fuelPrice,
-    carDetails: carDetails,
-    passengers: passValue
-  });
+
+  document.getElementById("startDest").value = startDest;
+  document.getElementById("endDest").value = endDest;
+  document.getElementById("vehicleDetail").value = carDetails;
+  document.getElementById("noPassengers").value = passSlider;
+  document.getElementById("fuelPrice").value = fuelPrice;
+
+  var recommendedCost = ((((distance / 100)*vehicleDetail)*fuelPrice)*1.20)/passSlider
+
+  document.getElementById("recommendedPrice").value = recommendedCost;
+
+
+  // $.post('/main', {
+  //   Start: startDest,
+  //   End: endDest,
+  //   distance: distance,
+  //   fuelPrice: fuelPrice,
+  //   carDetails: carDetails,
+  //   passengers: passValue
+  // });
 }

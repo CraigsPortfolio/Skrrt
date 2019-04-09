@@ -130,14 +130,8 @@ var datatostore = {
   })
 });
 
-app.post('/addcar', function(req, res) {
- var query = { login.username: currentUser };
- var newvalues = { $set: {"car":{"make":req.body.make,"model":req.body.model,"year":req.body.year, "mpg":req.body.mpg, "ftype":req.body.ftype, "reg":req.body.reg} }};
- db.collection('quotes').updateOne(query,newvalues, function(err, result) {
- if (err) throw err;
- res.redirect('/');
- });
-});
+
+
 
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.

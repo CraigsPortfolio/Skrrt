@@ -1,23 +1,17 @@
 function initialize() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var options = {
     zoom: 13,
     center: {
       lat: 57.1185,
       lng: -2.1408
     }
-  });
+  }
 
-  var map2 = new google.maps.Map(document.getElementById('map2'), {
-    zoom: 13,
-    center: {
-      lat: 57.1185,
-      lng: -2.1408
-    }
-  });
+  var map = new google.maps.Map(document.getElementById('map'), options);
+  var map2 = new google.maps.Map(document.getElementById('map2'), options);
   directionsDisplay.setMap(map);
-  directionsDisplay.setMap(map2);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
   autoComp();
   // ____________________________________________________________________________

@@ -37,7 +37,6 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
  res.render('pages/main', {Start:"", End:"", Distance:"", fuelPrice:"", carDetails:"", Passengers:""})
- console.log()
 });
 
 app.post('/main', function(req, res){
@@ -52,6 +51,12 @@ app.post('/main', function(req, res){
 
   res.json({ ok: true });
 });
+
+
+app.get('/addSugg', function(req, res){
+  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
+})
+
 
 app.get('/register', function(req, res) {
  res.render('pages/register');

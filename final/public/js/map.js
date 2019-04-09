@@ -72,11 +72,12 @@ function T() {
       $.post('/main', {
         distance: response['routes'][0]['legs'][0]['distance']['value']
       });
+      var distance = response['routes'][0]['legs'][0]['distance']['value'];
+      return distance
       window.location.href = "/main#2";
     } else
       alert("F")
   })
-  return response['routes'][0]['legs'][0]['distance']['value'];
 }
 
 function test(){

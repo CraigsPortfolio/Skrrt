@@ -47,31 +47,27 @@ app.get('/main', function(req, res) {
  console.log()
 });
 
-app.post('/main', function(req, res){
-  console.log(req.body.Start);
-  console.log(req.body.End);
-  console.log(req.body.distance);
-  console.log(req.body.fuelPrice);
-  console.log(req.body.carDetails);
-  console.log(req.body.passengers);
-  start = req.body.Start;
-  end = req.body.End;
-  distance = req.body.distance;
-  fuelPrice = req.body.fuelPrice;
-  carDetails = req.body.carDetails;
-  passengers = req.body.passengers;
-
-<<<<<<< HEAD
-  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
-=======
-  res.json({ ok: true });
-});
+// app.post('/main', function(req, res){
+//   console.log(req.body.Start);
+//   console.log(req.body.End);
+//   console.log(req.body.distance);
+//   console.log(req.body.fuelPrice);
+//   console.log(req.body.carDetails);
+//   console.log(req.body.passengers);
+//   start = req.body.Start;
+//   end = req.body.End;
+//   distance = req.body.distance;
+//   fuelPrice = req.body.fuelPrice;
+//   carDetails = req.body.carDetails;
+//   passengers = req.body.passengers;
+//
+//   res.json({ ok: true });
+// });
 
 
 app.get('/addSugg', function(req, res){
   res.render('pages/main', {Start:start, End:end, Distance:distance, fuelPrice:fuelPrice, carDetails:carDetails, Passengers:passengers})
 })
->>>>>>> f65062d89000e752dd8aff7c325f58c09d3b109a
 
   res.json({ ok: true });
 });

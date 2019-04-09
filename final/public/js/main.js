@@ -8,6 +8,11 @@
 
 'use strict';
 
+$('#sub1').click(function() {
+	T();
+	return false;
+});
+
 
 $(window).on('load', function() {
 	/*------------------

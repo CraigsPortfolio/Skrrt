@@ -37,6 +37,12 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
  res.render('pages/main');
+
+});
+
+app.post('/main', function(req, res){
+  console.log(req.body.address);
+  res.json({ ok: true });
 });
 
 app.get('/register', function(req, res) {

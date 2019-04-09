@@ -47,6 +47,14 @@ app.get('/profile', function(req, res) {
  res.render('pages/profile');
 });
 
+app.get('/journey', function(req, res) {
+ res.render('pages/journey');
+});
+
+app.get('/garage', function(req, res) {
+ res.render('pages/garage');
+});
+
 app.get('/adduser', function(req, res) {
  res.render('pages/main');
 });

@@ -14,7 +14,6 @@ $('#sub1').click(function() {
 });
 
 $('#recbtn').click(function() {
-	alert("hey")
 	calculateJourney();
 	return false;
 });

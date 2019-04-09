@@ -51,7 +51,6 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-  var uname = "Craigybaeb";
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result.fname);

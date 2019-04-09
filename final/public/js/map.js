@@ -70,9 +70,6 @@ function T() {
   directionsService.route(directionsRequest, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       distance = response['routes'][0]['legs'][0]['distance']['value'];
-      $.post('/main', {
-        distance: response['routes'][0]['legs'][0]['distance']['value']
-      });
       window.location.href = "/main#2";
     } else
       alert("F")
@@ -80,5 +77,12 @@ function T() {
 }
 
 function calculateJourney(){
-  alert(distance);
+  var fuelPrice = document.getElementById("fuelPrice").value;
+  var carDetails = document.getElementById("reg-box").value;
+  var passSlider = document.getElementById('sliderVal').value;
+  $.post('/main', {
+    distance: distance,
+    carDetails: carDetails,
+    passengers: passSlider 
+  });
 }

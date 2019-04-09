@@ -43,6 +43,8 @@ app.get('/main', function(req, res) {
 app.post('/main', function(req, res){
   console.log(req.body.distance);
   console.log(req.body.fuelPrice);
+  console.log(req.body.carDetails);
+  console.log(req.body.passengers);
   res.json({ ok: true });
 });
 

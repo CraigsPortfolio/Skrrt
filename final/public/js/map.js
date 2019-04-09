@@ -77,13 +77,14 @@ function T() {
 }
 
 function calculateJourney(){
-  var fuelPrice = document.getElementById("fuelPrice").value;
+  var fuelPrice = document.getElementById("fuelPrice-box").value;
   var carDetails = document.getElementById("reg-box").value;
-  var passSlider = document.getElementById('myRange').innerHTML;
+  var passSlider = document.getElementById('myRange');
+  var passValue = passSlider.value;
   $.post('/main', {
     distance: distance,
     fuelPrice: fuelPrice,
     carDetails: carDetails,
-    passengers: passSlider
+    passengers: passValue
   });
 }

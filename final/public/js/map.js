@@ -88,7 +88,12 @@ function calculateJourney(){
   document.getElementById("endDest").innerHTML = endDest;
   document.getElementById("vehicleDetail").innerHTML = carDetails;
   document.getElementById("noPassengers").innerHTML = passValue;
-  document.getElementById("fuelPrice").innerHTML = fuelPrice;
+  document.getElementById("fuelCost").innerHTML = fuelPrice;
+
+  alert(distance);
+  alert(vehicleDetail);
+  alert(fuelPrice);
+  alert(passSlider);
 
   var recommendedCost = ((((parseInt(distance) / 100)*parseInt(vehicleDetail))*parseInt(fuelPrice))*1.20)/parseInt(passSlider);
 

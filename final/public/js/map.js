@@ -103,7 +103,6 @@ function calculateJourney() {
   recommendedCost = Math.ceil(recommendedCost / 1) * 1;
 
   if(returned){
-    alert("ret");
     recommendedCost = recommendedCost * 2;
     document.getElementById("type").innerHTML = "Return";
   }else{

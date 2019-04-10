@@ -73,7 +73,14 @@ app.post('/adduser', function(req, res) {
 //  if(!req.session.loggedin){res.redirect('/login');return;}
 
   //we create the data string from the form components that have been passed in
-
+var exists = false;
+db.collection('profiles').findOne({"login.username":req.body.username}, function(err, result) {
+  if (err) throw err;//if there is an error, throw the error
+  //if there is no result, redirect the user back to the login system as that username must not exist
+  if(!result){exists=true;return}
+if(exists){
+  return;
+}
 var datatostore = {
 "fname":req.body.fname,
 "surname":req.body.surname,

@@ -40,7 +40,15 @@ $(document).ready(function() {
   $("#personal-details_btn").click(function() {
     if (validate1.valid() === true) {
       alert("hey")
-      $(".idNext").click();
+      // $(".idNext").click();
+    } else {
+      console.log("Please supply correct information"); //logs when incorrect user input is entered
+    }
+  });
+
+  $("#car-details_btn").click(function() {
+    if (validate1.valid() === true) {
+      $(".location").click();
     } else {
       console.log("Please supply correct information"); //logs when incorrect user input is entered
     }

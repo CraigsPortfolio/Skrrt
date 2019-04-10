@@ -111,7 +111,7 @@ function getMPG() {
     $.getJSON(url, function(jsondata) {
       console.log(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg);
       mpg = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
-      document.getElementById("vehicleMPG").innerHTML = mpg;
+      document.getElementById("vehicleMPG").innerHTML = mpg+"mp/g";
       window.location.href = "/main#4";
     });
   });

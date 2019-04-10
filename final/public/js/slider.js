@@ -26,7 +26,7 @@ output2.innerHTML = "Charitable";
 //Responding to manipulation of slider
 slider2.oninput = function() {
   if(this.value==1){
-    output2.innerHTML = "Charitable";
+    output2.innerHTML = "Break Even";
   }
   if(this.value==2){
     output2.innerHTML = "Reasonable";

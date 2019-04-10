@@ -13,6 +13,11 @@ $('#sub1').click(function() {
 	return false;
 });
 
+$('#sub2').click(function() {
+	getMPG();
+	return false;
+});
+
 $('#recbtn').click(function() {
 	calculateJourney();
 	return false;

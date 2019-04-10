@@ -17,7 +17,7 @@ function initialize() {
   // ____________________________________________________________________________
 }
 
-function autoComp(){
+function autoComp() {
   var coor1 = 0;
   var coor2 = 1;
   var input = document.getElementById('Start');
@@ -27,7 +27,7 @@ function autoComp(){
     var placeName = place.name;
     var placeLat = place.geometry.location.lat();
     var placeLng = place.geometry.location.lng();
-    var coor1 = placeLat.toString()+ "," + placeLng.toString();
+    var coor1 = placeLat.toString() + "," + placeLng.toString();
     initialize();
   });
 
@@ -38,10 +38,10 @@ function autoComp(){
     var placeName2 = place2.name;
     var placeLat2 = place2.geometry.location.lat();
     var placeLng2 = place2.geometry.location.lng();
-    var coor2 = placeLat2.toString()+ "," + placeLng2.toString();
+    var coor2 = placeLat2.toString() + "," + placeLng2.toString();
     initialize();
   });
-  return [coor1,coor2]
+  return [coor1, coor2]
 }
 
 
@@ -76,7 +76,7 @@ function T() {
   })
 }
 
-function calculateJourney(){
+function calculateJourney() {
   var startDest = document.getElementById("Start").value;
   var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;
@@ -95,20 +95,21 @@ function calculateJourney(){
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
   recommendedCost = parseInt(distance) / 1000; //convert to miles
   recommendedCost = recommendedCost / 100; //get fuel consumption / 100 mi
-  recommendedCost = recommendedCost * 100/((parseInt(carDetails) * 1.609)/4.546);
+  recommendedCost = recommendedCost * 100 / ((parseInt(carDetails) * 1.609) / 4.546);
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
-  recommendedCost = Math.ceil(recommendedCost/5)*5;
+  recommendedCost = Math.ceil(recommendedCost / 5) * 5;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue + "Profit" + profValue);
-  document.getElementById("recommendedPrice").innerHTML = "£"+recommendedCost.toFixed(2)+"/pp";
+  document.getElementById("recommendedPrice").innerHTML = "£" + recommendedCost.toFixed(2) + "/pp";
+}
 
-  // $.post('/main', {
-  //   Start: startDest,
-  //   End: endDest,
-  //   distance: distance,
-  //   fuelPrice: fuelPrice,
-  //   carDetails: carDetails,
-  //   passengers: passValue
-  // });
+function getMPG() {
+  $(document).ready(function() {
+    var reg = document.getElementById("reg-box").value;
+    var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
+    $.getJSON(url, function(jsondata) {
+      alert(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg)
+    });
+  });
 }

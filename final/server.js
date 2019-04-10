@@ -31,24 +31,8 @@ app.get('/', function(req, res) {
  res.render('pages/index');
 });
 
-// app.get('/login', function(req, res) {
-//  res.render('partials/login');
-// });
-
 app.get('/main', function(req, res) {
  res.render('pages/main');
-});
-
-app.post('/main', function(req, res){
-  console.log(req.body.Start);
-  console.log(req.body.End);
-  console.log(req.body.distance);
-  console.log(req.body.fuelPrice);
-  console.log(req.body.carDetails);
-  console.log(req.body.passengers);
-  console.log();
-
-  res.json({ ok: true });
 });
 
 app.get('/register', function(req, res) {

@@ -85,6 +85,7 @@ function calculateJourney() {
   var passValue = passSlider.value;
   var profitSlider = document.getElementById('myRange2');
   var profValue = profitSlider.value;
+  var returned = document.getElementById("return").checked
 
   document.getElementById("startDest").innerHTML = startDest;
   document.getElementById("endDest").innerHTML = endDest;
@@ -100,9 +101,13 @@ function calculateJourney() {
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
   recommendedCost = Math.ceil(recommendedCost / 1) * 1;
-  if(document.getElementById("return").checked == true){
+
+  if(returned){
     alert("ret");
     recommendedCost = recommendedCost * 2;
+    document.getElementById("type").innerHTML = "Return";
+  }else{
+    ocument.getElementById("type").innerHTML = "One Way";
   }
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue + "Profit" + profValue);
   document.getElementById("recommendedPrice").innerHTML = "£" + recommendedCost.toFixed(2) + "/pp";

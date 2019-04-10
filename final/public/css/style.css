@@ -1678,3 +1678,7 @@ section {
 .dropdown:hover .dropbtn {
   opacity: 0.8;;
 }
+
+.registrationDetails{
+  display: none;
+}

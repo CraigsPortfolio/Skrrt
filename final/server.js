@@ -102,7 +102,7 @@ app.post('/addcar', function(req, res) {
  });
 });
 
-app.get('/addjourney', function(req, res) {
+app.post('/addjourney', function(req, res) {
  var query = { "login.username": currentUser };
  var newvalues = { $addToSet: {journeys:{start: req.body.Start, end: req.body.End, pass: req.body.passengers, reg: req.body.reg, fcost: req.body.fuelPrice, mpg: req.body.vehicleMPG, rec:req.body.recommendedPrice} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {

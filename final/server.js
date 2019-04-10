@@ -78,7 +78,6 @@ app.post('/adduser', function(req, res) {
           console.log(user)
             message = "user exists";
             console.log(message)
-            res.json({message: message});
         } else {
             message= "user doesn't exist";
             console.log(message)

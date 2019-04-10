@@ -59,7 +59,7 @@ app.get('/newcar', function(req, res) {
 app.get('/garage', function(req, res) {
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    res.render('pages/garage', {make:result.cars.make, model:result.cars.model});
+    res.render('pages/garage', {make:result.car.make, model:result.car.model});
   });
 });
 

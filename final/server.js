@@ -109,6 +109,10 @@ var datatostore = {
   })
 });
 
+app.get('/adduser', function(req, res) {
+ res.render('pages/garage');
+});
+
 app.post('/addcar', function(req, res) {
  var query = { username: currentUser };
  var newvalues = { $addToSet: {cars:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, ftype: req.body.ftype, mpg: req.body.mpg} }};

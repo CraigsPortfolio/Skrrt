@@ -99,7 +99,7 @@ function calculateJourney(){
   recommendedCost = recommendedCost * 4; //profit multiplier
   recommendedCost = Math.ceil(recommendedCost/5)*5;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
-  document.getElementById("recommendedPrice").innerHTML = recommendedCost.toFixed(2);
+  document.getElementById("recommendedPrice").innerHTML = "£"+recommendedCost.toFixed(2)+"/pp";
 
   // $.post('/main', {
   //   Start: startDest,

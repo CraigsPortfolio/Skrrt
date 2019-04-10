@@ -8,5 +8,5 @@ function getResults(){
   var URL = "https://uk1.ukvehicledata.co.uk/api/datapackage/" + DataPackage + "?v=" + ApiVersion + QueryStringOptionals + "&key_vrm=" + VRM + "&auth_apikey=" + ApiKey;
   $.getJSON(URL, function(res){
     console.log("RES"+res);
-  })
-}
+  });
+};

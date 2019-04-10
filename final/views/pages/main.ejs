@@ -6,7 +6,7 @@
   <% include ../partials/headScripts %>
 </head>
 
-<body>
+<body onload=initialize()>
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
@@ -19,33 +19,7 @@
   <!-- Header section end -->
 
   <!-- Login Pop-up Section-->
-  <div id="id01" class="modal">
-    <div id="login-form">
-      <form class="modal-content animate" action="/action_page.php">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <img src="/img/avatar_image.jpg" alt="Avatar" class="avatar">
-        </div>
-
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input id="uname" type="text" placeholder="Enter Username" name="uname" required>
-
-          <label for="psw"><b>Password</b></label>
-          <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
-
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-
-        <div class="container" style="background-color:#c3c5c9">
-          <span class="psw">Make an <a href="register.html">account?</a></span>
-        </div>
-      </form>
-    </div>
-  </div>
+  <%include ../partials/login%>
 
   <!-- Journey Section-->
   <section class="hero-section set-bg" data-setbg="/img/banner_image_5.jpg">
@@ -54,11 +28,11 @@
         <div class="row">
           <h2>Plan your journey</h2>
           <p>Please enter the locations that you will be travelling to and from. </p>
-          <input id="user-input" type="text" placeholder="Starting Location" name="start-location" required>
-          <input id="user-input" type="text" placeholder="End Location" name="end-location" required>
-          <a href="#2" class="site-btn">Next Section</a>
+          <input id="Start" class="input-boxes" type="text" placeholder="Starting Location" name="start-location" value="Aberdeen, UK" required>
+          <input id="End" class="input-boxes" type="text" placeholder="End Location" name="end-location" value="Dundee, UK" required>
+          <a href="#2" id="sub1" class="site-btn">Next Section</a>
         </div>
-        <div id="googleMap"></div>
+        <div id="map"></div>
       </div>
     </div>
   </section>
@@ -71,8 +45,8 @@
         <div class="row">
           <h2>Fuel Prices</h2>
           <p>Enter your postcode so we can find the fuel prices in your area.</p>
-          <input id="user-input" type="text" placeholder="Postcode" name="registration-plate">
-          <a href="#3" class="site-btn">Next Section</a>
+          <input id="fuelPrice-box" type="text" placeholder="Postcode" name="registration-plate">
+          <a href="#3" id="fuelPrice" class="site-btn">Next Section</a>
         </div>
       </div>
     </div>
@@ -112,7 +86,7 @@
           </div>
           <div id="reg-car">
             <h5>Enter your registration.</h5>
-            <input id="user-input" type="text" placeholder="" name="registration" required>
+            <input id="reg-box" type="text" placeholder="" name="registration" required>
           </div>
           <a href="#4" class="site-btn">Next Section</a>
           <a href="#nothing" id="switchbtn" onClick="regSwitch()" class="site-btn">Enter Manually</a>
@@ -151,32 +125,32 @@
           <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
           <div class="calculatedRow">
             <h3>Starting location:</h3>
-            <h3 class="calculatedH3">Aberdeen</h3>
+            <h3 id="startDest" class="calculatedH3">Aberdeen</h3>
           </div>
           <div class="calculatedRow">
             <h3>End location:</h3>
-            <h3 class="calculatedH3">Dundee</h3>
+            <h3 id="endDest" class="calculatedH3">Dundee</h3>
           </div>
           <div class="calculatedRow">
             <h3>Vehicle Reg:</h3>
-            <h3 class="calculatedH3">SK1 RRT</h3>
+            <h3 id="vehicleDetail" class="calculatedH3">AB</h3>
           </div>
           <div class="calculatedRow">
             <h3>No. Of Passengers:</h3>
-            <h3 class="calculatedH3">4</h3>
+            <h3 id="noPassengers" class="calculatedH3">5</h3>
           </div>
           <div class="calculatedRow">
             <h3>Cost Of Fuel:</h3>
-            <h3 class="calculatedH3">£45.43</h3>
+            <h3 id="fuelCost" class="calculatedH3">2.0</h3>
           </div>
           <div class="calculatedRow">
             <h3>Recommendation:</h3>
-            <h3 class="calculatedH3">£20/pp</h3>
+            <h3 id="recommendedPrice" class="calculatedH3">£20/pp</h3>
           </div>
           <a href="#nothing" class="site-btn">Save Journey</a>
           <a href="" class="site-btn">New Journey</a>
         </div>
-        <div id="googleMap2"></div>
+        <!-- <div id="map2"></div> -->
       </div>
     </div>
   </section>
@@ -187,7 +161,7 @@
 
   <% include ../partials/footerScripts %>
   <script src="js/slider.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYJPNdzp2PrXo4AFKSRah6KizW6SJx18&callback=myMap"></script>
 
 </body>
+
 </html>

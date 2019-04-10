@@ -99,7 +99,7 @@ function calculateJourney() {
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
-  recommendedCost = Math.ceil(recommendedCost / 5) * 5;
+  recommendedCost = Math.ceil(recommendedCost / 1) * 1;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue + "Profit" + profValue);
   document.getElementById("recommendedPrice").innerHTML = "£" + recommendedCost.toFixed(2) + "/pp";
 }

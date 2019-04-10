@@ -37,7 +37,6 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
  res.render('pages/main');
- console.log(req.body.Start)
 });
 
 app.post('/main', function(req, res){
@@ -47,8 +46,7 @@ app.post('/main', function(req, res){
   console.log(req.body.fuelPrice);
   console.log(req.body.carDetails);
   console.log(req.body.passengers);
-
-  res.render('pages/main', {Start:req.body.Start, End:req.body.End, Distance:req.body.distance, fuelPrice:req.body.fuelPrice, carDetails:req.body.carDetails, Passengers:req.body.passengers})
+  console.log();
 
   res.json({ ok: true });
 });
@@ -77,7 +75,7 @@ app.get('/newcar', function(req, res) {
 app.get('/garage', function(req, res) {
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    res.render('pages/garage', {make:result.car.make, model:result.car.model});
+    res.render('pages/garage', {make:result.cars.make, model:result.cars.model});
   });
 });
 
@@ -95,9 +93,8 @@ app.post('/adduser', function(req, res) {
 var datatostore = {
 "fname":req.body.fname,
 "surname":req.body.surname,
-"email":req.body.email,
 "login":{"username":req.body.username,"pword":req.body.password},
-"car":{"make":req.body.make,"model":req.body.model,"year":req.body.year}
+ "cars":{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}
 }
 
 
@@ -110,6 +107,25 @@ var datatostore = {
     res.redirect('/profile')
   })
 });
+
+
+app.post('/addcar', function(req, res) {
+ var query = { "login.username": currentUser };
+ var newvalues = { $addToSet: {cars:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, ftype: req.body.ftype, mpg: req.body.mpg} }};
+ db.collection('profiles').update(query,newvalues, function(err, result) {
+ if (err) throw err;
+ res.redirect('/garage');
+ });
+});
+
+// app.get('/remcar', function(req, res) {
+//  var query = { "login.username": currentUser };
+//  var newvalues = { $pull: {cars:{make: req.body.make}}};
+//  db.collection('profiles').update(query,newvalues, function(err, result) {
+//  if (err) throw err;
+//  res.redirect('/garage');
+//  });
+// });
 
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.

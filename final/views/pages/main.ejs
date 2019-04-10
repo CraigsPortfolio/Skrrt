@@ -129,7 +129,7 @@
           <div id="user-input" class="slidecontainer">
             <input type="range" min="1" max="7" value="1" class="slider" id="myRange">
           </div>
-          <a href="/addSugg" id="recbtn" onClick="showRecommendation()" class="site-btn">Calculate Journey</a>
+          <a href="#5" id="recbtn" onClick="showRecommendation()" class="site-btn">Calculate Journey</a>
         </div>
       </div>
     </div>
@@ -145,27 +145,27 @@
           <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
           <div class="calculatedRow">
             <h3>Starting location:</h3>
-            <h3 id="Start" class="calculatedH3"><%= Start %></h3>
+            <h3 id="startDest" class="calculatedH3">Aberdeen</h3>
           </div>
           <div class="calculatedRow">
             <h3>End location:</h3>
-            <h3 class="calculatedH3"><%= End %></h3>
+            <h3 id="endDest" class="calculatedH3">Dundee</h3>
           </div>
           <div class="calculatedRow">
             <h3>Vehicle Reg:</h3>
-            <h3 class="calculatedH3"><%= carDetails %></h3>
+            <h3 id="vehicleDetail" class="calculatedH3">AB</h3>
           </div>
           <div class="calculatedRow">
             <h3>No. Of Passengers:</h3>
-            <h3 class="calculatedH3"><%= Passengers %></h3>
+            <h3 id="noPassengers" class="calculatedH3">5</h3>
           </div>
           <div class="calculatedRow">
             <h3>Cost Of Fuel:</h3>
-            <h3 class="calculatedH3"><%= fuelPrice %></h3>
+            <h3 id="fuelCost" class="calculatedH3">2.0</h3>
           </div>
           <div class="calculatedRow">
             <h3>Recommendation:</h3>
-            <h3 class="calculatedH3">£20/pp</h3>
+            <h3 id="recommendedPrice" class="calculatedH3">£20/pp</h3>
           </div>
           <a href="#nothing" class="site-btn">Save Journey</a>
           <a href="" class="site-btn">New Journey</a>

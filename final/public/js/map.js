@@ -83,12 +83,30 @@ function calculateJourney(){
   var carDetails = document.getElementById("reg-box").value;
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
-  $.post('/main', {
-    Start: startDest,
-    End: endDest,
-    distance: distance,
-    fuelPrice: fuelPrice,
-    carDetails: carDetails,
-    passengers: passValue
-  });
+
+  document.getElementById("startDest").innerHTML = startDest;
+  document.getElementById("endDest").innerHTML = endDest;
+  document.getElementById("vehicleDetail").innerHTML = carDetails;
+  document.getElementById("noPassengers").innerHTML = passValue;
+  document.getElementById("fuelCost").innerHTML = fuelPrice;
+
+  //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
+  recommendedCost = parseInt(distance) / 1000; //convert to miles
+  recommendedCost = recommendedCost / 100; //get fuel consumption / 100 mi
+  recommendedCost = recommendedCost * 100/((parseInt(carDetails) * 1.609)/4.546);
+  recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
+  recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
+  recommendedCost = recommendedCost * 4; //profit multiplier
+  recommendedCost = Math.ceil(recommendedCost/5)*5;
+  console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
+  document.getElementById("recommendedPrice").innerHTML = "£"+recommendedCost.toFixed(2)+"/pp";
+
+  // $.post('/main', {
+  //   Start: startDest,
+  //   End: endDest,
+  //   distance: distance,
+  //   fuelPrice: fuelPrice,
+  //   carDetails: carDetails,
+  //   passengers: passValue
+  // });
 }

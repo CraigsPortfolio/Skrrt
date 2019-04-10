@@ -97,8 +97,9 @@ function calculateJourney(){
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * 1.2; //profit multiplier
+  recommendedCost = Math.Ceiling( recommendedCost / 2.5 ) * 2.5;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
-  document.getElementById("recommendedPrice").innerHTML = recommendedCost.toFixed(2);
+  document.getElementById("recommendedPrice").innerHTML = recommendedCost; //.toFixed(2);
 
   // $.post('/main', {
   //   Start: startDest,

@@ -1662,28 +1662,19 @@ section {
   z-index: 1;
 }
 
-.dropdown-content .carList {
+.dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.carList:hover {background-color: #f1f1f1}
+.dropdown a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.carList:hover .registrationDetails {
-  display: block;
-}
-
-
 .dropdown:hover .dropbtn {
   opacity: 0.8;
-}
-
-.registrationDetails{
-  display: none;
 }

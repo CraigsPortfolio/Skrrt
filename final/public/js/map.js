@@ -91,7 +91,8 @@ function calculateJourney(){
   document.getElementById("fuelCost").innerHTML = fuelPrice;
 
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
-  recommendedCost = parseInt(distance) / 100000 *0.62;
+  recommendedCost = (parseInt(distance)*0.62) / 1000; //convert to miles
+  recommendedCost = recommendedCost / 100;
   recommendedCost = recommendedCost * parseInt(carDetails) * 0.22;
   recommendedCost = recommendedCost * parseInt(fuelPrice);
   recommendedCost = recommendedCost / parseInt(passValue);

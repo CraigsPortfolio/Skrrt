@@ -54,6 +54,14 @@ $(document).ready(function() {
     }
   });
 
+  $("#confirm_btn").click(function() {
+    if (validate1.valid() === true){
+      document.forms['validate1'].submit();
+    } else {
+      alert("error");
+    }
+  });
+
   // //Validates form 2 on the car details tab. If all fields are entered correctly lets you move on to next tab.
   // var validate2 = $("#validate2");
   // $("#car-details_btn").click(function() {

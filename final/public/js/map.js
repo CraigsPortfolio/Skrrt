@@ -101,6 +101,7 @@ function calculateJourney() {
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
   recommendedCost = Math.ceil(recommendedCost / 1) * 1;
   if(returned){
+    alert("ret");
     recommendedCost = recommendedCost * 2;
   }
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue + "Profit" + profValue);

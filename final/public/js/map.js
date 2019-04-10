@@ -85,7 +85,7 @@ function calculateJourney() {
   var passValue = passSlider.value;
   var profitSlider = document.getElementById('myRange2');
   var profValue = profitSlider.value;
-  var returned = document.getElementById('return').checked;
+
   document.getElementById("startDest").innerHTML = startDest;
   document.getElementById("endDest").innerHTML = endDest;
   document.getElementById("vehicleDetail").innerHTML = carDetails;
@@ -100,7 +100,7 @@ function calculateJourney() {
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
   recommendedCost = Math.ceil(recommendedCost / 1) * 1;
-  if(returned == True){
+  if(document.getElementById('return').checked; == True){
     alert("ret");
     recommendedCost = recommendedCost * 2;
   }

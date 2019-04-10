@@ -80,7 +80,7 @@ function calculateJourney() {
   var startDest = document.getElementById("Start").value;
   var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;
-  var carDetails = document.getElementById("reg-box").value;
+  // var carDetails = document.getElementById("reg-box").value;
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
   var profitSlider = document.getElementById('myRange2');
@@ -110,6 +110,7 @@ function getMPG() {
     var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
     $.getJSON(url, function(jsondata) {
       alert(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg)
+      carDetails = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
     });
   });
 }

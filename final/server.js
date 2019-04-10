@@ -92,6 +92,24 @@ var datatostore = {
   })
 });
 
+app.get('/adduser', function(req, res) {
+    db.collection('profiles').findOne({"login.username": req.body.username}, function(err, user){
+        if(err) {
+          console.log(err);
+        }
+        var message;
+        if(user) {
+          console.log(user)
+            message = "user exists";
+            console.log(message)
+        } else {
+            message= "user doesn't exist";
+            console.log(message)
+        }
+        res.json({message: message});
+    });
+});
+
 
 app.post('/addcar', function(req, res) {
  var query = { "login.username": currentUser };

@@ -1675,6 +1675,11 @@ section {
   display: block;
 }
 
+.dropdown a:hover .registrationDetails {
+  display: block;
+}
+
+
 .dropdown:hover .dropbtn {
   opacity: 0.8;;
 }

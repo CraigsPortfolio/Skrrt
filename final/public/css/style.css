@@ -1639,7 +1639,7 @@ section {
 ####################################*/
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #f27348;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -1676,19 +1676,4 @@ section {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
-}
-
-/* .animate {
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  /* Chrome and Safari */
-  /* -moz-backface-visibility: hidden; */
-  /* Firefox */
-  /* -ms-backface-visibility: hidden; */
-  /* Internet Explorer */
 }

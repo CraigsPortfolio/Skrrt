@@ -1662,14 +1662,14 @@ section {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content .carList {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1}
+.carList:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -1677,4 +1677,8 @@ section {
 
 .dropdown:hover .dropbtn {
   opacity: 0.8;
+}
+
+.registrationDetails{
+  display: none;
 }

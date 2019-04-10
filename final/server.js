@@ -107,7 +107,7 @@ app.post('/addjourney', function(req, res) {
  var newvalues = { $addToSet: {journeys:{start: req.body.startDest, end: req.body.endDest, pass: req.body.noPassengers, reg: req.body.vehicleDetail, fcost: req.body.fuelCost, mpg: req.body.vehicleMPG, rec:req.body.recommendedPrice} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
- res.redirect('/garage');
+ res.redirect('/main');
  });
 });
 

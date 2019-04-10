@@ -68,30 +68,6 @@ app.get('/adduser', function(req, res) {
 });
 
 
-// app.post('/adduser', function(req, res) {
-//   //check we are logged in
-// //  if(!req.session.loggedin){res.redirect('/login');return;}
-//
-//   //we create the data string from the form components that have been passed in
-//
-// var datatostore = {
-// "fname":req.body.fname,
-// "surname":req.body.surname,
-// "login":{"username":req.body.username,"pword":req.body.password},
-//  "car":{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}
-// }
-//
-//
-// //once created we just run the data string against the database and all our new data will be saved/
-//   db.collection('profiles').save(datatostore, function(err, result) {
-//     if (err) throw err;
-//     console.log('saved to database')
-//     //when complete redirect to the index
-//     currentUser=datatostore.login.username;
-//     res.redirect('/profile')
-//   })
-// });
-
 app.post('/adduser', function(req, res) {
     db.collection('profiles').findOne({"login.username": req.body.username}, function(err, user){
         if(err) {
@@ -102,11 +78,28 @@ app.post('/adduser', function(req, res) {
           console.log(user)
             message = "user exists";
             console.log(message)
+            res.json({message: message});
         } else {
             message= "user doesn't exist";
             console.log(message)
+            var datatostore = {
+            "fname":req.body.fname,
+            "surname":req.body.surname,
+            "login":{"username":req.body.username,"pword":req.body.password},
+             "car":{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}
+            }
+
+
+            //once created we just run the data string against the database and all our new data will be saved/
+              db.collection('profiles').save(datatostore, function(err, result) {
+                if (err) throw err;
+                console.log('saved to database')
+                //when complete redirect to the index
+                currentUser=datatostore.login.username;
+                res.redirect('/profile')
+              })
         }
-        res.json({message: message});
+        //res.json({message: message});
     });
 });
 

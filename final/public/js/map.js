@@ -88,7 +88,7 @@ function calculateJourney() {
 
   document.getElementById("startDest").innerHTML = startDest;
   document.getElementById("endDest").innerHTML = endDest;
-  document.getElementById("vehicleDetail").innerHTML = carDetails;
+  document.getElementById("vehicleDetail").innerHTML = reg;
   document.getElementById("noPassengers").innerHTML = passValue;
   document.getElementById("fuelCost").innerHTML = fuelPrice;
 

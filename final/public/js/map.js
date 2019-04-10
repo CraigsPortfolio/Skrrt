@@ -80,7 +80,7 @@ function calculateJourney() {
   var startDest = document.getElementById("Start").value;
   var endDest = document.getElementById("End").value;
   var fuelPrice = document.getElementById("fuelPrice-box").value;
-  // var carDetails = document.getElementById("reg-box").value;
+  var carDetails = document.getElementById("reg-box").value;
   var passSlider = document.getElementById('myRange');
   var passValue = passSlider.value;
   var profitSlider = document.getElementById('myRange2');
@@ -88,14 +88,14 @@ function calculateJourney() {
 
   document.getElementById("startDest").innerHTML = startDest;
   document.getElementById("endDest").innerHTML = endDest;
-  document.getElementById("vehicleDetail").innerHTML = reg;
+  document.getElementById("vehicleDetail").innerHTML = carDetails;
   document.getElementById("noPassengers").innerHTML = passValue;
   document.getElementById("fuelCost").innerHTML = fuelPrice;
 
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
   recommendedCost = parseInt(distance) / 1000; //convert to miles
   recommendedCost = recommendedCost / 100; //get fuel consumption / 100 mi
-  recommendedCost = recommendedCost * 100 / ((parseInt(carDetails) * 1.609) / 4.546);
+  recommendedCost = recommendedCost * 100 / ((parseInt(mpg) * 1.609) / 4.546);
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
@@ -110,7 +110,7 @@ function getMPG() {
     var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
     $.getJSON(url, function(jsondata) {
       alert(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg)
-      carDetails = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
+      mpg = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
       window.location.href = "/main#4";
     });
   });

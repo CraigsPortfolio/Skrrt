@@ -98,7 +98,7 @@ var datatostore = {
     res.redirect('/profile')
   })
 });
-
+});
 
 app.post('/addcar', function(req, res) {
  var query = { "login.username": currentUser };

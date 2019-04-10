@@ -6,7 +6,7 @@ $(document).ready(function(){ //Waiting until document is fully loaded
 
   //Scrolling to the recommendation
   $('html, body').animate({
-        scrollTop: $("#5").offset().top
+        scrollTop: $("#6").offset().top
     }, 0);
 });
 }

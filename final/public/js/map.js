@@ -122,7 +122,7 @@ function postJourney(){
   endDest = document.getElementById("endDest").innerHTML;
   reg = document.getElementById("vehicleDetail").innerHTML;
   passValue = document.getElementById("noPassengers").innerHTML;
-  fuelPrice = document.getElementById("fuelCost").innerHTM;
+  fuelPrice = document.getElementById("fuelCost").innerHTML;
   mpg = document.getElementById("vehicleMPG").innerHTML;
   recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
   $.post('/addjourney',{

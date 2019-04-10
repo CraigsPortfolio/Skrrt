@@ -92,7 +92,7 @@ app.get('/adduser', function(req, res) {
 //   })
 // });
 
-app.get('/adduser', function(req, res) {
+app.post('/adduser', function(req, res) {
     db.collection('profiles').findOne({"login.username": req.body.username}, function(err, user){
         if(err) {
           console.log(err);

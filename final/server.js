@@ -93,9 +93,8 @@ app.post('/adduser', function(req, res) {
 var datatostore = {
 "fname":req.body.fname,
 "surname":req.body.surname,
-"email":req.body.email,
 "login":{"username":req.body.username,"pword":req.body.password},
-"car":{"make":req.body.make,"model":req.body.model,"year":req.body.year}
+ "cars":{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}
 }
 
 

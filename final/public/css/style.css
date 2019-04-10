@@ -1638,17 +1638,6 @@ section {
   Garage profile css                #
 ####################################*/
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  box-sizing: border-box;
-}
-
-.float-right {
-  float: right;
-}
-
 .fa {
   font-size: .8em;
   line-height: 22px !important;

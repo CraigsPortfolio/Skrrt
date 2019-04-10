@@ -1641,10 +1641,12 @@ section {
 .dropbtn {
   background-color: #f27348;
   color: white;
-  padding: 16px;
-  font-size: 16px;
   border: none;
   cursor: pointer;
+  font-size: 14px;
+  padding: 12px 19px;
+  line-height: 1;
+  border-radius: 14px;
 }
 
 .dropdown {
@@ -1675,5 +1677,5 @@ section {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  opacity: 0.8;;
 }

@@ -96,7 +96,7 @@ function calculateJourney(){
   recommendedCost = recommendedCost * parseInt(carDetails) * 0.22;
   recommendedCost = recommendedCost * parseInt(fuelPrice);
   recommendedCost = recommendedCost / parseInt(passValue);
-  recommendedCost = recommendedCost * 6;
+  recommendedCost = recommendedCost * 3;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
   document.getElementById("recommendedPrice").innerHTML = recommendedCost;
 

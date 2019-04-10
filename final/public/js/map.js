@@ -118,16 +118,13 @@ function getMPG() {
 }
 
 function postJourney(){
-  var startDest = document.getElementById("Start").value;
-  var endDest = document.getElementById("End").value;
-  var fuelPrice = document.getElementById("fuelPrice-box").value;
-  var carDetails = document.getElementById("reg-box").value;
-  var passSlider = document.getElementById('myRange');
-  var passValue = passSlider.value;
-  var profitSlider = document.getElementById('myRange2');
-  var profValue = profitSlider.value;
-  var reg = document.getElementById("reg-box").value;
-  var recommendedPrice = document.getElementById("recommendedPrice").value;
+  startDest = document.getElementById("startDest").innerHTML;
+  endDest = document.getElementById("endDest").innerHTML;
+  reg = document.getElementById("vehicleDetail").innerHTML;
+  passValue = document.getElementById("noPassengers").innerHTML;
+  fuelPrice = document.getElementById("fuelCost").innerHTM;
+  mpg = document.getElementById("vehicleMPG").innerHTML;
+  recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
   $.post('/addjourney',{
     Start: startDest,
     End: endDest,

@@ -100,7 +100,7 @@ function calculateJourney() {
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
   recommendedCost = Math.ceil(recommendedCost / 1) * 1;
-  if(returned){
+  if(returned == True){
     alert("ret");
     recommendedCost = recommendedCost * 2;
   }

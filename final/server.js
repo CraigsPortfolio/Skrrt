@@ -118,14 +118,14 @@ app.post('/addcar', function(req, res) {
  });
 });
 
-app.get('/remcar', function(req, res) {
- var query = { "login.username": currentUser };
- var newvalues = { $pull: {cars:{make: req.body.make}}};
- db.collection('profiles').update(query,newvalues, function(err, result) {
- if (err) throw err;
- res.redirect('/garage');
- });
-});
+// app.get('/remcar', function(req, res) {
+//  var query = { "login.username": currentUser };
+//  var newvalues = { $pull: {cars:{make: req.body.make}}};
+//  db.collection('profiles').update(query,newvalues, function(err, result) {
+//  if (err) throw err;
+//  res.redirect('/garage');
+//  });
+// });
 
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.

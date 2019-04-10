@@ -104,7 +104,7 @@ app.post('/addcar', function(req, res) {
 
 app.get('/addjourney', function(req, res) {
  var query = { "login.username": currentUser };
- var newvalues = { $addToSet: {journeys:{start: req.body.startDest, end: req.body.endDest, pass: req.body.noPassengers, reg: req.body.vehicleDetail, fcost: req.body.fuelCost, mpg: req.body.vehicleMPG, rec:req.body.recommendedPrice} }};
+ var newvalues = { $addToSet: {journeys:{start: req.body.Start, end: req.body.End, pass: req.body.passengers, reg: req.body.reg, fcost: req.body.fuelPrice, mpg: req.body.vehicleMPG, rec:req.body.recommendedPrice} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  res.redirect('/main');

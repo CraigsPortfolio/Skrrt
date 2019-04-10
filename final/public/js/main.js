@@ -18,6 +18,11 @@ $('#sub2').click(function() {
 	return false;
 });
 
+$('#addj').click(function() {
+	postJourney();
+	return false;
+});
+
 $('#recbtn').click(function() {
 	calculateJourney();
 	return false;

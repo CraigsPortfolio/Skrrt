@@ -116,3 +116,25 @@ function getMPG() {
     });
   });
 }
+
+function postJourney(){
+  var startDest = document.getElementById("Start").value;
+  var endDest = document.getElementById("End").value;
+  var fuelPrice = document.getElementById("fuelPrice-box").value;
+  var carDetails = document.getElementById("reg-box").value;
+  var passSlider = document.getElementById('myRange');
+  var passValue = passSlider.value;
+  var profitSlider = document.getElementById('myRange2');
+  var profValue = profitSlider.value;
+  var reg = document.getElementById("reg-box").value;
+  var recommendedPrice = document.getElementById("recommendedPrice").value;
+  $.post('/addjourney',{
+    Start: startDest,
+    End: endDest,
+    pass: passValue,
+    reg: reg,
+    fcost: fuelPrice,
+    mpg: mpg,
+    rec:recommendedPrice
+  });
+}

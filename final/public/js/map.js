@@ -93,7 +93,7 @@ function calculateJourney(){
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
   recommendedCost = (parseInt(distance)*0.62) / 100; //convert to miles
   recommendedCost = recommendedCost / 100; //get fuel consumption / 100 mi
-  recommendedCost = recommendedCost * parseInt(carDetails) * 0.22; //multiply by mpg (convert to litres/mile)
+  recommendedCost = recommendedCost * 100/((parseInt(carDetails) * 1.609)/4.546); //multiply by mpg (convert to litres/100km)
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
   recommendedCost = recommendedCost * 1.2; //profit multiplier

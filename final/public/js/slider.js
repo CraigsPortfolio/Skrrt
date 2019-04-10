@@ -32,6 +32,12 @@ slider2.oninput = function() {
     output2.innerHTML = "Reasonable";
   }
   if(this.value==3){
+    output2.innerHTML = "Fair";
+  }
+  if(this.value==4){
     output2.innerHTML = "Greedy";
+  }
+  if(this.value==5){
+    output2.innerHTML = "Taking The P**S";
   }
 }

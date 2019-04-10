@@ -108,9 +108,6 @@ var datatostore = {
   })
 });
 
-app.get('/adduser', function(req, res) {
- res.render('pages/garage');
-});
 
 app.post('/addcar', function(req, res) {
  var query = { "login.username": currentUser };
@@ -121,7 +118,7 @@ app.post('/addcar', function(req, res) {
  });
 });
 
-app.post('/remcar', function(req, res) {
+app.get('/remcar', function(req, res) {
  var query = { "login.username": currentUser };
  var newvalues = { $pull: {cars:{make: req.body.make}}};
  db.collection('profiles').update(query,newvalues, function(err, result) {

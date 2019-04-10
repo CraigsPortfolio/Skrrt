@@ -20,7 +20,7 @@ var slider2 = document.getElementById("myRange2"); //Gets slider element and sto
 var output2 = document.getElementById("demo2"); //Gets text element and stores it in local variable
 
 //Initialising the output
-output2.innerHTML = "Number of passengers: " + slider.value;
+output2.innerHTML = "Charitable";
 
 
 //Responding to manipulation of slider

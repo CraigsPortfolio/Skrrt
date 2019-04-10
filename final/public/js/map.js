@@ -91,11 +91,12 @@ function calculateJourney(){
   document.getElementById("fuelCost").innerHTML = fuelPrice;
 
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
-  recommendedCost = (parseInt(distance)*0.62) / 1000; //convert to miles
+  recommendedCost = (parseInt(distance)*0.62) / 100; //convert to miles
   recommendedCost = recommendedCost / 100;
   recommendedCost = recommendedCost * parseInt(carDetails) * 0.22;
   recommendedCost = recommendedCost * parseInt(fuelPrice);
   recommendedCost = recommendedCost / parseInt(passValue);
+  recommendedCost = recommendedCost * 6;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
   document.getElementById("recommendedPrice").innerHTML = recommendedCost;
 

@@ -109,8 +109,9 @@ function getMPG() {
     var reg = document.getElementById("reg-box").value;
     var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
     $.getJSON(url, function(jsondata) {
-      alert(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg)
+      console.log(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg);
       mpg = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
+      document.getElementById("vehicleMPG").innerHTML = mpg;
       window.location.href = "/main#4";
     });
   });

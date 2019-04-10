@@ -222,6 +222,7 @@ img.avatar {
   border: 2px solid #e57436;
 }
 
+
 span.psw {
   float: right;
   padding-top: 16px;
@@ -890,7 +891,7 @@ section {
 /* Deailed Journey Section End */
 /* Calculated Journey Section */
 #bigRow {
-  width: 900px;
+  width: 1200px;
 }
 
 .calculatedRow>h3 {

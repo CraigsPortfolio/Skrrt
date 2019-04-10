@@ -12,3 +12,26 @@ output.innerHTML = "Number of passengers: " + slider.value;
 slider.oninput = function() {
   output.innerHTML = "Number of passengers: " + this.value;
 }
+
+//This JavaScript file changes the number of passengers selected being displayed
+//According to the range slider
+
+var slider2 = document.getElementById("myRange2"); //Gets slider element and stores it in local variable
+var output2 = document.getElementById("demo2"); //Gets text element and stores it in local variable
+
+//Initialising the output
+output2.innerHTML = "Number of passengers: " + slider.value;
+
+
+//Responding to manipulation of slider
+slider2.oninput = function() {
+  if(this.value==1){
+    output2.innerHTML = "Charitable";
+  }
+  if(this.value==2){
+    output2.innerHTML = "Reasonable";
+  }
+  if(this.value==3){
+    output2.innerHTML = "Greedy";
+  }
+}

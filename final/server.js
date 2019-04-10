@@ -107,6 +107,7 @@ app.post('/addjourney', function(req, res) {
  var newvalues = { $addToSet: {journeys:{start: req.body.Start, end: req.body.End, pass: req.body.pass, reg: req.body.reg, fcost: req.body.fcost, mpg: req.body.mpg, rec:req.body.rec} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
+ console.log("Added");
  res.redirect('/main');
  });
 });

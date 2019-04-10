@@ -85,7 +85,7 @@ function calculateJourney(){
   var passValue = passSlider.value;
   var profitSlider = document.getElementById('myRange2');
   var profValue = profitSlider.value;
-  
+
   document.getElementById("startDest").innerHTML = startDest;
   document.getElementById("endDest").innerHTML = endDest;
   document.getElementById("vehicleDetail").innerHTML = carDetails;
@@ -98,7 +98,7 @@ function calculateJourney(){
   recommendedCost = recommendedCost * 100/((parseInt(carDetails) * 1.609)/4.546);
   recommendedCost = recommendedCost * parseInt(fuelPrice); //multiply by fuel cost
   recommendedCost = recommendedCost / parseInt(passValue); //split cost between passengers
-  recommendedCost = recommendedCost * parseInt(profit); //profit multiplier
+  recommendedCost = recommendedCost * parseInt(profValue); //profit multiplier
   recommendedCost = Math.ceil(recommendedCost/5)*5;
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue);
   document.getElementById("recommendedPrice").innerHTML = "£"+recommendedCost.toFixed(2)+"/pp";

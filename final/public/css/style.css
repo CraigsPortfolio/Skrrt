@@ -1675,13 +1675,13 @@ section {
   display: block;
 }
 
-.dropdown a:hover .registrationDetails {
+.carList:hover .registrationDetails {
   display: block;
 }
 
 
 .dropdown:hover .dropbtn {
-  opacity: 0.8;;
+  opacity: 0.8;
 }
 
 .registrationDetails{

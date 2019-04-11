@@ -1748,7 +1748,7 @@ input:checked + .slider3:before {
   color: black;
 }
 
-.profileTitle{
+.profileTitle h2{
   color: white;
-  font-size:32px; 
+  font-size:32px;
 }

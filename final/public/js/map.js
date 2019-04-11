@@ -143,3 +143,9 @@ function postJourney(){
     rec:recommendedPrice
   });
 }
+
+$(document).ready(function(){
+    $('#dropgarage').change(function(){
+         alert(this.value);
+    });
+});

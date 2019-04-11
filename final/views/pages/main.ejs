@@ -15,7 +15,8 @@
   <!-- Header section -->
   <header class="header-section">
     <% include ../partials/header%>
-    <% if (user && user.verified == true) { %>
+    <% var user = 1 %>
+    <% if (user == 1) { %>
         <% include ../partials/profileHeader%>
 <% } else { %>
   <% include ../partials/header%>

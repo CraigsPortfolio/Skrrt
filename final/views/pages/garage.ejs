@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
   <% include ../partials/head %>
   <% include ../partials/headScripts %>
@@ -8,48 +7,46 @@
 </head>
 
 <body>
-  <!-- Page Preloder -->
-  <div id="preloder">
-    <div class="loader"></div>
-  </div>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-  <!-- Header section -->
-  <header class="header-section">
-    <% include ../partials/profileHeader %>
-  </header>
-  <!-- Header section end -->
+	<!-- Header section -->
+	<header class="header-section">
+		<% include ../partials/profileHeader %>
+	</header>
+	<!-- Header section end -->
 
   <!--Calculated Journey -->
   <section id="garage" class="hero-section set-bg" data-setbg="/img/garage.jpg">
-    <div class="container h-100" id="5">
-      <div class="hero-content text-white">
-        <!-- <div class="row" id="bigRow"> -->
-          <h2>Garage</h2>
-          <p>Below is the details of cars you have in your Skrrt garage.</p>
-          <div class="dropdown">
-            <div class="dropbtn">Registration Plates</div>
-            <div class="dropdown-content">
-              <a href="#">Car 1</a>
-              <a href="#">Car 2</a>
-              <a href="#">Car 3</a>
-            </div>
+  <div class="container h-100" id="5">
+    <div class="hero-content text-white">
+      <div class="row" id="bigRow">
+        <h2>Garage</h2>
+        <p>Below is the details of cars you have in your Skrrt garage.</p>
+        <div class="dropdown">
+          <div class="dropbtn">Registration Plates</div>
+          <div class="dropdown-content">
+            <a href="#">Car 1</a>
+            <a href="#">Car 2</a>
+            <a href="#">Car 3</a>
           </div>
-          <div class="GarageInfo">
-            <div class="calculatedRow">
+        </div>
+        <div class="GarageInfo">
+
+        </div>
+        <div class="calculatedRow">
               <h3>Registration Number:</h3>
               <h3 class="calculatedH3"></h3>
             </div>
             <div class="calculatedRow">
               <h3>Make: </h3>
-              <h3 class="calculatedH3">
-                <%= make %>
-              </h3>
+              <h3 class="calculatedH3"><%= make %></h3>
             </div>
             <div class="calculatedRow">
               <h3>Model:</h3>
-              <h3 class="calculatedH3">
-                <%= model %>
-              </h3>
+              <h3 class="calculatedH3"><%= model %></h3>
             </div>
             <div class="calculatedRow">
               <h3>MPG: </h3>
@@ -61,17 +58,17 @@
             </div>
             <a href="/remcar" class="site-btn">Remove Car</a>
             <a href="" class="site-btn">Next Car</a>
-            <a href="/newcar" class="site-btn">Park New Car</a>
-          </div>
-        </div>
-
-
-        <div id="googleMap2"></div>
-
-
+						<a href="/newcar" class="site-btn">Park New Car</a>
 
       </div>
-    </div>
+
+
+            <div id="googleMap2"></div>
+
+
+
+        </div>
+      </div>
   </section>
   <!--Calculated Journey Section End-->
 
@@ -79,16 +76,15 @@
 
 
 
-  <!-- Footer section -->
-  <footer class="footer-section">
-    <% include ../partials/footer %>
-  </footer>
-  <!-- Footer top section end -->
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<% include ../partials/footer %>
+	</footer>
+	<!-- Footer top section end -->
 
 
-  <!--====== Javascripts & Jquery ======-->
-  <% include ../partials/footerScripts %>
+	<!--====== Javascripts & Jquery ======-->
+	<% include ../partials/footerScripts %>
 
-</body>
-
+	</body>
 </html>

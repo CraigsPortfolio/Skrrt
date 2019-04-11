@@ -462,7 +462,7 @@ span.psw {
   text-align: left;
 }
 
-.circle-progress .progress-info h2 {
+.circle-progress .progress-info  {
   font-size: 72px;
   font-weight: 400;
   color: #1c1c1c;
@@ -492,7 +492,7 @@ span.psw {
   font-size: 76px;
 }
 
-.milestone-item h2 {
+.milestone-item  {
   font-size: 72px;
   font-weight: 400;
   line-height: 1;
@@ -1746,4 +1746,9 @@ input:checked + .slider3:before {
 
 .msg{
   color: black;
+}
+
+.profileTitle{
+  color: white;
+  font-size:32px; 
 }

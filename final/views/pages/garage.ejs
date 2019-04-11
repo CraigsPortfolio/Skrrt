@@ -25,11 +25,17 @@
       <div class="row" id="bigRow">
         <h2>Garage</h2>
         <p>Below is the details of cars you have in your Skrrt garage.</p>
-        <select id="garagedrop">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
+        <select id="dropgarage">
+          <% var select = document.getElementById("dropgarage"); %>
+          <%= options %>
+
+          <% for(var i = 0; i < options.length; i++) {
+              var opt = options[i];
+              var el = document.createElement("option");
+              el.textContent = opt;
+              el.value = opt;
+              select.appendChild(el);
+          }​ %>
         </select>
         <div class="calculatedRow">
               <h3>Registration Number:</h3>

@@ -25,10 +25,7 @@
       <div class="row" id="bigRow">
         <h2>Garage</h2>
         <p>Below is the details of cars you have in your Skrrt garage.</p>
-        <select id="dropgarage">
-          <% var select = document.getElementById("dropgarage"); %>
-          <%= options %>
-
+        <select onload="populate()" id="dropgarage">
 
         </select>
         <div class="calculatedRow">

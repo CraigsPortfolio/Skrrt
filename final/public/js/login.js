@@ -1,17 +1,17 @@
 $(document).ready(function() {
   //on load hide the Car info and Location forms.
   $(".car-info-form").hide();
-  $(".location-form").hide();
+  // $(".location-form").hide();
   $(".car-info").css("background", "#c4c4c4");
-  $(".location").css("background", "#c4c4c4");
+  // $(".location").css("background", "#c4c4c4");
 
   //When details tab clicked show details and hide car info and location.
   $(".details").click(function() {
     $(".details-form").show();
     $(".car-info-form").hide();
-    $(".location-form").hide();
+    // $(".location-form").hide();
     $(".car-info").css("background", "#c4c4c4");
-    $(".location").css("background", "#c4c4c4");
+    // $(".location").css("background", "#c4c4c4");
     $(".details").css("background", "#fff");
   });
 
@@ -19,21 +19,21 @@ $(document).ready(function() {
   $(".car-info").click(function() {
     $(".details-form").hide();
     $(".car-info-form").show();
-    $(".location-form").hide();
+    // $(".location-form").hide();
     $(".details").css("background", "#c4c4c4");
-    $(".location").css("background", "#c4c4c4");
+    // $(".location").css("background", "#c4c4c4");
     $(".car-info").css("background", "#fff");
   });
 
   //When location tab clicked show location and hide details and car info.
-  $(".location").click(function() {
-    $(".details-form").hide();
-    $(".car-info-form").hide();
-    $(".location-form").show();
-    $(".car-info").css("background", "#c4c4c4");
-    $(".details").css("background", "#c4c4c4");
-    $(".location").css("background", "#fff");
-  });
+  // $(".location").click(function() {
+  //   $(".details-form").hide();
+  //   $(".car-info-form").show();
+  //   // $(".location-form").show();
+  //   $(".car-info").css("background", "#c4c4c4");
+  //   $(".details").css("background", "#c4c4c4");
+  //   // $(".location").css("background", "#fff");
+  // });
 
   //Validates form 1 on the details tab. If all fields are entered correctly lets you move on to next tab.
   var validate1 = $("#validate1");
@@ -45,13 +45,13 @@ $(document).ready(function() {
     }
   });
 
-  $("#car-details_btn").click(function() {
-    if (validate1.valid() === true) {
-      $(".location").click();
-    } else {
-      console.log("Please supply correct information"); //logs when incorrect user input is entered
-    }
-  });
+  // $("#car-details_btn").click(function() {
+  //   if (validate1.valid() === true) {
+  //     $(".location").click();
+  //   } else {
+  //     console.log("Please supply correct information"); //logs when incorrect user input is entered
+  //   }
+  // });
 
   $("#confirm_btn").click(function() {
     if (validate1.valid() === true){
@@ -92,15 +92,6 @@ $(document).ready(function() {
         required: true,
       },
       reg: {
-        required: true,
-      },
-      field9: {
-        required: true,
-      },
-      field10: {
-        required: true,
-      },
-      field11: {
         required: true,
       }
     }

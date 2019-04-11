@@ -13,7 +13,12 @@
 
   <!-- Header section -->
   <header class="header-section">
-    <% include ../partials/header%>
+    <%= user %>
+    <% if (user != "") { %>
+        <% include ../partials/profileHeader%>
+<% } else { %>
+  <% include ../partials/header%>
+<% } %>
   </header>
   <!-- Header section end -->
 

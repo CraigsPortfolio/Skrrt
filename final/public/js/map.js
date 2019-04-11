@@ -146,6 +146,6 @@ function postJourney(){
 
 $(document).ready(function(){
     $('#dropgarage').change(function(){
-         alert(this.value);
+         reg:this.value;
     });
 });

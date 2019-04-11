@@ -1743,3 +1743,7 @@ input:checked + .slider3:before {
 .slider3.round:before {
   border-radius: 50%;
 }
+
+#msg{
+  color: black;
+}

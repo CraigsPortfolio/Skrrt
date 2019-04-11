@@ -1652,6 +1652,11 @@ section {
 .dropdown {
   position: relative;
   display: inline-block;
+  float: left;
+}
+
+.GarageInfo{
+  float: right;
 }
 
 .dropdown-content {

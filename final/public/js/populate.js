@@ -1,6 +1,6 @@
 function populate(){
-  var ddlItems = document.getElementById("dropgarage"),
-      itemArray = <%= options %>;
+  var ddlItems = document.getElementById("dropgarage");
+    var  itemArray = <%= options %>;
 
       for (var i = 0; i < itemArray.length; i++) {
         var opt = itemArray[i];

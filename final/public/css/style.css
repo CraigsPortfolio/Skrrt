@@ -1751,4 +1751,5 @@ input:checked + .slider3:before {
 .profileTitle h2{
   color: white;
   font-size:32px;
+  margin-top: 20px;
 }

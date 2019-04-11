@@ -31,10 +31,6 @@ app.get('/', function(req, res) {
  res.render('pages/index', {user:currentUser});
 });
 
-app.get('/login', function(req, res) {
- res.render('partials/login', {logmsg:""});
-});
-
 app.get('/main', function(req, res) {
  res.render('pages/main', {user:currentUser});
 });

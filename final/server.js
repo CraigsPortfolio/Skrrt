@@ -78,7 +78,7 @@ app.post('/adduser', function(req, res) {
           console.log(user)
             message = "user exists";
             console.log(message)
-            res.render('pages/register', {msg:"Username Taken"});
+            res.redirect('pages/register', {msg:"Username Taken"});
         } else {
             message= "user doesn't exist";
             console.log(message)

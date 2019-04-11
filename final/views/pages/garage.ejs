@@ -29,7 +29,9 @@
         <p><%= options[0].reg %></p>
 
         <select id="dropgarage">
-          <% alert("options.[0].reg") %>
+          <% option.forEach(function(option) { %>
+        <option><%= option.reg %></option>
+    <% }); %>
         </select>
         <div class="calculatedRow">
               <h3>Registration Number:</h3>

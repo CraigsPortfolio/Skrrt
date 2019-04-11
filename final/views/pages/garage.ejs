@@ -28,13 +28,14 @@
         <p><%= options[0].reg %></p>
         <select id="dropgarage">
           <script>
+          alert("sdasd");
           var select = document.getElementById("dropgarage");
           var options = ["1", "2", "3", "4", "5"];
 
           for(var i = 0; i < options.length; i++) {
-              var opt = options[i];
+              opt = options[i];
               var el = document.createElement("option");
-              el.textContent = opt;
+              el.textContent = opt.reg;
               el.value = opt;
               select.appendChild(el);
             }​

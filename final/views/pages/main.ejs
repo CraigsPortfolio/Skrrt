@@ -14,9 +14,9 @@
 
   <!-- Header section -->
   <header class="header-section">
-    
-    <% var user = 1 %>
-    <% if (user == 1) { %>
+
+
+    <%= if (user != "") { %>
         <% include ../partials/profileHeader%>
 <% } else { %>
   <% include ../partials/header%>

@@ -29,13 +29,7 @@
           <% var select = document.getElementById("dropgarage"); %>
           <%= options %>
 
-          <% for(var i = 0; i < options.length; i++) {
-              var opt = options[i];
-              var el = document.createElement("option");
-              el.textContent = opt;
-              el.value = opt;
-              select.appendChild(el);
-          }​ %>
+          <% for(var i = 0; i < options.length; i++) {var opt = options[i];var el = document.createElement("option");el.textContent = opt;el.value = opt;select.appendChild(el);}​ %>
         </select>
         <div class="calculatedRow">
               <h3>Registration Number:</h3>

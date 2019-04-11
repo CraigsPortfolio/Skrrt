@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html lang="zxx">
-<script>
-function asd(){
-alert("sdasd");
-var select = document.getElementById("dropgarage");
-var options = ["1", "2", "3", "4", "5"];
 
-for(var i = 0; i < options.length; i++) {
-    opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt.reg;
-    el.value = opt;
-    select.appendChild(el);
-  }​
-}
-</script>
 <head>
   <% include ../partials/head %>
-  <% include ../partials/headScripts %>
+
 
 </head>
 
@@ -41,7 +27,18 @@ for(var i = 0; i < options.length; i++) {
         <h2>Garage</h2>
         <p>Below is the details of cars you have in your Skrrt garage.</p>
         <p><%= options[0].reg %></p>
+        <script>
+        var ddlItems = document.getElementById("dropgarage"),
+            itemArray = <%= options %>;
 
+            for (var i = 0; i < itemArray.length; i++) {
+              var opt = itemArray[i];
+              var el = document.createElement("option");
+              el.textContent = opt.reg;
+              el.value = opt.reg;
+              ddlItems.appendChild(el);
+            }
+        </script>
         <select id="dropgarage">
 
         </select>
@@ -65,13 +62,11 @@ for(var i = 0; i < options.length; i++) {
               <h3>Fuel Type: </h3>
               <h3 class="calculatedH3"><%= ftype %></h3>
             </div>
-            <a href="#" onclick="asd()" class="site-btn">Remove Car</a>
+            <a href="#" class="site-btn">Remove Car</a>
 						<a href="/newcar" class="site-btn">Park New Car</a>
 
       </div>
 
-
-            <div id="googleMap2"></div>
 
 
 

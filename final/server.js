@@ -36,7 +36,7 @@ app.get('/main', function(req, res) {
 });
 
 app.get('/register', function(req, res) {
- res.render('pages/register');
+ res.render('pages/register', {msg:""});
 });
 
 app.get('/profile', function(req, res) {

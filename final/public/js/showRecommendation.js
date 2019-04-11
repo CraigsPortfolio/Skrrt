@@ -2,7 +2,7 @@
 //Using JQuery
 function showRecommendation(){
 $(document).ready(function(){ //Waiting until document is fully loaded
-  if(document.getElementById("Start").innerHTML !="" && document.getElementById("End").innerHTML !="" !="" && document.getElementById("fuelPrice-box").innerHTML !="" && document.getElementById("reg-box").innerHTML !=""){
+  if(document.getElementById("Start").innerHTML !="" && document.getElementById("End").innerHTML !=""  && document.getElementById("fuelPrice-box").innerHTML !="" && document.getElementById("reg-box").innerHTML !=""){
   $("#recommendation").show(); //Showing recommendation section
   //Scrolling to the recommendation
   $('html, body').animate({

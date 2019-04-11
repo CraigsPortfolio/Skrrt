@@ -1652,12 +1652,6 @@ section {
 .dropdown {
   position: relative;
   display: inline-block;
-  float: left;
-}
-
-.GarageInfo{
-  float: right;
-  margin-top: 40%;
 }
 
 .dropdown-content {

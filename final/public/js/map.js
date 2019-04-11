@@ -143,3 +143,16 @@ function postJourney(){
     rec:recommendedPrice
   });
 }
+
+function populate(){
+  var select = document.getElementById("dropgarage");
+  <%= options %>
+  <% var options:options %>
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement("option");
+      el.textContent = opt;
+      el.value = opt;
+      select.appendChild(el);
+  }​
+}

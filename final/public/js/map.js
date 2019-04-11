@@ -106,7 +106,7 @@ function calculateJourney() {
     recommendedCost = recommendedCost * 2;
     document.getElementById("type").innerHTML = "Return";
   }else{
-    ocument.getElementById("type").innerHTML = "One Way";
+    document.getElementById("type").innerHTML = "One Way";
   }
   console.log("Distance " + distance + " MPG " + carDetails + " Price " + fuelPrice + " Passenegers " + passValue + "Profit" + profValue);
   document.getElementById("recommendedPrice").innerHTML = "£" + recommendedCost.toFixed(2) + "/pp";

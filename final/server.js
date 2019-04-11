@@ -59,7 +59,7 @@ app.get('/newcar', function(req, res) {
 app.get('/garage', function(req, res) {
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    res.render('pages/garage', {make:result.car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg});
+    res.render('pages/garage', {make:result.car[0].make, model:result.car.model, reg:result.car.reg, fType:result.car.ftype, mpg:result.car.mpg});
   });
 });
 
@@ -106,7 +106,7 @@ app.post('/adduser', function(req, res) {
 
 app.post('/addcar', function(req, res) {
  var query = { "login.username": currentUser };
- var newvalues = { $addToSet: {car:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, ftype: req.body.ftype, mpg: req.body.mpg} }};
+ var newvalues = { $addToSet: {car:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, fType: req.body.ftype, mpg: req.body.mpg} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  res.redirect('/garage');

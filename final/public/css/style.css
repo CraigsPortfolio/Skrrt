@@ -1657,6 +1657,7 @@ section {
 
 .GarageInfo{
   float: right;
+  margin-left: 60%;
 }
 
 .dropdown-content {

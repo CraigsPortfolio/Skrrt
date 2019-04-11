@@ -25,14 +25,12 @@
       <div class="row" id="bigRow">
         <h2>Garage</h2>
         <p>Below is the details of cars you have in your Skrrt garage.</p>
-        <div class="dropdown">
-          <div class="dropbtn">Registration Plates</div>
-          <div class="dropdown-content">
-            <a href="#">Car 1</a>
-            <a href="#">Car 2</a>
-            <a href="#">Car 3</a>
-          </div>
-        </div>
+        <select id="garagedrop">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
         <div class="calculatedRow">
               <h3>Registration Number:</h3>
               <h3 class="calculatedH3"><%= reg %></h3>

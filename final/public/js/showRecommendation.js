@@ -2,13 +2,6 @@
 //Using JQuery
 function showRecommendation(){
 $(document).ready(function(){ //Waiting until document is fully loaded
-  select(""){
-    case document.getElementById("reg-box").value:
-      alert("Mwo");
-      break;
-    default:
-      alert("measdasd");
-  }
   if(document.getElementById("Start").value !="" && document.getElementById("End").value !=""  && document.getElementById("fuelPrice-box").value !="" && document.getElementById("reg-box").value !=""){
   $("#recommendation").show(); //Showing recommendation section
   //Scrolling to the recommendation

@@ -1755,5 +1755,6 @@ input:checked + .slider3:before {
 }
 
 .profileTitle .lastname{
-  float: right;
+  margin-top: -20px;
+  margin-left: 5px;
 }

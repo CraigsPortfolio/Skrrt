@@ -1,3 +1,0 @@
-function populate(){
-  alert("sdasd");
-}

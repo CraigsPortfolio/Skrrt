@@ -27,14 +27,18 @@
         <p>Below is the details of cars you have in your Skrrt garage.</p>
         <p><%= options %></p>
         <select id="dropgarage">
-          <% var select = document.getElementById("selectNumber") %>
- <% for(var i = 0; i < options.length; i++) { %>
-    <% var opt = options[i] %>
-    <% var el = document.createElement("option") %>
-    <% el.textContent = opt %>
-    <% el.value = opt %>
-    <% select.appendChild(el) %>
-<% }​ %>
+          <script>
+          var select = document.getElementById("selectNumber");
+          var options = <%= options %>
+
+          for(var i = 0; i < options.length; i++) {
+              var opt = options[i];
+              var el = document.createElement("option");
+              el.textContent = opt;
+              el.value = opt;
+              select.appendChild(el);
+            }​
+          </script>
         </select>
         <div class="calculatedRow">
               <h3>Registration Number:</h3>

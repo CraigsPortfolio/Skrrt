@@ -57,10 +57,9 @@ app.get('/newcar', function(req, res) {
 });
 
 app.get('/garage', function(req, res) {
-  db.collection('profiles').find({"login.username":currentUser}, function(err, result) {
+  db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    console.log(result.car[0]);
-    res.render('pages/garage', {make:result[0].car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg, options:result.car.reg});
+    res.render('pages/garage', {make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg});
   });
 });
 

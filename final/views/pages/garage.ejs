@@ -30,7 +30,7 @@
 
         <select id="dropgarage">
           <% options.forEach(function(option) { %>
-        <option value=<%= option %>><%= option.reg %></option>
+        <option data-value=<%= option %>><%= option.reg %></option>
     <% }); %>
         </select>
         <div class="calculatedRow">

@@ -162,6 +162,8 @@ $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;
          document.getElementById("gar-reg").innerHTML = reg;
-         getCar(reg);
+         $.post('/refresh', {
+           newreg: reg
+         });
     });
 });

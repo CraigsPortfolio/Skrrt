@@ -24,62 +24,56 @@
         <div class="row" id="bigRow">
             <h2>Saved Journeys</h2>
             <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
-            <div class="dropdown">
-              <div class="dropbtn">Saved Journeys</div>
-              <div class="dropdown-content">
-                <a href="#">Journey 1</a>
-                <a href="#">Journey 2</a>
-                <a href="#">Journey 3</a>
-              </div>
-            </div>
+            <select id="dropgarage">
+              <% options.forEach(function(option) { %>
+            <option><%= option.start + option.end %></option>
+              <% }); %>
+            </select>
             <div class="calculatedRow">
               <h3>Starting location:</h3>
-              <h3 class="calculatedH3">Aberdeen</h3>
+              <h3 id="jny-start" class="calculatedH3"><%= start %></h3>
             </div>
             <div class="calculatedRow">
               <h3>End location:</h3>
-              <h3 class="calculatedH3">Dundee</h3>
+              <h3 id="jny-end" class="calculatedH3"><%= end %></h3>
             </div>
             <div class="calculatedRow">
               <h3>Vehicle Reg:</h3>
-              <h3 class="calculatedH3">SK1 RRT</h3>
+              <h3 id="jny-reg" class="calculatedH3"><%= reg %></h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>Miles Per Gallon:</h3>
+              <h3 id="jny-mpg" class="calculatedH3"><%= mpg %></h3>
             </div>
             <div class="calculatedRow">
               <h3>No. Of Passengers:</h3>
-              <h3 class="calculatedH3">4</h3>
+              <h3 id="jny-pass" class="calculatedH3"><%= pass %></h3>
             </div>
             <div class="calculatedRow">
               <h3>Cost Of Fuel:</h3>
-              <h3 class="calculatedH3">£45.43</h3>
+              <h3 id="jny-fuel" class="calculatedH3"><%= fuel %></h3>
+            </div>
+            <div class="calculatedRow">
+              <h3>Profit Multiplier:</h3>
+              <h3 id="jny-prof" class="calculatedH3"><%= prof %></h3>
             </div>
             <div class="calculatedRow">
               <h3>Recommendation:</h3>
-              <h3 class="calculatedH3">£20/pp</h3>
+              <h3 id="jny-rec" class="calculatedH3"><%= rec %></h3>
             </div>
             <a href="#nothing" class="site-btn">Delete Journey</a>
 
             </div>
-
-
-            <div id="googleMap2"></div>
-
-
-
         </div>
       </div>
   </section>
   <!--Calculated Journey Section End-->
-
-
-
-
 
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<% include ../partials/footer %>
 	</footer>
 	<!-- Footer top section end -->
-
 
 	<!--====== Javascripts & Jquery ======-->
 	<% include ../partials/footerScripts %>

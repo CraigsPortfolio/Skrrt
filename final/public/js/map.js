@@ -92,6 +92,7 @@ function calculateJourney() {
   document.getElementById("vehicleDetail").innerHTML = carDetails;
   document.getElementById("noPassengers").innerHTML = passValue;
   document.getElementById("fuelCost").innerHTML = fuelPrice;
+  document.getElementById("prof").innerHTML = profValue;
 
   //var recommendedCost = ((((parseInt(distance) / 100)*parseInt(carDetails))*parseInt(fuelPrice))*1.20)/parseInt(passValue);
   recommendedCost = parseInt(distance) / 1000; //convert to miles

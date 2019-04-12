@@ -73,7 +73,9 @@ app.post('/refresh', function(req, res) {
   console.log(currentUser);
 
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
-  db.collection('profiles').find({"login.username": currentUser, "car":{$elemMatch:{"reg": "X31 CRG"}}, "car":{$elemMatch:{"reg": "X31 CRG"}}}) , function(err, result) {
+  // db.collection('users').find({email:uEmail, ocassionTypes: {$elemMatch: {occasiontype:uocType}}},{email:1, ocassionTypes: {$elemMatch: {occasiontype:uocType}}})
+  // db.collection('profiles').find({"login.username"":currentUser, car: {$elemMatch: {"reg": "X31 CRG"}}},{"login.username":1, car: {$elemMatch: {"reg": "X31 CRG"}}})
+  db.collection('profiles').find({"login.username"":currentUser, car: {$elemMatch: {"reg": "X31 CRG"}}},{"login.username":1, car: {$elemMatch: {"reg": "X31 CRG"}}}) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result);
     res.redirect('/garage');

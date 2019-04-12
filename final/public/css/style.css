@@ -1743,6 +1743,7 @@ input:checked + .slider3:before {
 /* Rounded sliders */
 .slider3.round {
   border-radius: 34px;
+  background-color:#f27348; 
 }
 
 .slider3.round:before {

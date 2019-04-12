@@ -27,12 +27,7 @@
         <h2>Garage</h2>
         <p>Below is the details of cars you have in your Skrrt garage.</p>
 
-        <% $(document).ready(function(){ %>
-          <% $('#dropgarage').change(function(){ %>
-                <% var reg= this.value; %>
-                 <% document.getElementById("gar-reg").innerHTML = "dasd"; %>
-          <%  }); %>
-      <%  }); %>
+        
         <select id="dropgarage">
           <% options.forEach(function(option) { %>
         <option><%= option.reg %></option>

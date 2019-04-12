@@ -335,8 +335,8 @@ span.psw {
   line-height: 1;
   cursor: pointer;
   text-align: center;
-  -webkit-animation: vibrate-1 1s linear infinite both;
-  animation: vibrate-1 1s linear infinite both;
+  /* -webkit-animation: vibrate-1 1s linear infinite both;
+  animation: vibrate-1 1s linear infinite both; */
 }
 
 .site-btn:hover {

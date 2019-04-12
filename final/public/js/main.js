@@ -23,6 +23,11 @@ $('#addj').click(function() {
 	return false;
 });
 
+$('#delcar').click(function() {
+	postRemCar();
+	return false;
+});
+
 $('#recbtn').click(function() {
 	calculateJourney();
 	return false;

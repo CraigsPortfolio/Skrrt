@@ -73,7 +73,6 @@ app.post('/refresh', function(req, res) {
     console.log(result.car[0].make)
     var data = {make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg, options:result.car};
     res.send(data);
-    //res.render('pages/garage',{make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg, options:result.car});
   });
   });
 

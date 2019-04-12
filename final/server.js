@@ -173,9 +173,8 @@ app.post('/dologin', function(req, res) {
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
-    // if(result.login.pword != pword){console.log("INCORRECT"); res.redirect({logmsg:"Incorrect login details"},'/main')}
-    // if(result.login.pword != pword){console.log("INCORRECT"); res.redirect('back'}
-    if(result.login.pword != pword){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
+    // if(result.login.pword != pword){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
+    if(!result){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; currentUser=result.login.username; res.redirect('/profile') }
     //otherwise send them back to login

@@ -136,9 +136,10 @@ function postJourney(){
   recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
   var profitSlider = document.getElementById('myRange2');
   var profValue = profitSlider.value;
-  // name = prompt("Please enter your journey name");
+  name = prompt("Please enter your journey name");
   console.log(name);
   $.post('/addjourney',{
+    jnyName: name,
     Start: startDest,
     End: endDest,
     pass: passValue,

@@ -146,12 +146,19 @@ function postJourney(){
 
 $(document).ready(function(){
     $('#dropgarage').change(function(){
-         // var reg= this.value;
-         document.getElementById("gar-reg").innerHTML = $(this).find(":selected").data("value").reg;
+         var reg= this.value;
+         document.getElementById("gar-reg").innerHTML = reg;
     });
 });
 
 var url = window.location.href;
-if(url.indexOf(url + '#loginError') != -1) {
+if(url.indexOf(url + "#loginError") != -1) {
+  ur = url + "#loginError"
+  alert("YAYEET "+url)
+  alert(ur)
    document.getElementById('id01').style.display = "block";
+} else{
+  ur = url + "#loginError"
+  alert("YAYEET "+url)
+  alert(ur)
 }

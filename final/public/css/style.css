@@ -1747,6 +1747,7 @@ input:checked + .slider3:before {
 
 .slider3.round:before {
   border-radius: 50%;
+  background-color:#f27348; 
 }
 
 .msg{

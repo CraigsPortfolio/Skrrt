@@ -1656,6 +1656,22 @@ section {
   display: inline-block;
 }
 
+#dropjourney {
+  background-color: #f27348;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px 120px;
+  line-height: 1;
+  border-radius: 14px;
+}
+
+#dropjourney {
+  position: relative;
+  display: inline-block;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -1666,16 +1682,16 @@ section {
   border-radius: 14px;
 }
 
-#dropgarage select-items {
+.dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.row select-items:hover {
+.dropdown-content a:hover {
   background-color: #f1f1f1;
-  border-radius: 14px;
+border-radius: 14px;
 }
 
 .dropdown:hover .dropdown-content {

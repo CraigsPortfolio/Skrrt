@@ -137,8 +137,7 @@ function postJourney(){
   var profitSlider = document.getElementById('myRange2');
   var profValue = profitSlider.value;
   //name = prompt("Please enter your journey name");
-  name = document.getElementsByID("jny-box").text;
-  console.log(name);
+  name = document.getElementsByID("jny-box").value;
   console.log(name);
   $.post('/addjourney',{
     jnyName: name,

@@ -66,10 +66,11 @@ app.get('/garage', function(req, res) {
 
 app.post('/refresh', function(req, res) {
   console.log("hi")
-  var query = {"login.username": currentUser}, {car: {$elemMatch:{reg: req.body.newreg}}}
+  var query = {"login.username": currentUser};
+  var query1 =  {car: {$elemMatch:{reg: req.body.newreg}}}
 
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
-  db.collection('profiles').findOne(query) , function(err, result) {
+  db.collection('profiles').findOne(query,query1) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result);
     res.redirect('pages/garage', {make:result.car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg, options:result.car});

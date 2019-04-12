@@ -165,10 +165,9 @@ function postRemCar(){
     document.getElementById("car-model").innerHTML = data.model;
     document.getElementById("car-mpg").innerHTML = data.mpg;
     document.getElementById("car-fuel").innerHTML = data.ftype;
-    
+
   });
 });
-}
 
 function postRemJny(){
   // reg = document.getElementById("gar-reg").innerHTML;

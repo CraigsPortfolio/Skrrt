@@ -827,12 +827,12 @@ span.psw {
   display: none;
 }
 
-/* section {
+section {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+}
 
 /* Detailed Journey Section */
 #manufacturerSelect {
@@ -1727,7 +1727,7 @@ border-radius: 14px;
 }
 
 input:checked + .slider3 {
-  background-color: #f27348 ;
+  background-color: orange;
 }
 
 input:focus + .slider3 {
@@ -1766,4 +1766,10 @@ input:checked + .slider3:before {
 
 .profileTitle .username{
   margin-bottom: 20px;
+}
+
+.row .returnText{
+  float: right;
+  margin-left: 200px;
+  margin top: -300px;
 }

@@ -1767,9 +1767,3 @@ input:checked + .slider3:before {
 .profileTitle .username{
   margin-bottom: 20px;
 }
-
-.row .returnText{
-  float: right;
-  margin-left: 1800px;
-  margin top: -600px;
-}

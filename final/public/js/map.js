@@ -219,14 +219,14 @@ function switchEdit(){
   if($('#edit:visible').length == 0)
   {
     //Registration method is shown
-      $("#profile").hide(); //Hide registration field
+      $("#profile-info").hide(); //Hide registration field
       $("#edit").show(); //Show manual fields
       $("a#edit-btn").text("Edit Profile"); //Change button text
   }
   else{
     //Manual fields are shown
     $("#edit").hide(); //Hide manual fields
-    $("#profile").show(); //Show registration field
+    $("#profile-info").show(); //Show registration field
     $("a#edit-btn").text("Save Profile"); //Change button text
   }
 });

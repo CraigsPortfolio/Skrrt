@@ -19,6 +19,7 @@ var url = window.location.href;
 $(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
     document.getElementById('id01').style.display = "block";
-    document.getElementById('errorMSG').style.visibility = "visible"
+    document.getElementById('errorMSG').style.visibility = "visible";
+    document.getElementById('errorMSG').style.color = "red";
   }
 });

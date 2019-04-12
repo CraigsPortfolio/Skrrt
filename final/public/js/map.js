@@ -152,14 +152,26 @@ $(document).ready(function(){
     });
 });
 
+var host = window.location.host;
 var url = window.location.href;
-if(url.indexOf(url + "#loginError") != -1) {
-  ur = url + "#loginError"
-  alert("YAYEET "+url)
-  alert(ur)
-   document.getElementById('id01').style.display = "block";
-} else{
-  ur = url + "#loginError"
-  alert("YAYEET "+url)
-  alert(ur)
+
+// if(url.indexOf(url + "#loginError") != -1) {
+//   url = "http://" + host +
+//
+//   ur = url + "#loginError"
+//   alert("YAYEET "+url)
+//   alert(ur)
+//   document.getElementById('id01').style.display = "block";
+// } else{
+//   ur = url + "#loginError"
+//   alert("YAYEET "+url)
+//   alert(ur)
+// }
+
+function isValidPath(str, path) {
+  str = str.substring(str.indexOf('://') + 3);
+  str = str.substring(str.indexOf('#') + 1);
+  return (str.indexOf(path) == 0);
 }
+
+alert(isValidPath(url, 'loginError'));

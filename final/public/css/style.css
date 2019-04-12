@@ -1770,7 +1770,5 @@ input:checked + .slider3:before {
 }
 
 .row .returnText{
-  float: right;
-  margin-left: 200px;
-  margin top: -300px;
+  word-spacing: 50px
 }

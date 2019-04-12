@@ -1690,6 +1690,10 @@ border-radius: 14px;
   display: none;
 }
 
+#reg-box{
+  text-transform: uppercase;
+}
+
 /**Switch**/
 .switch {
   position: relative;

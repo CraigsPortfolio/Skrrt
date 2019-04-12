@@ -86,7 +86,7 @@ app.post('/adduser', function(req, res) {
             "fname":req.body.fname,
             "surname":req.body.surname,
             "login":{"username":req.body.username,"pword":req.body.password},
-             "car":{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}
+             "car":[{"make": req.body.make, "model": req.body.model, "year": req.body.year, "reg": req.body.reg, "ftype": req.body.ftype, "mpg": req.body.mpg}]
             }
 
 

@@ -151,6 +151,7 @@ $(document).ready(function(){
     });
 });
 
+<<<<<<< HEAD
 // var url = window.location.href;
 // if(url.indexOf(url + "#loginError") != -1) {
 //   ur = url + "#loginError"
@@ -163,4 +164,9 @@ $(document).ready(function(){
 
 if (/\/\/[^\/]+\/#loginError\//.test(window.location.href)) {
   alert("aye")
+=======
+var url = window.location.href;
+if(url.indexOf(url + '#loginError') != -1) {
+   document.getElementById('id01').style.display = "block";
+>>>>>>> f1559048b5bd7c63eb423512e870f3ed18a525ec
 }

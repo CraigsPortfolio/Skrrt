@@ -65,23 +65,13 @@ app.get('/garage', function(req, res) {
 });
 
 app.post('/refresh', function(req, res) {
-  console.log("RR=" + req.body.newreg);
-  db.collection('profiles').find({"login.username":currentUser, "car.reg":req.body.newreg}, function(err, result) {
+
+  db.collection('profiles').find({"login.username":currentUser, "car:{$elemMatch:{reg":req.body.newreg}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    console.log("R=" + req.body.newreg);
-    var i = 0;
-    var pos = 0;
-    result.forEach(function (r) {
-      console.log("found" + r.car[i].reg);
-    if(r.car[i].reg==req.body.newreg){
-      pos = i;
-      console.log("found" + r.car[i].reg);
-    }
-    i++;
+
   });
-    res.render('pages/garage', {make:result.car.make, model:result.car[pos].model, reg:result.car[pos].reg, ftype:result.car[pos].ftype, mpg:result.car[pos].mpg, options:result.car});
+    res.render('pages/garage', {make:result.car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg, options:result.car});
   });
-});
 
 app.get('/adduser', function(req, res) {
  res.render('pages/main');

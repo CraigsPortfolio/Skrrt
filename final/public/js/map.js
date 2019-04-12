@@ -147,26 +147,18 @@ function postJourney(){
 $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;
-         document.getElementById("gar-reg").innerHTML = reg.reg;
+         document.getElementById("gar-reg").innerHTML = reg;
     });
 });
 
-<<<<<<< HEAD
-// var url = window.location.href;
-// if(url.indexOf(url + "#loginError") != -1) {
-//   ur = url + "#loginError"
-//   alert("YAYEET "+url+ur)
-//    document.getElementById('id01').style.display = "block";
-// } else{
-//   ur = url + "#loginError"
-//   alert("YAYEET "+url+ur)
-// }
-
-if (/\/\/[^\/]+\/#loginError\//.test(window.location.href)) {
-  alert("aye")
-=======
 var url = window.location.href;
-if(url.indexOf(url + '#loginError') != -1) {
+if(url.indexOf(url + "#loginError") != -1) {
+  ur = url + "#loginError"
+  alert("YAYEET "+url)
+  alert(ur)
    document.getElementById('id01').style.display = "block";
->>>>>>> f1559048b5bd7c63eb423512e870f3ed18a525ec
+} else{
+  ur = url + "#loginError"
+  alert("YAYEET "+url)
+  alert(ur)
 }

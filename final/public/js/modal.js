@@ -1,5 +1,5 @@
 // Get the modal
-var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
 document.getElementById('errorMSG').style.visibility = "hidden"
 
 // When the user clicks anywhere outside of the modal, close it
@@ -18,7 +18,7 @@ function isValidPath(str, path) {
 var url = window.location.href;
 $(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
-    document.getElementById('id01').style.display = "block";
+    document.getElementById('id02').style.display = "block";
     document.getElementById('errorMSG').style.visibility = "visible";
     document.getElementById('errorMSG').style.color = "red";
   }

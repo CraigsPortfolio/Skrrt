@@ -152,6 +152,8 @@ $(document).ready(function(){
 });
 
 var url = window.location.href;
-if(url.indexOf(url + '#loginError') != -1) {
+if(url.indexOf(url + "#loginError") != -1) {
+  ur = url + "#loginError"
+  alert("YAYEET "+url+ur)
    document.getElementById('id01').style.display = "block";
 }

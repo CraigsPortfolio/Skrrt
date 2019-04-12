@@ -191,7 +191,7 @@ $(document).ready(function(){
            document.getElementById("jny-name").innerHTML = data.name;
            document.getElementById("jny-start").innerHTML = data.start;
            document.getElementById("jny-end").innerHTML = data.end;
-           document.getElementById("jny-reg").innerHTML = data.car;
+           document.getElementById("jny-reg").innerHTML = data.reg;
            document.getElementById("jny-pass").innerHTML = data.pass;
            document.getElementById("jny-fuel").innerHTML = data.fcost;
            document.getElementById("jny-rec").innerHTML = data.rec;

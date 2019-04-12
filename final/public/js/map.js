@@ -137,7 +137,7 @@ function postJourney(){
   // name = prompt("Please enter your journey name");
   console.log(name);
   $.post('/addjourney',{
-    journeyName: name,
+    Start: startDest,
     End: endDest,
     pass: passValue,
     reg: reg,

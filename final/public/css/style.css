@@ -1760,11 +1760,6 @@ input:checked + .slider3:before {
   margin-top: 20px;
 }
 
-.profileTitle .lastname{
-  margin-top: -49px;
-  margin-left: 190px;
-}
-
 .profileTitle .username{
   margin-bottom: 20px;
 }

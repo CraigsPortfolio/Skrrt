@@ -1770,8 +1770,6 @@ input:checked + .slider3:before {
 }
 
 .row .returnText{
-  word-spacing: 140px
-}
-.hero-banner-content .returnText{
+  word-spacing: 140px;
   margin-bottom: 20px;
 }

@@ -1727,7 +1727,7 @@ border-radius: 14px;
 }
 
 input:checked + .slider3 {
-  background-color: orange;
+  background-color: #f27348 ;
 }
 
 input:focus + .slider3 {
@@ -1766,10 +1766,4 @@ input:checked + .slider3:before {
 
 .profileTitle .username{
   margin-bottom: 20px;
-}
-
-.row .returnText{
-  float: right;
-  margin-left: 200px;
-  margin top: -300px;
 }

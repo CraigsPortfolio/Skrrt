@@ -150,3 +150,11 @@ $(document).ready(function(){
          $('#gar-reg').html = reg;
     });
 });
+
+var url = window.location.href;
+var host = window.location.host;
+alert(url);
+alert(host);
+// if(url.indexOf('host + '/movies') != -1) {
+//    //match
+// }

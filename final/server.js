@@ -72,6 +72,7 @@ app.post('/refresh', function(req, res) {
     var i = 0;
     var pos = 0;
     result.forEach(function (result) {
+      console.log("found" + result.car[i].reg);
     if(result.car[i].reg==req.body.newreg){
       pos = i;
       console.log("found" + result.car[i].reg);

@@ -79,6 +79,14 @@ app.post('/refresh', function(req, res) {
   });
   });
 
+  app.post('/refreshJourney', function(req, res) {
+    db.collection('profiles').findOne({"login.username": currentUser}, {journeys: {$elemMatch:{name: req.body.name}}} , function(err, result) {
+      if (err) throw err;//if there is an error, throw the error
+      var data = { start: result.journeys[0].start, end: result.journeys[0].end, pass: result.journeys[0].pass, reg: result.journeys[0].reg, fcost: result.journeys[0].fcost, mpg: result.journeys[0].mpg, rec:result.journeys[0].rec, profit:result.journeys[0].profit, name:result.journeys[0].name};
+      res.send(data);
+    });
+    });
+
 app.get('/adduser', function(req, res) {
  res.render('pages/main');
 });

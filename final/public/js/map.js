@@ -181,21 +181,22 @@ $(document).ready(function(){
     });
 });
 
-// $(document).ready(function(){
-//     $('#dropjourney').change(function(){
-//          var reg= this.value;
-//          $.post('/refresh', {
-//            newreg: reg
-//          },function(data){
-//            console.log(data);
-//            document.getElementById("jny-start").innerHTML = data.start;
-//            document.getElementById("jny-end").innerHTML = data.end;
-//            document.getElementById("jny-reg").innerHTML = data.car;
-//            document.getElementById("jny-pass").innerHTML = data.pass;
-//            document.getElementById("jny-fuel").innerHTML = data.fcost;
-//            document.getElementById("jny-rec").innerHTML = data.rec;
-//            document.getElementById("jny-prof").innerHTML = data.profit;
-//            document.getElementById("jny-mpg").innerHTML = data.mpg;
-//          });
-//     });
-// });
+$(document).ready(function(){
+    $('#dropjourney').change(function(){
+         var name= this.value;
+         $.post('/refreshJourney', {
+           name: name
+         },function(data){
+           console.log(data);
+           document.getElementById("jny-name").innerHTML = data.name;
+           document.getElementById("jny-start").innerHTML = data.start;
+           document.getElementById("jny-end").innerHTML = data.end;
+           document.getElementById("jny-reg").innerHTML = data.car;
+           document.getElementById("jny-pass").innerHTML = data.pass;
+           document.getElementById("jny-fuel").innerHTML = data.fcost;
+           document.getElementById("jny-rec").innerHTML = data.rec;
+           document.getElementById("jny-prof").innerHTML = data.profit;
+           document.getElementById("jny-mpg").innerHTML = data.mpg;
+         });
+    });
+});

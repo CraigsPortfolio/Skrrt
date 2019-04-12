@@ -26,9 +26,13 @@
             <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
             <select id="dropjourney">
               <% options.forEach(function(option) { %>
-            <option><%= option.start + option.end %></option>
+            <option><%= option.name %></option>
               <% }); %>
             </select>
+            <div class="calculatedRow">
+              <h3>Journey Name:</h3>
+              <h3 id="jny-name" class="calculatedH3"><%= name %></h3>
+            </div>
             <div class="calculatedRow">
               <h3>Starting location:</h3>
               <h3 id="jny-start" class="calculatedH3"><%= start %></h3>

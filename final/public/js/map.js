@@ -152,9 +152,9 @@ function postRemCar(){
   });
 }
 
-function getCar(){
+function getCar(reg){
   $.post('/refresh', {
-    newreg: document.getElementById("gar-reg").innerHTML
+    newreg: reg
   });
 }
 
@@ -162,6 +162,6 @@ $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;
          document.getElementById("gar-reg").innerHTML = reg;
-         getCar();
+         getCar(this.value);
     });
 });

@@ -164,6 +164,9 @@ $(document).ready(function(){
          document.getElementById("gar-reg").innerHTML = reg;
          $.post('/refresh', {
            newreg: reg
+         },function(data){
+           console.log(data);
+           
          });
     });
 });

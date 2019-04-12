@@ -67,7 +67,7 @@ app.get('/garage', function(req, res) {
 app.post('/refresh', function(req, res) {
   db.collection('profiles').find({"login.username":currentUser, "car.reg":req.body.newreg}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    console.log("refresh" + result.car.make);
+    console.log("refresh" + result.car[0].make);
     var i = 0;
     var pos = 0;
     result.forEach(function (result) {

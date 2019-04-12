@@ -1770,6 +1770,6 @@ input:checked + .slider3:before {
 
 .row .returnText{
   float: right;
-  margin-left: 800px;
-  margin top: -300px;
+  margin-left: 1800px;
+  margin top: -600px;
 }

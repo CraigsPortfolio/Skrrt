@@ -24,17 +24,21 @@
         <div class="row" id="bigRow">
             <h2>Profile</h2>
             <div class="profileTitle">
+              <div id="profile">
             <h2 class="firstname"><%= First %> <%= Last %></h2>
             <h2 class="username">Username: <%= Username %></h2>
-
+          </div>
+            <div id="edit">
+              <h5>Enter your registration.</h5>
+              <input id="reg-box" type="text" placeholder="AM58 ZHR" name="registration" maxlength="10" required>
+            </div>
           </div>
             <a href="/journey" class="site-btn">Saved Journeys</a>
             <a href="/garage" class="site-btn">Garage</a>
-						<a href="" class="site-btn">Edit Profile</a>
+						<a href="" id="edit-btn"class="site-btn">Edit Profile</a>
             </div>
 
 
-            <div id="googleMap2"></div>
 
 
 

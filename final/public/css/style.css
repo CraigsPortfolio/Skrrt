@@ -1772,3 +1772,7 @@ input:checked + .slider3:before {
   word-spacing: 140px;
   margin-bottom: 20px;
 }
+
+#edit{
+  visibility: hidden;
+}

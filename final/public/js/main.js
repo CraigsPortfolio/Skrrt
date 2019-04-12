@@ -23,6 +23,11 @@ $('#addj').click(function() {
 	return false;
 });
 
+$('#btn-edit').click(function() {
+	switchEdit();
+	return false;
+});
+
 $('#delcar').click(function() {
 	postRemCar();
 	return false;

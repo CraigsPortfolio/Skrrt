@@ -74,10 +74,8 @@ app.post('/refresh', function(req, res) {
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
   db.collection('profiles').findOne({"login.username": currentUser}, {car: {$elemMatch:{reg: "EM55 KEL"}}} , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    console.log(result)
-    console.log(result.car.make)
     console.log(result.car[0].make)
-    res.redirect('/garage');
+    res.redirect('/garage',{make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg});
   });
   });
 

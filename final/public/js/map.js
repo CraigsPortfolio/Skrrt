@@ -153,7 +153,7 @@ function postRemCar(){
 }
 
 function getCar(){
-  $.post('/garage', {
+  $.post('/newreg', {
     reg: document.getElementById("gar-reg").innerHTML
   });
 }

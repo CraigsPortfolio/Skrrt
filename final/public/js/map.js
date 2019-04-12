@@ -168,24 +168,10 @@ var url = window.location.href;
 //   alert(ur)
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function isValidPath(str, path) {
   str = str.substring(str.indexOf('://') + 3);
   str = str.substring(str.indexOf('#') + 1);
   return (str.indexOf(path) == 0);
 }
 
-alert(isValidPath(url, '#loginError'));
+alert(isValidPath(url, 'loginError'));

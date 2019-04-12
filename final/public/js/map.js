@@ -152,9 +152,6 @@ $(document).ready(function(){
 });
 
 var url = window.location.href;
-var host = window.location.host;
-alert(url);
-alert(host);
-// if(url.indexOf('host + '/movies') != -1) {
-//    //match
-// }
+if(url.indexOf(url + '#loginError') != -1) {
+   document.getElementById('id01').style.display = "block";
+}

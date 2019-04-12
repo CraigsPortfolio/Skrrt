@@ -7,7 +7,7 @@
 
 /* css to allign the tabs next to each other and to also alter their appearance */
 .details, .car-info, {
-  width: 300px;
+  width: 150px;
   background: #fff;
   float: left;
   height: 60px;

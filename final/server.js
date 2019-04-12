@@ -76,7 +76,7 @@ app.post('/refresh', function(req, res) {
     }
     i++;
   });
-    res.render('pages/garage', {make:result.car[pos].make, model:result.car[pos].model, reg:result.car[pos].reg, ftype:result.car[pos].ftype, mpg:result.car[pos].mpg, options:result.car});
+    res.render('pages/garage', {make:result.car.make, model:result.car[pos].model, reg:result.car[pos].reg, ftype:result.car[pos].ftype, mpg:result.car[pos].mpg, options:result.car});
   });
 });
 

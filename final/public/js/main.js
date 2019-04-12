@@ -23,7 +23,7 @@ $('#addj').click(function() {
 	return false;
 });
 
-$('#btn-edit').click(function() {
+$('#edit-btn').click(function() {
 	switchEdit();
 	return false;
 });

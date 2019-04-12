@@ -1666,7 +1666,7 @@ section {
   border-radius: 14px;
 }
 
-#dropgarage select-items {
+#dropgarage option{
   color: black;
   padding: 12px 16px;
   text-decoration: none;

@@ -123,7 +123,7 @@ app.post('/addjourney', function(req, res) {
  });
 });
 
-app.get('/remcar', function(req, res) {
+app.post('/remcar', function(req, res) {
  var query = { "login.username": currentUser};
  var newvalues = { $pull: {car:{reg: req.body.reg}}};
  db.collection('profiles').update(query,newvalues, function(err, result) {

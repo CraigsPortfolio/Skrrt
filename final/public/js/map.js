@@ -144,6 +144,14 @@ function postJourney(){
   });
 }
 
+function postRemCar(){
+  reg = document.getElementById("gar-reg").innerHTML;
+  
+  $.post('/remcar',{
+    reg: reg,
+  });
+}
+
 $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;

@@ -133,7 +133,9 @@ function postJourney(){
   fuelPrice = document.getElementById("fuelCost").innerHTML;
   mpg = document.getElementById("vehicleMPG").innerHTML;
   recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
+  name = input("Please enter your journey name");
   $.post('/addjourney',{
+    journeyName: name,
     Start: startDest,
     End: endDest,
     pass: passValue,

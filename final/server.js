@@ -75,7 +75,7 @@ app.post('/refresh', function(req, res) {
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
   db.collection('profiles').find({"login.username": currentUser}, {car: {$elemMatch:{reg: "EM55 KEL"}}} , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-    console.log(result[0].car);
+    console.log(result.make);
     res.redirect('/garage');
   });
   });

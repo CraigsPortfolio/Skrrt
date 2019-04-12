@@ -182,7 +182,10 @@ app.post('/dologin', function(req, res) {
       // if(result.login.pword != pword){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
       // if(!result){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.username == uname && result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; currentUser=result.login.username; res.redirect('/profile') }
+    if(result == null){
+      console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x); }
+    }
+    if(result.login.pword == pword){console.log("CORRECT"); req.session.loggedin = true; currentUser=result.login.username; res.redirect('/profile') }
     //if there is no result, redirect the user back to the login system as that username must not exist
     else{
       console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x); }

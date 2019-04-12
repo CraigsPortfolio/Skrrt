@@ -65,6 +65,7 @@ app.get('/garage', function(req, res) {
 });
 
 app.post('/refresh', function(req, res) {
+  console.log("hi")
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
   db.collection('profiles').find({"login.username": currentUser}, {car: {$elemMatch:{reg: req.body.newreg}}}) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error

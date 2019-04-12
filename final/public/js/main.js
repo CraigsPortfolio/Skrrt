@@ -28,6 +28,11 @@ $('#delcar').click(function() {
 	return false;
 });
 
+$('#deljny').click(function() {
+	postRemCar();
+	return false;
+});
+
 $('#recbtn').click(function() {
 	calculateJourney();
 	return false;

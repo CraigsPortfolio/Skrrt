@@ -160,6 +160,15 @@ function postRemCar(){
   });
 }
 
+function postRemJny(){
+  // reg = document.getElementById("gar-reg").innerHTML;
+  name= $("#dropjourney option:selected").text();
+
+  $.post('/remjourney',{
+    name: name,
+  });
+}
+
 function getCar(reg){
   $.post('/refresh', {
     newreg: reg

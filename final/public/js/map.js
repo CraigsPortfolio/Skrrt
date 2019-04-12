@@ -141,7 +141,7 @@ function postJourney(){
     reg: reg,
     fcost: fuelPrice,
     mpg: mpg,
-    rec:recommendedPrice
+    rec:recommendedPrice,
     prof: prof
   });
 }

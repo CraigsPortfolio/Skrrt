@@ -23,10 +23,7 @@ $('#addj').click(function() {
 	return false;
 });
 
-$('#edit-btn').click(function() {
-	switchEdit();
-	return false;
-});
+
 
 $('#delcar').click(function() {
 	postRemCar();

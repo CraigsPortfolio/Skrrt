@@ -173,7 +173,8 @@ function isValidPath(str, path) {
   str = str.substring(str.indexOf('#') + 1);
   return (str.indexOf(path) == 0);
 }
-$(document).ready(){
+
+$(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
     alert("esy")
     document.getElementById('id01').style.display = "block";

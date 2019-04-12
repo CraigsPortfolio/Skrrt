@@ -49,7 +49,10 @@ app.get('/profile', function(req, res) {
 });
 
 app.get('/journey', function(req, res) {
- res.render('pages/journey');
+  db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error;
+    res.render('pages/journey', {start:result.journeys[0].start, end:result.journeys[0].end, reg:result.journeys[0].reg, fuel:result.journeys[0].fcost, mpg:result.journeys[0].mpg, pass:result.journeys[0].pass, prof:result.journeys[0].profit, rec:result.journeys[0].rec, options:result.journeys});
+  });
 });
 
 app.get('/newcar', function(req, res) {

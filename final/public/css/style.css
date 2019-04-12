@@ -1769,6 +1769,7 @@ input:checked + .slider3:before {
 }
 
 .row .returnText{
-  margin-left: 200px;
+  float: right;
+  margin-left: 800px;
   margin top: -300px;
 }

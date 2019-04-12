@@ -126,7 +126,7 @@ app.post('/adduser', function(req, res) {
 
 app.post('/addcar', function(req, res) {
  var query = { "login.username": currentUser };
- var newvalues = { $addToSet: {car:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, fType: req.body.ftype, mpg: req.body.mpg} }};
+ var newvalues = { $addToSet: {car:{make: req.body.make, model: req.body.model, year: req.body.year, reg: req.body.reg, ftype: req.body.ftype, mpg: req.body.mpg} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  res.redirect('/garage');

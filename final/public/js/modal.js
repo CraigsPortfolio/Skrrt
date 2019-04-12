@@ -14,6 +14,7 @@ function isValidPath(str, path) {
   return (str.indexOf(path) == 0);
 }
 
+var url = window.location.href;
 $(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
     document.getElementById('id01').style.display = "block";

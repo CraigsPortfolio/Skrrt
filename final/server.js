@@ -67,6 +67,7 @@ app.get('/garage', function(req, res) {
     res.render('pages/garage', {make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg, options:result.car});
 }
 }
+  });
 });
 
 app.get('/adduser', function(req, res) {

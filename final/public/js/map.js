@@ -134,6 +134,8 @@ function postJourney(){
   fuelPrice = document.getElementById("fuelCost").innerHTML;
   mpg = document.getElementById("vehicleMPG").innerHTML;
   recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
+  var profitSlider = document.getElementById('myRange2');
+  var profValue = profitSlider.value;
   // name = prompt("Please enter your journey name");
   console.log(name);
   $.post('/addjourney',{
@@ -144,6 +146,7 @@ function postJourney(){
     fcost: fuelPrice,
     mpg: mpg,
     rec:recommendedPrice,
+    prof: profValue
   });
 }
 

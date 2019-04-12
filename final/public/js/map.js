@@ -166,7 +166,8 @@ $(document).ready(function(){
            newreg: reg
          },function(data){
            console.log(data);
-           
+           document.getElementById("car-make").innerHTML = data.make;
+
          });
     });
 });

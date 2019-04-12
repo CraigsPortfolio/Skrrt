@@ -146,9 +146,15 @@ function postJourney(){
 
 function postRemCar(){
   reg = document.getElementById("gar-reg").innerHTML;
-  
+
   $.post('/remcar',{
     reg: reg,
+  });
+}
+
+function getCar(){
+  $.post('/garage', {
+    reg: document.getElementById("gar-reg").innerHTML;,
   });
 }
 
@@ -156,6 +162,6 @@ $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;
          document.getElementById("gar-reg").innerHTML = reg;
-
+         getCar();
     });
 });

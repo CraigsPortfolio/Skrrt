@@ -133,6 +133,7 @@ function postJourney(){
   fuelPrice = document.getElementById("fuelCost").innerHTML;
   mpg = document.getElementById("vehicleMPG").innerHTML;
   recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
+  prof = document.getElementById("prof").innerHTML;
   $.post('/addjourney',{
     Start: startDest,
     End: endDest,
@@ -141,6 +142,7 @@ function postJourney(){
     fcost: fuelPrice,
     mpg: mpg,
     rec:recommendedPrice
+    prof: prof
   });
 }
 

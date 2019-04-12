@@ -173,10 +173,10 @@ function isValidPath(str, path) {
   str = str.substring(str.indexOf('#') + 1);
   return (str.indexOf(path) == 0);
 }
-
-if (isValidPath(url, 'loginError') == true){
-  document.getElementById('id01').style.display = "block";
-  console.log("he")
-}else{
-  alert("YAYEET")
-}
+$(window).load(function(){
+  if (isValidPath(url, 'loginError') == true){
+    document.getElementById('id01').style.display = "block";
+  }else{
+    alert("YAYEET")
+  }
+});

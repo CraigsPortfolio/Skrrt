@@ -51,7 +51,7 @@ app.get('/profile', function(req, res) {
 app.get('/journey', function(req, res) {
   db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error;
-    res.render('pages/journey', {start:result.journeys[0].start, end:result.journeys[0].end, reg:result.journeys[0].car, fuel:result.journeys[0].fcost, mpg:result.journeys[0].mpg, pass:result.journeys[0].pass, prof:result.journeys[0].profit, rec:result.journeys[0].rec, options:result.journeys});
+    res.render('pages/journey', {start:result.journeys[0].start, end:result.journeys[0].end, reg:result.journeys[0].reg, fuel:result.journeys[0].fcost, mpg:result.journeys[0].mpg, pass:result.journeys[0].pass, prof:result.journeys[0].profit, rec:result.journeys[0].rec, options:result.journeys});
   });
 });
 
@@ -131,7 +131,7 @@ app.post('/addcar', function(req, res) {
 
 app.post('/addjourney', function(req, res) {
  var query = { "login.username": currentUser };
- var newvalues = { $addToSet: {journeys:{start: req.body.Start, end: req.body.End, pass: req.body.pass, reg: req.body.reg, fcost: req.body.fcost, mpg: req.body.mpg, rec:req.body.rec} }};
+ var newvalues = { $addToSet: {journeys:{start: req.body.Start, end: req.body.End, pass: req.body.pass, reg: req.body.reg, fcost: req.body.fcost, mpg: req.body.mpg, rec:req.body.rec, profit:req.body.prof} }};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("Added");

@@ -1666,14 +1666,14 @@ section {
   border-radius: 14px;
 }
 
-.garageContent{
+.row select-items {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.garageContent {
+.row select-items:hover {
   background-color: #f1f1f1;
   border-radius: 14px;
 }

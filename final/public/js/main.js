@@ -29,7 +29,7 @@ $('#delcar').click(function() {
 });
 
 $('#deljny').click(function() {
-	postRemCar();
+	postRemJny();
 	return false;
 });
 

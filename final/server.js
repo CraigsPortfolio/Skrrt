@@ -65,10 +65,10 @@ app.get('/garage', function(req, res) {
 });
 
 app.post('/refresh', function(req, res) {
-
-  db.collection('profiles').find({"login.username":currentUser, "car:{$elemMatch:{reg":req.body.newreg}, function(err, result) {
+  // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
+  db.collection('profiles').find({"login.username": currentUser}, {car: {$elemMatch:{reg: req.body.newreg}}}) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
-
+    console.log(result);
   });
     res.render('pages/garage', {make:result.car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg, options:result.car});
   });

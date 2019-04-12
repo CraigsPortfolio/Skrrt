@@ -69,6 +69,9 @@ app.post('/refresh', function(req, res) {
   var query = {"login.username": currentUser};
   var query1 =  {car: {$elemMatch:{reg: req.body.newreg}}}
 
+  console.log(req.body.newreg);
+  console.log(currentUser)
+
   // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
   db.collection('profiles').findOne(query,query1) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error

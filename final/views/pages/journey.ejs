@@ -26,7 +26,7 @@
             <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
             <select id="dropgarage">
               <% options.forEach(function(option) { %>
-            <option><%= option.reg %></option>
+            <option><%= option.start + option.end %></option>
               <% }); %>
             </select>
             <div class="calculatedRow">

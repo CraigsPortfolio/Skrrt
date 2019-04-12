@@ -7,3 +7,17 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function isValidPath(str, path) {
+  str = str.substring(str.indexOf('://') + 3);
+  str = str.substring(str.indexOf('#') + 1);
+  return (str.indexOf(path) == 0);
+}
+
+$(document).ready(function(){
+  if (isValidPath(url, 'loginError') == true){
+    document.getElementById('id01').style.display = "block";
+  }else{
+    alert("YAYEET")
+  }
+});

@@ -64,7 +64,6 @@ app.get('/garage', function(req, res) {
 });
 
 app.post('/refresh', function(req, res) {
-  console.log("hi")
   var query = {"login.username": currentUser};
   var query1 =  {car: {$elemMatch:{reg: req.body.newreg}}};
 

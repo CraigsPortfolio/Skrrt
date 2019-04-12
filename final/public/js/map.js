@@ -156,4 +156,7 @@ if(url.indexOf(url + "#loginError") != -1) {
   ur = url + "#loginError"
   alert("YAYEET "+url+ur)
    document.getElementById('id01').style.display = "block";
+} else{
+  ur = url + "#loginError"
+  alert("YAYEET "+url+ur)
 }

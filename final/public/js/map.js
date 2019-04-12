@@ -174,4 +174,9 @@ function isValidPath(str, path) {
   return (str.indexOf(path) == 0);
 }
 
-alert(isValidPath(url, 'loginError'));
+if (isValidPath(url, 'loginError') == true){
+  document.getElementById('id01').style.display = "block";
+  console.log("he")
+}else{
+  alert("YAYEET")
+}

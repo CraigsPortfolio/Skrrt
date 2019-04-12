@@ -1640,7 +1640,7 @@ section {
   Garage profile css                #
 ####################################*/
 
-.dropbtn {
+.dropgarage {
   background-color: #f27348;
   color: white;
   border: none;
@@ -1651,7 +1651,7 @@ section {
   border-radius: 14px;
 }
 
-.dropdown {
+.dropgarage {
   position: relative;
   display: inline-block;
 }

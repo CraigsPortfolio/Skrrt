@@ -146,8 +146,8 @@ function postJourney(){
 
 $(document).ready(function(){
     $('#dropgarage').change(function(){
-         var reg= this.value;
-         document.getElementById("gar-reg").innerHTML = reg.reg;
+         // var reg= this.value;
+         document.getElementById("gar-reg").innerHTML = $(this).find(":selected").data("value").reg;
     });
 });
 

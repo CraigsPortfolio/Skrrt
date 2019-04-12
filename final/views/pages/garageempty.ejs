@@ -20,7 +20,7 @@
 	<!-- Header section end -->
 
   <!--Calculated Journey -->
-  <section id="garage" class="hero-section set-bg" data-setbg="/img/garage.jpg">
+  <section id="garageempty" class="hero-section set-bg" data-setbg="/img/garage.jpg">
   <div class="container h-100" id="5">
     <div class="hero-content text-white">
       <div class="row" id="bigRow">
@@ -28,32 +28,10 @@
         <p>Below is the details of cars you have in your Skrrt garage.</p>
 
 
-        <select id="dropgarage">
-          <% options.forEach(function(option) { %>
-        <option><%= option.reg %></option>
-    <% }); %>
-        </select>
-        <div class="calculatedRow">
-              <h3>Registration Number:</h3>
-              <h3 id="gar-reg" class="calculatedH3"><%= reg %></h3>
-            </div>
+
             <div class="calculatedRow">
-              <h3>Make: </h3>
-              <h3 class="calculatedH3"><%= make %></h3>
+              <h3>You have no cars saved in your garage :(</h3>
             </div>
-            <div class="calculatedRow">
-              <h3>Model:</h3>
-              <h3 class="calculatedH3"><%= model %></h3>
-            </div>
-            <div class="calculatedRow">
-              <h3>MPG: </h3>
-              <h3 class="calculatedH3"><%= mpg %></h3>
-            </div>
-            <div class="calculatedRow">
-              <h3>Fuel Type: </h3>
-              <h3 class="calculatedH3"><%= ftype %></h3>
-            </div>
-            <a href="/remcar" id="delcar" class="site-btn">Remove Car</a>
 						<a href="/newcar" class="site-btn">Park New Car</a>
 
       </div>

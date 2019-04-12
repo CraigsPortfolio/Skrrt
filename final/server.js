@@ -133,6 +133,16 @@ app.post('/remcar', function(req, res) {
  });
 });
 
+app.post('/remjourney', function(req, res) {
+ var query = { "login.username": currentUser};
+ var newvalues = { $pull: {journeys:{start: req.body.start, end:req.body.end}}};
+ db.collection('profiles').update(query,newvalues, function(err, result) {
+ if (err) throw err;
+ console.log("del");
+ res.redirect('/journeys');
+ });
+});
+
 //the dologin route detasl with the data from the login screen.
 //the post variables, username and password ceom from the form on the login page.
 app.post('/dologin', function(req, res) {

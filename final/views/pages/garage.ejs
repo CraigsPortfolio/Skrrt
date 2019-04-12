@@ -29,6 +29,7 @@
 
 
         <select id="dropgarage">
+          <% if(options.length !=0){ %>
           <% options.forEach(function(option) { %>
         <option><%= option.reg %></option>
     <% }); %>
@@ -53,6 +54,11 @@
               <h3>Fuel Type: </h3>
               <h3 class="calculatedH3"><%= ftype %></h3>
             </div>
+            <% }else{ %>
+              <div class="calculatedRow">
+                <h3>You have no saved cars :(</h3>
+              </div>
+            <% } %>
             <a href="/remcar" id="delcar" class="site-btn">Remove Car</a>
 						<a href="/newcar" class="site-btn">Park New Car</a>
 

@@ -1,0 +1,15 @@
+<div id="logOutPopUp" class="modal">
+
+  <form class="modal-content animate" action="/doLogin" method="POST">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('logOutPopUp').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/img/avatar_image.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <p class="msg" id="errorMSG">Incorrect Login</p>
+      <button type="submit">Log Out</button>
+    </div>
+
+  </form>
+</div>

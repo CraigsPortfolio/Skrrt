@@ -128,6 +128,7 @@ app.post('/remcar', function(req, res) {
  var newvalues = { $pull: {car:{reg: req.body.reg}}};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
+ console.log("del");
  res.redirect('/garage');
  });
 });

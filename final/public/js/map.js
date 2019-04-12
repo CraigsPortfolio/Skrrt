@@ -152,7 +152,8 @@ function postJourney(){
 }
 
 function postRemCar(){
-  reg = document.getElementById("gar-reg").innerHTML;
+  // reg = document.getElementById("gar-reg").innerHTML;
+  reg= $("#dropgarage option:selected").text();
 
   $.post('/remcar',{
     reg: reg,

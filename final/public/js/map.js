@@ -167,7 +167,7 @@ function postRemCar(){
     document.getElementById("car-fuel").innerHTML = data.ftype;
 
   });
-});
+}
 
 function postRemJny(){
   // reg = document.getElementById("gar-reg").innerHTML;

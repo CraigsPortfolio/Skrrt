@@ -176,6 +176,7 @@ function isValidPath(str, path) {
 
 if (isValidPath(url, 'loginError') == true){
   document.getElementById('id01').style.display = "block";
+  alert("he")
 }else{
   alert("YAYEET")
 }

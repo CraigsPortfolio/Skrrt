@@ -76,7 +76,7 @@ app.post('/refresh', function(req, res) {
   db.collection('profiles').findOne({"login.username": currentUser, "car":{$elemMatch:{"reg": "X31 CRG"}}}) , function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     console.log(result);
-    res.redirect('/garage', {make:result.car.make, model:result.car.model, reg:result.car.reg, ftype:result.car.ftype, mpg:result.car.mpg, options:result.car});
+    res.redirect('/garage');
   };
   });
 

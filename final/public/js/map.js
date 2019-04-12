@@ -161,13 +161,15 @@ function getCar(reg){
 $(document).ready(function(){
     $('#dropgarage').change(function(){
          var reg= this.value;
-         document.getElementById("gar-reg").innerHTML = reg;
          $.post('/refresh', {
            newreg: reg
          },function(data){
            console.log(data);
+           document.getElementById("car-reg").innerHTML = data.reg;
            document.getElementById("car-make").innerHTML = data.make;
-
+           document.getElementById("car-model").innerHTML = data.model;
+           document.getElementById("car-mpg").innerHTML = data.mpg;
+           document.getElementById("car-fuel").innerHTML = data.ftype;
          });
     });
 });

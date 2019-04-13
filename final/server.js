@@ -41,7 +41,7 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if(currentUser = ""){
-    res.render('pages/404')
+    res.render('pages/404');
   } else {
     db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
       if (err) throw err;//if there is an error, throw the error

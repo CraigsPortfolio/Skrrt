@@ -154,7 +154,7 @@ app.post('/remcar', function(req, res) {
  if (err) throw err;
  console.log("del");
  });
- db.collection('profiles').findOne({"login.username": currentUser}}) , function(err, result) {
+ db.collection('profiles').findOne({"login.username": currentUser} , function(err, result) {
    if (err) throw err;//if there is an error, throw the error
    console.log(result.car[0].make)
    var data = {make:result.car[0].make, model:result.car[0].model, reg:result.car[0].reg, ftype:result.car[0].ftype, mpg:result.car[0].mpg, options:result.car};

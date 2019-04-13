@@ -175,7 +175,8 @@ app.post('/dologin', function(req, res) {
   var pword = req.body.pword;
 
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
-    if(err || result.login.pword == null) {
+    if(result==null){console.log("NULL US");}
+    if(err) {
       console.log(err);
       res.redirect('back')
     }//if there is an error, throw the error

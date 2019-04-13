@@ -29,7 +29,7 @@ $('#addj').click(function() {
 				} else {
 					postJourney();
 				}
-		});
+      }});
 	return false;
 });
 

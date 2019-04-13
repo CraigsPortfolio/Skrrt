@@ -143,6 +143,7 @@ app.post('/addjourney', function(req, res) {
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("Added");
+ res.send(currentUser)
  res.redirect('/main');
  });
 });

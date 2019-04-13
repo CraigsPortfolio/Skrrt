@@ -163,6 +163,11 @@ app.post('/editprofile', function(req, res) {
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("updated");
+ db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
+   if (err) throw err;//if there is an error, throw the error
+   var data = {fname:profile.fname, surname:profile.surname, username:profile.username};
+   res.send(data);
+ });
  res.redirect('/profile');
  });
 });

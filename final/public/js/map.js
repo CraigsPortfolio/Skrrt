@@ -218,7 +218,7 @@ function editProfile(){
   var username = prompt("Enter username");
   var pword = prompt("Enter pword");
 
-  $.post('/editprofile'),{
+  $.post('/editprofile',{
     fname:fname,
     surname:surname,
     username:username,

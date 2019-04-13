@@ -49,7 +49,7 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser
@@ -68,7 +68,7 @@ app.get('/profile', function(req, res) {
 
 app.get('/journey', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser
@@ -92,7 +92,7 @@ app.get('/journey', function(req, res) {
 
 app.get('/newcar', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     res.render('pages/newcar');
   }
@@ -100,7 +100,7 @@ app.get('/newcar', function(req, res) {
 
 app.get('/garage', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser
@@ -120,7 +120,7 @@ app.get('/garage', function(req, res) {
 
 app.post('/refresh', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     console.log(req.body.newreg);
     console.log(currentUser);
@@ -152,7 +152,7 @@ app.post('/refresh', function(req, res) {
 
 app.post('/refreshJourney', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser
@@ -237,7 +237,7 @@ app.post('/adduser', function(req, res) {
 
 app.post('/addcar', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     var query = {
       "login.username": currentUser
@@ -263,7 +263,7 @@ app.post('/addcar', function(req, res) {
 
 app.post('/addjourney', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     var query = {
       "login.username": currentUser
@@ -298,7 +298,7 @@ app.get('/userLoggedIn', function(req, res) {
 
 app.post('/remcar', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     var query = {
       "login.username": currentUser
@@ -334,7 +334,7 @@ app.post('/remcar', function(req, res) {
 
 app.post('/editprofile', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     db.collection('profiles').findOne({
       "login.username": req.body.username
@@ -387,7 +387,7 @@ app.post('/editprofile', function(req, res) {
 
 app.post('/remjourney', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     var query = {
       "login.username": currentUser
@@ -470,7 +470,7 @@ app.post('/dologin', function(req, res) {
 //it sets our session.loggedin to false and then redirects the user to the login
 app.get('/logout', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/404');
+    res.render('pages/403');
   } else {
     req.session.loggedin = false;
     req.session.destroy();

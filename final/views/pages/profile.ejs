@@ -1,59 +1,44 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
   <% include ../partials/head %>
   <% include ../partials/headScripts %>
 </head>
 
 <body>
-  <!-- Page Preloder -->
-  <div id="preloder">
-    <div class="loader"></div>
-  </div>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-  <!-- Header section -->
-  <header class="header-section">
-    <% include ../partials/profileHeader %>
-  </header>
-  <!-- Header section end -->
+	<!-- Header section -->
+	<header class="header-section">
+		<% include ../partials/profileHeader %>
+	</header>
+	<!-- Header section end -->
 
   <!--Calculated Journey -->
   <section id="profile" class="hero-section set-bg" data-setbg="/img/profile.jpg">
     <div class="container h-100" id="5">
       <div class="hero-content text-white">
         <div class="row" id="bigRow">
-          <h2>Profile</h2>
-          <div class="profileTitle">
-            <h2 id="pro-first" class="firstname">
-              <%= First %>
-              <%= Last %>
-            </h2>
-            <h2 id="pro-user" class="username">Username:
-              <%= Username %>
-            </h2>
+            <h2>Profile</h2>
+            <div class="profileTitle">
+            <h2 id="pro-first"class="firstname"><%= First %> <%= Last %></h2>
+            <h2 id="pro-user"class="username">Username: <%= Username %></h2>
             <p class="msg" id="msg"></p>
           </div>
-          <a href="/journey" class="site-btn">Saved Journeys</a>
-          <a href="/garage" class="site-btn">Garage</a>
-          <a href="#" id="editbtn" class="site-btn">Edit Profile</a>
+            <a href="/journey" class="site-btn">Saved Journeys</a>
+            <a href="/garage" class="site-btn">Garage</a>
+						<a href="#" id="editbtn"class="site-btn">Edit Profile</a>
+            </div>
+
+
+
+
+
         </div>
-
-        <div id="modalWindow">
-          <div>
-            <a href="#close">Close modal</a><br>
-            <p>
-              This is the modal. Put any text or controls here.
-              <br><br>
-              <button type="button">Just a button for display purposes only!</button>
-            </p>
-          </div>
-        </div>
-
-
-
       </div>
-    </div>
   </section>
   <!--Calculated Journey Section End-->
 
@@ -61,15 +46,14 @@
 
 
 
-  <!-- Footer section -->
-  <footer class="footer-section">
-    <% include ../partials/footer %>
-  </footer>
-  <!-- Footer top section end -->
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<% include ../partials/footer %>
+	</footer>
+	<!-- Footer top section end -->
 
 
-  <!--====== Javascripts & Jquery ======-->
-  <% include ../partials/footerScripts %>
-</body>
-
+	<!--====== Javascripts & Jquery ======-->
+	<% include ../partials/footerScripts %>
+	</body>
 </html>

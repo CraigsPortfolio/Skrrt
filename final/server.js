@@ -175,7 +175,7 @@ app.post('/editprofile', function(req, res) {
  console.log("updated");
  });
  if(res){
-   console.log(user)
+   console.log(res)
      message = "user exists";
      console.log(message)
      var data = {msg:"Username Taken"};

@@ -143,10 +143,13 @@ app.post('/addjourney', function(req, res) {
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("Added");
- res.send(currentUser)
  res.redirect('/main');
  });
 });
+
+app.get('/userLoggedIn',function(req,res){
+   res.send(currentUser)
+})
 
 app.post('/remcar', function(req, res) {
  var query = { "login.username": currentUser};

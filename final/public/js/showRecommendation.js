@@ -9,7 +9,7 @@ $(document).ready(function(){ //Waiting until document is fully loaded
         scrollTop: $("#7").offset().top
     }, 0);
   }else{
-    document.getElementById("msg-show").innerHTML = "Please make sure all data is entered correctly before calculating!"";
+    document.getElementById("msg-show").innerHTML = "Please make sure all data is entered correctly before calculating!";
   }
 });
 }

@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/main', function(req, res) {
- res.render('pages/main', {user:currentUser});
+ res.render('pages/main', {user:currentUser,msg:""});
 });
 
 app.get('/register', function(req, res) {

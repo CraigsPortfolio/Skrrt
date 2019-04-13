@@ -193,7 +193,12 @@
   </section>
 
   <footer class="footer-section">
-    <% include ../partials/footer %>
+    <%= user %>
+    <% if (user != "") { %>
+        <% include ../partials/profileFooter%>
+<% } else { %>
+  <% include ../partials/header%>
+<% } %>
   </footer>
 
   <% include ../partials/footerScripts %>

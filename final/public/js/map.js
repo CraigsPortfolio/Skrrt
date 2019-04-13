@@ -252,6 +252,7 @@ function editProfile(){
   },function(data){
     console.log(data);
     if(data.msg == ""){
+    document.getElementById("msg").innerHTML = "";
     document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
     document.getElementById("pro-user").innerHTML = data.username;
   }else{

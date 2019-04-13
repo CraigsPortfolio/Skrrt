@@ -183,7 +183,7 @@ app.post('/editprofile', function(req, res) {
  }else{
  db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
    if (err) throw err;//if there is an error, throw the error
-   var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username};
+   var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username, msg:""};
    res.send(data);
    currentUser=req.body.username;
  });

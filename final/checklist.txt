@@ -9,7 +9,7 @@ Random white div bar on the bottom of the login modal
 Fuel type drop down for new car
 
 ###BACKEND###
-Main page needs validated
+Main page validation could be improved
 Add fuel API if they email back
 Check passwords on register and edit
 Handle the event of zero journeys/cars on journey/garage pages

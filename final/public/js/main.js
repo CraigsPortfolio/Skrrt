@@ -23,8 +23,8 @@ $('#addj').click(function() {
 			if(data == ""){
 				alert("Please Log in");
 			} else {
-				var nyBox = document.getElementById('ny-box').value
-				if(nyBox == ""){
+				var jnyBox = document.getElementById('jny-box').value
+				if(jnyBox == ""){
 					alert("Please supply a journey name")
 				} else {
 					postJourney();

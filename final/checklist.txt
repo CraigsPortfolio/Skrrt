@@ -14,7 +14,7 @@ Footer could display links to garage/journeys etc when logged in
 ###BACKEND###
 ###IMPORTANT###
 Handle the event of zero journeys/cars on journey/garage pages - Craig Pirie
-Validate accessing forbidden routes when logged out
+Validate accessing forbidden routes when logged out - Craig Robertson DONE
 
 ###NOT-SO IMPORTANT###
 Check passwords on register and edit

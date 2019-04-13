@@ -40,7 +40,7 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-  if(currentUser = ""){
+  if(currentUser == ""){
     console.log("not logged")
     res.render('pages/404');
   } else {

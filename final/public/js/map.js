@@ -228,5 +228,5 @@ function editProfile(){
     document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
     document.getElementById("pro-user").innerHTML = data.username;
 
-  });
+  };
 }

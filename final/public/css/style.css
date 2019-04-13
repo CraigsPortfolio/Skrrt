@@ -1771,7 +1771,7 @@ input:checked + .slider3:before {
 }
 
 .msg{
-  color: black;
+  color: red;
 }
 
 .profileTitle h2{

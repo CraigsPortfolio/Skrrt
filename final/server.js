@@ -49,7 +49,9 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/main');
+    res.render('pages/main', {
+      user: currentUser
+    });
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser

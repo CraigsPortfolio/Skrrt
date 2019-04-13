@@ -18,8 +18,6 @@ function isValidPath(str, path) {
 var url = window.location.href;
 $(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
-    document.getElementById('id02').style.display = "block";
-    document.getElementById('errorMSG').style.visibility = "visible";
-    document.getElementById('errorMSG').style.color = "red";
+    $.post('/logout');
   }
 });

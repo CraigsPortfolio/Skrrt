@@ -22,7 +22,7 @@ $('#addj').click(function() {
 	$.get( "/userLoggedIn", function(data) {
 			if(data == ""){
 				alert("Please Log in");
-				document.getElementById("msg").innerHTML = "Please Login";
+				document.getElementById("main-msg").innerHTML = "Please Login";
 			} else {
 				var jnyBox = document.getElementById('jny-box').value
 				if(jnyBox == ""){

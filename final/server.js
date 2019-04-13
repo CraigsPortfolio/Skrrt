@@ -125,13 +125,12 @@ app.get('/garage', function(req, res) {
       });
     }else{
       res.render('pages/garage', {
-        var emptyArray = [0];
         make: "No car",
         model: "No car",
         reg: "No car",
         ftype: "No car",
         mpg: "No car",
-        options: emptyArray;
+        options: "";
       });
     }
     });

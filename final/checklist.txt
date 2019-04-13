@@ -10,7 +10,6 @@ Fuel type drop down for new car
 
 ###BACKEND###
 Main page needs validated
-'Save Journey' button and field on the main page needs hidden when user isnt logged in
 Add fuel API if they email back
 Check passwords on register and edit
 Handle the event of zero journeys/cars on journey/garage pages

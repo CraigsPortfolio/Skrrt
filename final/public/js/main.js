@@ -19,15 +19,13 @@ $('#sub2').click(function() {
 });
 
 $('#addj').click(function() {
-	function saveJourney(){
-		$.get( "/userLoggedIn", function(data) {
-				if(data == ""){
-					alert("User not logged in!");
-				} else {
-					postJourney();
-				}
-			});
-	}
+	$.get( "/userLoggedIn", function(data) {
+			if(data == ""){
+				alert("User not logged in!");
+			} else {
+				postJourney();
+			}
+		});
 	return false;
 });
 

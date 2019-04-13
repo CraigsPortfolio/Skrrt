@@ -130,7 +130,7 @@ app.get('/garage', function(req, res) {
         reg: "No car",
         ftype: "No car",
         mpg: "No car",
-        options: "";
+        options: ""
       });
     }
     });

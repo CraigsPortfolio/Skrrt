@@ -40,12 +40,16 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-  db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
-    if (err) throw err;//if there is an error, throw the error
-    console.log(result.fname);
-    first=result.fname;
-    res.render('pages/profile', {First:result.fname, Last:result.surname, Username:result.login.username});
-  });
+  if(currentUser = ""){
+    res.render('pages/404')
+  } else {
+    db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {
+      if (err) throw err;//if there is an error, throw the error
+      console.log(result.fname);
+      first=result.fname;
+      res.render('pages/profile', {First:result.fname, Last:result.surname, Username:result.login.username});
+    });
+  }
 });
 
 app.get('/journey', function(req, res) {

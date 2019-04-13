@@ -150,6 +150,7 @@ function postJourney(){
     rec:recommendedPrice,
     prof: profValue
   });
+  document.getElementById("msg").innerHTML = "Journey saved succesfully";
 }
 
 function postRemCar(){

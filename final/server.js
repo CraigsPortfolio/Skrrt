@@ -114,7 +114,7 @@ app.get('/garage', function(req, res) {
       "login.username": currentUser
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error;
-      if(result){
+      if(result.car!=null){
       res.render('pages/garage', {
         make: result.car[0].make,
         model: result.car[0].model,

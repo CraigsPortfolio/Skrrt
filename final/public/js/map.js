@@ -173,6 +173,7 @@ function postRemCar(){
     //     x.add(option, x[i]);
     //     i++;
     // });
+    alert("GGG" + data.options[0].reg);
     $("#dropgarage").empty();
     for(var i=0; i < data.length; i++){
     var option = $('<option></option>').attr(data.options[i].reg, data.options[i].reg).text(data.options[i].reg);

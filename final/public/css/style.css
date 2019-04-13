@@ -1798,7 +1798,7 @@ input:checked + .slider3:before {
   visibility: hidden;
 }
 
-#modalWindow {
+.row #modalWindow {
 			position: fixed;
 			font-family: arial,helvetica, sans-serif;
 			top: 0;
@@ -1811,11 +1811,11 @@ input:checked + .slider3:before {
 			transition: opacity 400ms linear;
 			pointer-events: none;
 		}
-		#modalWindow:target {
+.row		#modalWindow:target {
 			opacity:1;
 			pointer-events: auto;
 		}
-		#modalWindow > div {
+.row		#modalWindow > div {
 			width: 400px;
 			height: 240px;
 			position: relative;

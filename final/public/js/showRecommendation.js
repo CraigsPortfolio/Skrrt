@@ -9,7 +9,7 @@ $(document).ready(function(){ //Waiting until document is fully loaded
         scrollTop: $("#7").offset().top
     }, 0);
   }else{
-    alert("Error, empty fields present. Please make sure all data is entered correctly before calculating!");
+    document.getElementById("msg-show").innerHTML = "Please make sure all data is entered correctly before calculating!"";
   }
 });
 }

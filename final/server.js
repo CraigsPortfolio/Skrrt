@@ -41,6 +41,7 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if(currentUser = ""){
+    console.log("not logged")
     res.render('pages/404');
   } else {
     db.collection('profiles').findOne({"login.username":currentUser}, function(err, result) {

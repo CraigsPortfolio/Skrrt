@@ -1,18 +1,22 @@
+###FRONT END###
 Some of the backgrounds need darkened
-Main page needs validated
-'Save Journey' button and field on the main page needs hidden when user isnt logged in
 Login button on the login modal needs style to look similar to others
 Login button in the nav bar is only clickable on the text
 Logout needs fixed
 Edit profile page needs made or profile needs to be toggleable to be edited
 Some of the fields (eg the 'New Car' page) are really wide
 Random white div bar on the bottom of the login modal
+Fuel type drop down for new car
+
+###BACKEND###
+Main page needs validated
+'Save Journey' button and field on the main page needs hidden when user isnt logged in
 Add fuel API if they email back
-Reduce the number of CSS and JS files
-Comment / clean code
-Check the database for an existing username before changing the a username in edit profile
 Check passwords on register and edit
 Handle the event of zero journeys/cars on journey/garage pages
-Fuel type drop down for new car
 Validate accessing forbidden routes when logged out
 Choose from garage on the main page for logged in users
+
+###GENERAL###
+Reduce the number of CSS and JS files
+Comment / clean code

@@ -168,24 +168,25 @@ app.post('/remcar', function(req, res) {
 });
 
 app.post('/editprofile', function(req, res) {
- var query = { "login.username": currentUser};
- var newvalues = { $set: { login:{username: req.body.username, pword:req.body.pword},fname:req.body.fname, surname:req.body.surname}};
- db.collection('profiles').update(query,newvalues, function(err, result) {
- if (err) throw err;
- console.log("updated");
- });
- if(res){
-   console.log(res)
+  db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
+    if (err) throw err;//if there is an error, throw the error
+    var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username, msg:""};
+    res.send(data);
+    currentUser=req.body.username;
+  });
+ if(profile){
+   console.log(profile)
      message = "user exists";
      console.log(message)
      var data = {msg:"Username Taken"};
      res.send(data);
  }else{
- db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
-   if (err) throw err;//if there is an error, throw the error
-   var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username, msg:""};
-   res.send(data);
-   currentUser=req.body.username;
+
+ var query = { "login.username": currentUser};
+ var newvalues = { $set: { login:{username: req.body.username, pword:req.body.pword},fname:req.body.fname, surname:req.body.surname}};
+ db.collection('profiles').update(query,newvalues, function(err, result) {
+ if (err) throw err;
+ console.log("updated");
  });
 }
 });

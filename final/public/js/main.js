@@ -27,7 +27,7 @@ $('#addj').click(function() {
 				var jnyBox = document.getElementById('jny-box').value
 				if(jnyBox == ""){
 					alert("Please supply a journey name")
-					document.getElementById("msg").innerHTML = "Please supply a journey name";
+					document.getElementById("main-msg").innerHTML = "Please supply a journey name";
 				} else {
 					postJourney();
 				}

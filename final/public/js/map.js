@@ -176,7 +176,7 @@ function postRemCar(){
     alert("GGG" + data.options.length);
     $("#dropgarage").empty();
     for(var i=0; i < data.options.length + 1; i++){
-    var option = $('<option></option>').attr(data.options[i].reg, data.options[i].reg).text(data.options[i].reg);
+    var option = $('<option></option>').text(data.options[i].reg);
     $("#dropgarage").append(option);
   }
   });

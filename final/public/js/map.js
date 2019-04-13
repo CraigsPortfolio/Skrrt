@@ -251,8 +251,11 @@ function editProfile(){
     pword:pword
   },function(data){
     console.log(data);
+    if(data.msg == ""){
     document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
     document.getElementById("pro-user").innerHTML = data.username;
+  }else{
     document.getElementById("msg").innerHTML = data.msg;
+  }
   });
 }

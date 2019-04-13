@@ -1776,7 +1776,7 @@ input:checked + .slider3:before {
 
 #msg{
   color: red;
-  margin: 0,0,0,0;
+  margin-bottom: 0;
 }
 
 .profileTitle h2{

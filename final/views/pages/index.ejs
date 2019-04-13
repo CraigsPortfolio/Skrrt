@@ -13,7 +13,6 @@
 
   <!-- Header section -->
   <header class="header-section">
-    <%= user %>
     <% if (user != "") { %>
         <% include ../partials/profileHeader%>
 <% } else { %>
@@ -109,7 +108,7 @@
   </section>
 
   <footer class="footer-section">
-    <% include ../partials/footer %>
+    <% include ../partials/profileFooter %>
   </footer>
 
   <% include ../partials/footerScripts %>

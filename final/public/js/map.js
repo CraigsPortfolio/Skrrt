@@ -194,7 +194,7 @@ function postRemJny(){
 
     $("#dropjourney").empty();
     for(var i=0; i < data.options.length + 1; i++){
-    var option = $('<option></option>').text(data.options[i].reg);
+    var option = $('<option></option>').text(data.options[i].name);
     $("#dropjourney").append(option);
   }
   });

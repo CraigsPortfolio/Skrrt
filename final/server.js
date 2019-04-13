@@ -173,7 +173,7 @@ app.post('/editprofile', function(req, res) {
     var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username, msg:""};
     res.send(data);
     currentUser=req.body.username;
-  });
+
  if(profile){
    console.log(profile)
      message = "user exists";
@@ -189,6 +189,7 @@ app.post('/editprofile', function(req, res) {
  console.log("updated");
  });
 }
+});
 });
 
 app.post('/remjourney', function(req, res) {

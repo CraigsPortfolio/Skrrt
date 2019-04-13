@@ -11,7 +11,7 @@
 $('#sub1').click(function() {
 	T();
 	$('html, body').animate({
-        scrollTop: $("#3").offset().top
+        scrollTop: $("#2").offset().top
     }, 0);
 	return false;
 });

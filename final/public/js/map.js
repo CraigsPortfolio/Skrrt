@@ -165,15 +165,7 @@ function postRemCar(){
     document.getElementById("car-model").innerHTML = data.model;
     document.getElementById("car-mpg").innerHTML = data.mpg;
     document.getElementById("car-fuel").innerHTML = data.ftype;
-    // var x = document.getElementById("dropgarage");
-    // var i =0;
-    // data.forEach(function(item) {
-    //     var option = document.createElement("option");
-    //     option.text=item.reg;
-    //     x.add(option, x[i]);
-    //     i++;
-    // });
-    alert("GGG" + data.options.length);
+
     $("#dropgarage").empty();
     for(var i=0; i < data.options.length + 1; i++){
     var option = $('<option></option>').text(data.options[i].reg);
@@ -188,6 +180,23 @@ function postRemJny(){
 
   $.post('/remjourney',{
     name: name,
+  },function(data){
+    console.log(data);
+    document.getElementById("jny-name").innerHTML = data.name;
+    document.getElementById("jny-start").innerHTML = data.start;
+    document.getElementById("jny-end").innerHTML = data.end;
+    document.getElementById("jny-reg").innerHTML = data.reg;
+    document.getElementById("jny-mpg").innerHTML = data.mpg;
+    document.getElementById("jny-pass").innerHTML = data.pass;
+    document.getElementById("jny-fuel").innerHTML = data.fuel;
+    document.getElementById("jny-prof").innerHTML = data.prof;
+    document.getElementById("jny-rec").innerHTML = data.rec;
+
+    $("#dropjourney").empty();
+    for(var i=0; i < data.options.length + 1; i++){
+    var option = $('<option></option>').text(data.options[i].reg);
+    $("#dropjourney").append(option);
+  }
   });
 }
 

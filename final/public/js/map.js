@@ -211,6 +211,3 @@ $(document).ready(function(){
          });
     });
 });
-
-
-}

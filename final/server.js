@@ -148,6 +148,7 @@ app.post('/addjourney', function(req, res) {
 });
 
 app.get('/userLoggedIn',function(req,res){
+  console.log(currentUser);
    res.send(currentUser)
 })
 

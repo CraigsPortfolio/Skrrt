@@ -177,6 +177,7 @@ app.post('/dologin', function(req, res) {
   db.collection('profiles').findOne({"login.username":uname}, function(err, result) {
     if(result==null){
       console.log("USERNAME INVALID");
+      res.redirect('back')
       return;
     }
     if(err) {

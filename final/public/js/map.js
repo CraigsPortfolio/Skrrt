@@ -177,11 +177,7 @@ function postRemJny(){
   });
 }
 
-function getCar(reg){
-  $.post('/refresh', {
-    newreg: reg
-  });
-}
+
 
 $(document).ready(function(){
     $('#dropgarage').change(function(){

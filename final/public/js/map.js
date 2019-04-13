@@ -211,3 +211,22 @@ $(document).ready(function(){
          });
     });
 });
+
+editProfile(){
+  fname = prompt("Enter first name");
+  surname = prompt("Enter last name");
+  username = prompt("Enter username");
+  pword = prompt("Enter pword");
+
+  $.post('/editprofile'),{
+    fname:fname,
+    surname:surname,
+    username:username,
+    pword:pword
+  },function(data){
+    console.log(data);
+    document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
+    document.getElementById("pro-user").innerHTML = data.username;
+
+  });
+}

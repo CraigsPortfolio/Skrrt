@@ -23,6 +23,11 @@ $('#addj').click(function() {
 	return false;
 });
 
+$('#editbtn').click(function() {
+	editProfile();
+	return false;
+});
+
 
 
 $('#delcar').click(function() {

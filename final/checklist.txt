@@ -23,6 +23,6 @@ Main page validation could be improved
 Add fuel API if they email back
 ???Add return/oneway to DB???
 
-###GENERAL###
+###GENERAL >>> CAN BE DONE AFTER PRESENTATION###
 Reduce the number of CSS and JS files
 Comment / clean code

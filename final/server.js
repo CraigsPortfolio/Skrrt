@@ -159,7 +159,7 @@ app.post('/remcar', function(req, res) {
 
 app.post('/editprofile', function(req, res) {
  var query = { "login.username": currentUser};
- var newvalues = { login:{username: req.body.username, pword:req.body.pword},fname:req.body.fname, surname:req.body.surname};
+ var newvalues = { $set: { login:{username: req.body.username, pword:req.body.pword},fname:req.body.fname, surname:req.body.surname}};
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("updated");

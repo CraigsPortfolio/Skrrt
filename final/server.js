@@ -153,7 +153,7 @@ app.post('/remcar', function(req, res) {
  db.collection('profiles').update(query,newvalues, function(err, result) {
  if (err) throw err;
  console.log("del");
- res.redirect('/garage');
+ res.redirect('/refresh');
  });
 });
 

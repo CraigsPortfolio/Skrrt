@@ -169,12 +169,20 @@ app.post('/editprofile', function(req, res) {
  if (err) throw err;
  console.log("updated");
  });
+ if(res){
+   console.log(user)
+     message = "user exists";
+     console.log(message)
+     var data = {msg:"Username Taken"};
+     res.send(data);
+ }else{
  db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
    if (err) throw err;//if there is an error, throw the error
    var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username};
    res.send(data);
    currentUser=req.body.username;
  });
+}
 });
 
 app.post('/remjourney', function(req, res) {

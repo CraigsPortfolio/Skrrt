@@ -212,7 +212,7 @@ $(document).ready(function(){
     });
 });
 
-editProfile(){
+function editProfile(){
   fname = prompt("Enter first name");
   surname = prompt("Enter last name");
   username = prompt("Enter username");

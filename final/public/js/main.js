@@ -10,6 +10,9 @@
 
 $('#sub1').click(function() {
 	T();
+	$('html, body').animate({
+        scrollTop: $("#3").offset().top
+    }, 0);
 	return false;
 });
 

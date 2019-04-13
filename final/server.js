@@ -446,8 +446,6 @@ app.post('/dologin', function(req, res) {
       console.log(err);
       res.redirect('back')
     } //if there is an error, throw the error
-    // if(result.login.pword != pword){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
-    // if(!result){console.log("INCORRECT"); backURL=req.header('Referer'); var x = backURL + "#loginError";console.log(x);res.redirect(x);}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if (result.login.pword == pword) {
       console.log("CORRECT");

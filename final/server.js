@@ -49,7 +49,7 @@ app.get('/register', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if (currentUser == "") {
-    res.render('pages/403');
+    res.render('pages/main');
   } else {
     db.collection('profiles').findOne({
       "login.username": currentUser

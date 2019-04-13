@@ -170,7 +170,7 @@ app.post('/remcar', function(req, res) {
 app.post('/editprofile', function(req, res) {
   db.collection('profiles').findOne({"login.username": req.body.username} , function(err, profile) {
     if (err) throw err;//if there is an error, throw the error
- if(profile){
+ if(profile && req.body.username != profile.login.username){
    console.log(profile)
      message = "user exists";
      console.log(message)

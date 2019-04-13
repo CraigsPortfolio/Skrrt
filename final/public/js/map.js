@@ -165,6 +165,14 @@ function postRemCar(){
     document.getElementById("car-model").innerHTML = data.model;
     document.getElementById("car-mpg").innerHTML = data.mpg;
     document.getElementById("car-fuel").innerHTML = data.ftype;
+    var x = document.getElementById("dropgarage");
+    var i =0;
+    data.forEach(function(item) {
+        var option = document.createElement("option");
+        option.text=item.reg;
+        x.add(option, x[i]);
+        i++;
+    });
   });
 }
 

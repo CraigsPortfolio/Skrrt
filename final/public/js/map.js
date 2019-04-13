@@ -213,10 +213,10 @@ $(document).ready(function(){
 });
 
 function editProfile(){
-  fname = prompt("Enter first name");
-  surname = prompt("Enter last name");
-  username = prompt("Enter username");
-  pword = prompt("Enter pword");
+  var fname = prompt("Enter first name");
+  var surname = prompt("Enter last name");
+  var username = prompt("Enter username");
+  var pword = prompt("Enter pword");
 
   $.post('/editprofile'),{
     fname:fname,

@@ -1,20 +1,27 @@
 ###FRONT END###
+###IMPORTANT###
+Edit profile page needs made or profile needs to be toggleable to be edited
+Logout needs fixed
+
+###NOT-SO IMPORTANT###
+Some of the fields (eg the 'New Car' page) are really wide
 Some of the backgrounds need darkened
 Login button on the login modal needs style to look similar to others
-Login button in the nav bar is only clickable on the text
-Logout needs fixed
-Edit profile page needs made or profile needs to be toggleable to be edited
-Some of the fields (eg the 'New Car' page) are really wide
-Random white div bar on the bottom of the login modal
+Random white div bar on the bottom of the login modal (looks like the 'Make an account?' text should be inside it?)
 Fuel type drop down for new car
+Footer could display links to garage/journeys etc when logged in
 
 ###BACKEND###
-Main page validation could be improved
-Add fuel API if they email back
-Check passwords on register and edit
+###IMPORTANT###
 Handle the event of zero journeys/cars on journey/garage pages
 Validate accessing forbidden routes when logged out
+
+###NOT-SO IMPORTANT###
+Check passwords on register and edit
 Choose from garage on the main page for logged in users
+Main page validation could be improved
+Add fuel API if they email back
+???Add return/oneway to DB???
 
 ###GENERAL###
 Reduce the number of CSS and JS files

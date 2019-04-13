@@ -192,6 +192,7 @@ app.post('/editprofile', function(req, res) {
 }
 });
 });
+});
 
 app.post('/remjourney', function(req, res) {
  var query = { "login.username": currentUser};

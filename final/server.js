@@ -185,7 +185,7 @@ app.post('/editprofile', function(req, res) {
    if (err) throw err;//if there is an error, throw the error
    var data = {fname:profile.fname, surname:profile.surname, username:profile.login.username, msg:""};
    res.send(data);
-   currentUser=req.body.login.username;
+   currentUser=req.body.username;
  });
 }
 });

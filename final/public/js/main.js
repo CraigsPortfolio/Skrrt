@@ -21,10 +21,14 @@ $('#sub2').click(function() {
 $('#addj').click(function() {
 	$.get( "/userLoggedIn", function(data) {
 			if(data == ""){
-				alert("User not logged in!");
+				alert("Please Log in");
 			} else {
-				postJourney();
-			}
+				var nyBox = document.getElementById('ny-box').value
+				if(nyBox == ""){
+					alert("Please supply a journey name")
+				} else {
+					postJourney();
+				}
 		});
 	return false;
 });

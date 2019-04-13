@@ -9,7 +9,6 @@ Some of the backgrounds need darkened
 Login button on the login modal needs style to look similar to others
 Random white div bar on the bottom of the login modal (looks like the 'Make an account?' text should be inside it?)
 Fuel type drop down for new car
-Footer could display links to garage/journeys etc when logged in
 
 ###BACKEND###
 ###IMPORTANT###

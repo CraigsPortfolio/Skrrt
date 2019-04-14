@@ -17,15 +17,18 @@
 	</header>
 	<!-- Header section end -->
 <%include ../partials/logOut%>
-  <!--Calculated Journey -->
+
+
   <section id="profile" class="hero-section set-bg" data-setbg="/img/profile.jpg">
     <div class="container h-100" id="5">
       <div class="hero-content text-white">
         <div class="row" id="bigRow">
             <h2>Profile</h2>
             <div class="profileTitle">
-            <h2 id="pro-first"class="firstname">Name: <%= First %> <%= Last %></h2>
-            <h2 id="pro-user"class="username">Username: <%= Username %></h2>
+            <h2>Name:</h2>
+            <h2 id="pro-first"class="firstname"><%= First %> <%= Last %></h2>
+            <h2>Username:</h2>
+            <h2 id="pro-user"class="username"><%= Username %></h2>
             <p class="msg" id="msg"></p>
           </div>
             <a href="/journey" class="site-btn">Saved Journeys</a>
@@ -41,11 +44,13 @@
       </div>
   </section>
 
+
+
   <section id="profile" class="hero-section set-bg" data-setbg="/img/profile2.jpg">
     <div class="container h-100" id="5">
       <div class="hero-content text-white">
         <div class="row" id="bigRow">
-            <h2>Profile</h2>
+            <h2>Edit Profile</h2>
             <div class="profileTitle">
             <h2 id="pro-first"class="firstname">Name: <%= First %> <%= Last %></h2>
             <h2 id="pro-user"class="username">Username: <%= Username %></h2>

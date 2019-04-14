@@ -46,7 +46,9 @@ app.get('/register', function(req, res) {
     msg: ""
   });
 });
-
+app.post('/profile', function(req,res){
+  res.redirect('/profile');
+});
 app.get('/profile', function(req, res) {
   if (currentUser == "") {
     res.render('pages/main', {

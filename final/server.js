@@ -187,6 +187,7 @@ app.post('/refreshJourney', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
+      try{
       var data = {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -198,6 +199,18 @@ app.post('/refreshJourney', function(req, res) {
         profit: result.journeys[0].profit,
         name: result.journeys[0].name
       };
+    }catch(err){
+    }catch(err){
+      res.render('pages/garage', {
+        make: "No car",
+        model: "No car",
+        reg: "No car",
+        ftype: "No car",
+        mpg: "No car",
+        options: [""]
+      });
+    }
+    }
       res.send(data);
     });
   }

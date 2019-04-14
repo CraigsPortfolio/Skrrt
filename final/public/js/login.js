@@ -73,7 +73,7 @@ $(document).ready(function() {
     }
   });
 });
-// 
+//
 // $(document).ready(function() {
 //   //Validates form 1 on the details tab. If all fields are entered correctly lets you move on to next tab.
 //   var validate2 = $("#newcarform");

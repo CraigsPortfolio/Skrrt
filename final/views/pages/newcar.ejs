@@ -3,10 +3,6 @@
 <head>
   <% include ../partials/head %>
   <% include ../partials/headScripts %>
-  <!--Scripts-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
-  <script src="/js/login.js" type="text/javascript"></script>
 
 </head>
 
@@ -41,7 +37,7 @@
                 <input type="text" placeholder="Fuel Economy" class="input" name="mpg"><br />
               </div>
 
-            <a href="#nothing" id="addcarbtn"class="site-btn">Add Car</a>
+            <a href="#nothing" class="site-btn" onClick="document.forms['newcarform'].submit();">Add Car</a>
             <a href="/garage" class="site-btn">Return To Garage</a>
             </form>
             </div>

@@ -78,6 +78,7 @@ $(document).ready(function() {
   //Validates form 1 on the details tab. If all fields are entered correctly lets you move on to next tab.
   var validate2 = $("#newcarform");
   $("#addcarbtn").click(function() {
+    alert("LCIED");
     if (validate2.valid() === true){
       document.forms['validate2'].submit();
     } else {

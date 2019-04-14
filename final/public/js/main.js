@@ -38,6 +38,11 @@ $('#editbtn').click(function() {
 	return false;
 });
 
+$('#log-btn').click(function() {
+	login();
+	return false;
+});
+
 
 
 $('#delcar').click(function() {

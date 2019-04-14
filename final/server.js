@@ -125,12 +125,7 @@ app.get('/garage', function(req, res) {
       });
     }catch(err){
       res.render('pages/garage', {
-        make: "No car",
-        model: "No car",
-        reg: "No car",
-        ftype: "No car",
-        mpg: "No car",
-        options: [""]
+        console.log("asdas");
       });
     }
     });

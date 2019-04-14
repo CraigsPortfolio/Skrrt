@@ -537,7 +537,7 @@ app.post('/dologin', function(req, res) {
       // var x = backURL + "#loginError";
       // console.log(x);
       // res.redirect(x);
-      var data = {msg:"Username invalid"}
+      var data = {msg:"Username invalid"};
       res.send(data);
       return;
     }

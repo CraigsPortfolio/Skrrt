@@ -318,7 +318,7 @@ $(document).ready(function(){
     }
 });
 
-function login(){
+function logme(){
   var uname = document.getElementById("username").value;
   var pword = document.getElementById("password").value;
   $.post('dologin',{

@@ -123,7 +123,7 @@ app.get('/garage', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       });
-    }catch(Exception e){
+    }catch(err){
       res.render('pages/garage', {
         make: "No car",
         model: "No car",

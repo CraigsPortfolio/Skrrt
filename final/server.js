@@ -114,7 +114,7 @@ app.get('/garage', function(req, res) {
       "login.username": currentUser
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error;
-      if(result.car == null){
+      try{
       res.render('pages/garage', {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -123,7 +123,7 @@ app.get('/garage', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       });
-    }else{
+    }catch(Exception e){
       res.render('pages/garage', {
         make: "No car",
         model: "No car",

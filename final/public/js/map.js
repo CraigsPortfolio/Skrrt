@@ -270,5 +270,6 @@ $(document).ready(function(){
       document.getElementById("car-fuel-row").hidden = true;
       document.getElementById("car-reg-row").hidden = true;
       document.getElementById("dropgarage").hidden = true;
+      document.getElementById("delcar").hidden = true;
     }
 });

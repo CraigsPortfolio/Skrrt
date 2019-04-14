@@ -72,4 +72,38 @@ $(document).ready(function() {
       }
     }
   });
+
+  //Validates form 1 on the details tab. If all fields are entered correctly lets you move on to next tab.
+  var validate2 = $("#newcarform");
+  $("#addcarbtn").click(function() {
+    if (validate2.valid() === true){
+      document.forms['newcarform'].submit();
+    } else {
+      console.log("error");
+    }
+  });
+
+  //this is the rules for form 1. Specifies the input box and what kind of validation you want.
+  validate2.validate({
+    rules: {
+      make: {
+        required: true,
+      },
+      model: {
+        required: true,
+      },
+      year: {
+        required: true,
+      },
+      ftype: {
+        required: true,
+      },
+      mpg: {
+        required: true,
+      },
+      reg: {
+        required: true,
+      }
+    }
+  });
 });

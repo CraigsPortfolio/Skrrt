@@ -318,17 +318,17 @@ $(document).ready(function(){
     }
 });
 
-function login(){
-  var uname = document.getElementById("username").value;
-  var pword = document.getElementById("password").value;
-  $.post('/dologin',{
-    uname:uname,
-    pword:pword
-  }, function(data){
-    if(data.msg==""){
-      $.get('/profile');
-    }
-    document.getElementById("errorMSG").visible;
-    document.getElementById("errorMSG").innerHTML = data.msg;
-  });
-}
+// function login(){
+//   var uname = document.getElementById("username").value;
+//   var pword = document.getElementById("password").value;
+//   $.post('/dologin',{
+//     uname:uname,
+//     pword:pword
+//   }, function(data){
+//     if(data.msg=""){
+//
+//     }
+//     document.getElementById("errorMSG").visible;
+//     document.getElementById("errorMSG").innerHTML = data.msg;
+//   });
+// }

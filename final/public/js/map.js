@@ -317,3 +317,13 @@ $(document).ready(function(){
         document.getElementById("deljny").hidden=true;
     }
 });
+
+function login(){
+  var uname = document.getElementById("username").value;
+  var pword = document.getElementById("password").value;
+  $.post('doLogin',{
+    uname:uname,
+    pword:pword
+  }, function(data){
+      document.getElementById("errorMSG").innerHTML = data.msg;
+  }

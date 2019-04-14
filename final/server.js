@@ -357,7 +357,7 @@ app.post('/remcar', function(req, res) {
       "login.username": currentUser
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      console.log(result.car[0].make)
+      try{
       var data = {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -366,6 +366,16 @@ app.post('/remcar', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       };
+    }catch(err){
+      var data = {
+        make: "No car",
+        model: "No car",
+        reg: "No car",
+        ftype: "No car",
+        mpg: "No car",
+        options: [0]
+      };
+    }
       res.send(data);
     });
   }

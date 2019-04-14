@@ -211,7 +211,17 @@ function postRemJny(){
     $("#dropjourney").append(option);
   }
 }else{
-
+  document.getElementById("jny-name-row").hidden = true;
+  document.getElementById("jny-start-row").hidden = true;
+  document.getElementById("jny-end-row").hidden = true;
+  document.getElementById("jny-reg-row").hidden = true;
+  document.getElementById("jny-mpg-row").hidden = true;
+  document.getElementById("jny-pass-row").hidden = true;
+  document.getElementById("jny-fuel-row").hidden = true;
+  document.getElementById("jny-rec-row").hidden = true;
+  document.getElementById("jny-prof-row").hidden = true;
+  document.getElementById("dropjourney").hidden = true;
+  document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
 }
   });
 }
@@ -299,7 +309,9 @@ $(document).ready(function(){
       document.getElementById("jny-mpg-row").hidden = true;
       document.getElementById("jny-pass-row").hidden = true;
       document.getElementById("jny-fuel-row").hidden = true;
-      document.getElementById("deljourney").hidden = true;
+      document.getElementById("jny-rec-row").hidden = true;
+      document.getElementById("jny-prof-row").hidden = true;
+      document.getElementById("dropjourney").hidden = true;
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });

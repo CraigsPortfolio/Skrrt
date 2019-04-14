@@ -38,7 +38,7 @@ $('#editbtn').click(function() {
 	return false;
 });
 
-$('#editswitch').click(function(){
+$('#edit-switch').click(function(){
 	editSwitch();
 	return false;
 })

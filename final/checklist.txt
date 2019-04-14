@@ -1,7 +1,6 @@
 ###FRONT END###
 ###IMPORTANT###
 Edit profile page needs made or profile needs to be toggleable to be edited
-Logout needs fixed
 
 ###NOT-SO IMPORTANT###
 Some of the fields (eg the 'New Car' page) are really wide

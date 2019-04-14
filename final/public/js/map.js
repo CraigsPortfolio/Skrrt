@@ -327,3 +327,5 @@ function login(){
   }, function(data){
       document.getElementById("errorMSG").innerHTML = data.msg;
   }
+});
+}

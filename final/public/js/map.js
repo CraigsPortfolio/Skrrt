@@ -264,6 +264,9 @@ function editProfile(){
 
 $(document).ready(function(){
     if(document.getElementById("car-reg").innerHTML == "No car"){
-      alert("NOOOOS");
+      document.getElementById("car-make").hidden = true;
+      document.getElementById("car-model").hidden = true;
+      document.getElementById("car-mpg").hidden = true;
+      document.getElementById("car-ftype").hidden = true;
     }
 });

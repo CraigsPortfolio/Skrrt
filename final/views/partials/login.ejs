@@ -1,6 +1,6 @@
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/doLogin" method="POST">
+  <form id="loginform" class="modal-content animate" action="/doLogin" method="POST">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="/img/avatar_image.jpg" alt="Avatar" class="avatar">
@@ -13,7 +13,7 @@
       <label for="pword"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pword" required>
       <p class="msg" id="errorMSG">Incorrect Login</p>
-      <button type="submit">Login</button>
+      <a href="#nothing" class="site-btn" onClick="document.forms['loginform'].submit();">Login</a>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>

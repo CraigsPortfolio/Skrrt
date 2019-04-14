@@ -12,6 +12,7 @@ Fuel type drop down for new car
 ###BACKEND###
 ###IMPORTANT###
 Handle the event of zero journeys/cars on journey/garage pages - Craig Pirie
+New car needs validated
 
 ###NOT-SO IMPORTANT###
 Check passwords on register and edit

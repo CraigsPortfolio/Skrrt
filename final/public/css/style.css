@@ -1801,6 +1801,12 @@ input:checked + .slider3:before {
   width: 40%;
 }
 
-#edit-profile input{
-  width: 50px;
+.editProfileTitle h2{
+  color: white;
+  font-size:40px;
+  margin-top: 20px;
+}
+
+.profileTitle .username{
+  margin-bottom: 20px;
 }

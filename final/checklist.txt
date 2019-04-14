@@ -4,7 +4,6 @@ Edit profile page needs made or profile needs to be toggleable to be edited
 
 ###NOT-SO IMPORTANT###
 Some of the fields (eg the 'New Car' page) are really wide
-Some of the background images need darkened
 Fuel type drop down for new car
 
 ###BACKEND###

@@ -326,5 +326,5 @@ function login(){
     pword:pword
   }, function(data){
       document.getElementById("errorMSG").innerHTML = data.msg;
-  }
-});
+  });
+}

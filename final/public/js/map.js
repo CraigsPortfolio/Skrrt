@@ -161,6 +161,7 @@ function postRemCar(){
     reg: reg,
   },function(data){
     console.log(data);
+    if(data.reg!="No car"){
     document.getElementById("car-reg").innerHTML = data.reg;
     document.getElementById("car-make").innerHTML = data.make;
     document.getElementById("car-model").innerHTML = data.model;
@@ -172,6 +173,16 @@ function postRemCar(){
     var option = $('<option></option>').text(data.options[i].reg);
     $("#dropgarage").append(option);
   }
+}else{
+  document.getElementById("car-make-row").hidden = true;
+  document.getElementById("car-model-row").hidden = true;
+  document.getElementById("car-mpg-row").hidden = true;
+  document.getElementById("car-fuel-row").hidden = true;
+  document.getElementById("car-reg-row").hidden = true;
+  document.getElementById("dropgarage").hidden = true;
+  document.getElementById("delcar").hidden = true;
+  document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
+}
   });
 }
 

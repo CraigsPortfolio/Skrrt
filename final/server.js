@@ -209,7 +209,7 @@ app.post('/refreshJourney', function(req, res) {
         options: [""]
       });
     }
-    }
+    
       res.send(data);
     });
   }

@@ -271,5 +271,6 @@ $(document).ready(function(){
       document.getElementById("car-reg-row").hidden = true;
       document.getElementById("dropgarage").hidden = true;
       document.getElementById("delcar").hidden = true;
+      document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
     }
 });

@@ -550,7 +550,7 @@ app.post('/dologin', function(req, res) {
       console.log("CORRECT");
       req.session.loggedin = true;
       currentUser = result.login.username;
-      res.redirect('/profile')
+      res.render('pages/profile')
     }
     //if there is no result, redirect the user back to the login system as that username must not exist
     else {

@@ -538,6 +538,7 @@ app.post('/dologin', function(req, res) {
       // console.log(x);
       // res.redirect(x);
       var data = {msg:"Username invalid"}
+      res.send(data);
       return;
     }
     if (err) {

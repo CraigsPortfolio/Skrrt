@@ -557,6 +557,7 @@ span.psw {
 .site-logo {
   display: inline-block;
   margin-left: 50px;
+  margin-top: 10px;
 }
 
 .nav-switch {

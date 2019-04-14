@@ -1,6 +1,6 @@
 <div id="id02" class="modal">
 
-  <form class="modal-content animate" action="/logout">
+  <form id="logoutform" class="modal-content animate" action="/logout">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="./img/avatar_image.jpg" alt="Avatar" class="avatar">
@@ -8,7 +8,7 @@
 
     <div class="container">
         <label><b>Are you sure that you want to log out?</b></label>
-      <button type="submit">Log Out</button>
+      <a href="#nothing" class="site-btn" onClick="document.forms['logoutform'].submit();">Log Out</a>
     </div>
 
   </form>

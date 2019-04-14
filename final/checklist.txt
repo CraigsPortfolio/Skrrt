@@ -5,7 +5,6 @@ Edit profile page needs made or profile needs to be toggleable to be edited
 ###NOT-SO IMPORTANT###
 Some of the fields (eg the 'New Car' page) are really wide
 Some of the background images need darkened
-Login button on the login / logout modal needs style to look similar to others
 Fuel type drop down for new car
 
 ###BACKEND###

@@ -1807,6 +1807,6 @@ input:checked + .slider3:before {
   margin-top: 20px;
 }
 
-.profileTitle .username{
-  margin-bottom: 20px;
+.editProfileTitle input{
+  width: 400px;
 }

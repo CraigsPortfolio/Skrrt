@@ -1796,7 +1796,3 @@ input:checked + .slider3:before {
 #edit{
   visibility: hidden;
 }
-
-.newcarform{
-  width: 50%;
-}

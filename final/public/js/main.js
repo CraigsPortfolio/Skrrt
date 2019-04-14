@@ -39,7 +39,7 @@ $('#editbtn').click(function() {
 });
 
 $('#log-btn').click(function() {
-	logme();
+	login();
 	return false;
 });
 

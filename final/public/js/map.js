@@ -318,10 +318,10 @@ $(document).ready(function(){
     }
 });
 
-function logme(){
+function login(){
   var uname = document.getElementById("username").value;
   var pword = document.getElementById("password").value;
-  $.post('dologin',{
+  $.post('/dologin',{
     uname:uname,
     pword:pword
   }, function(data){

@@ -328,4 +328,3 @@ function login(){
       document.getElementById("errorMSG").innerHTML = data.msg;
   }
 });
-}

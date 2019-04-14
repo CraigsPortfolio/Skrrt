@@ -77,7 +77,7 @@ $(document).ready(function() {
   var validate2 = $("#newcarform");
   $("#addcarbtn").click(function() {
     if (validate2.valid() === true){
-      document.forms['validat2'].submit();
+      document.forms['validate2'].submit();
     } else {
       console.log("error");
     }

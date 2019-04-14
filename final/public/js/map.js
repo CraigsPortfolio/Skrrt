@@ -268,9 +268,8 @@ $(document).ready(function(){
 function editProfile(){
   var fname = document.getElementById("NewFirst").value;
   var surname = document.getElementById("NewLast").value;
-  var username = document.getElementById("NewUsert").value;
+  var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
-
   $.post('/editprofile',{
     fname:fname,
     surname:surname,
@@ -282,11 +281,26 @@ function editProfile(){
     document.getElementById("msg").innerHTML = "";
     document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
     document.getElementById("pro-user").innerHTML = data.username;
+    $("#edit-profile").hide(); //Showing recommendation section
+    //Scrolling to the recommendation
+    $('html, body').animate({
+          scrollTop: $("#").offset().top
+      }, 0);
   }else{
     document.getElementById("msg").innerHTML = data.msg;
   }
   });
   location.reload();
+}
+function editSwitch(){
+  $("#edit-profile").show(); //Showing recommendation section
+  //Scrolling to the recommendation
+  $('html, body').animate({
+        scrollTop: $("#2").offset().top
+    }, 0);
+  document.getElementById("NewFirst").value=document.getElementById("pro-first").innerHTML;
+  document.getElementById("NewLast").value=document.getElementById("pro-last").innerHTML;
+  document.getElementById("NewUser").value=document.getElementById("pro-user").innerHTML;
 }
 
 $(document).ready(function(){

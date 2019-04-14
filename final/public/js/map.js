@@ -261,3 +261,9 @@ function editProfile(){
   }
   });
 }
+
+$(document).ready(function(){
+    if(document.getElementById("car-reg").innerHTML == "No car"){
+      alert("NOOOOS");
+    }
+});

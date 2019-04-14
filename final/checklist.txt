@@ -5,7 +5,7 @@ Edit profile page needs made or profile needs to be toggleable to be edited
 ###NOT-SO IMPORTANT###
 Some of the fields (eg the 'New Car' page) are really wide
 Some of the backgrounds need darkened
-Login button on the login modal needs style to look similar to others
+Login button on the login / logout modal needs style to look similar to others
 Random white div bar on the bottom of the login modal (looks like the 'Make an account?' text should be inside it?)
 Fuel type drop down for new car
 
@@ -16,9 +16,11 @@ Handle the event of zero journeys/cars on journey/garage pages - Craig Pirie
 ###NOT-SO IMPORTANT###
 Check passwords on register and edit
 Choose from garage on the main page for logged in users
+???Add return/oneway to DB???
+
 Main page validation could be improved
 Add fuel API if they email back
-???Add return/oneway to DB???
+
 
 ###GENERAL >>> CAN BE DONE AFTER PRESENTATION###
 Reduce the number of CSS and JS files

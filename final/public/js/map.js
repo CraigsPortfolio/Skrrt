@@ -161,7 +161,6 @@ function postRemCar(){
     reg: reg,
   },function(data){
     console.log(data);
-    if(data!=""){
     document.getElementById("car-reg").innerHTML = data.reg;
     document.getElementById("car-make").innerHTML = data.make;
     document.getElementById("car-model").innerHTML = data.model;
@@ -172,9 +171,6 @@ function postRemCar(){
     for(var i=0; i < data.options.length + 1; i++){
     var option = $('<option></option>').text(data.options[i].reg);
     $("#dropgarage").append(option);
-  }else{
-    alert("sdasd");
-  }
   }
   });
 }

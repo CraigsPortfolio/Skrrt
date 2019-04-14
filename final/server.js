@@ -356,10 +356,9 @@ app.post('/remcar', function(req, res) {
     db.collection('profiles').findOne({
       "login.username": currentUser
     }, function(err, result) {
-      var data;
       if (err) throw err; //if there is an error, throw the error
       try{
-      data = {
+      var data = {
         make: result.car[0].make,
         model: result.car[0].model,
         reg: result.car[0].reg,
@@ -368,7 +367,14 @@ app.post('/remcar', function(req, res) {
         options: result.car
       };
     }catch(err){
-      data = "";
+      var data = {
+        make: "No car",
+        model: "No car",
+        reg: "No car",
+        ftype: "No car",
+        mpg: "No car",
+        options: [0]
+      };
     }
       res.send(data);
     });

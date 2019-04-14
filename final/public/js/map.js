@@ -325,6 +325,7 @@ function login(){
     uname:uname,
     pword:pword
   }, function(data){
+    document.getElementById("errorMSG").hidden = false;
       document.getElementById("errorMSG").innerHTML = data.msg;
   });
 }

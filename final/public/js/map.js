@@ -222,6 +222,7 @@ function postRemJny(){
   document.getElementById("jny-prof-row").hidden = true;
   document.getElementById("dropjourney").hidden = true;
   document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
+  document.getElementById("deljny").hidden=true;
 }
   });
 }
@@ -313,5 +314,6 @@ $(document).ready(function(){
       document.getElementById("jny-prof-row").hidden = true;
       document.getElementById("dropjourney").hidden = true;
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
+        document.getElementById("deljny").hidden=true;
     }
 });

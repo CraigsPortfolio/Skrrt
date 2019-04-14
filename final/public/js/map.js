@@ -321,7 +321,7 @@ $(document).ready(function(){
 function login(){
   var uname = document.getElementById("username").value;
   var pword = document.getElementById("password").value;
-  $.post('doLogin',{
+  $.post('dologin',{
     uname:uname,
     pword:pword
   }, function(data){

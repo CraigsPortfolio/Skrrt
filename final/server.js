@@ -78,6 +78,7 @@ app.get('/journey', function(req, res) {
       "login.username": currentUser
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error;
+      try{
       res.render('pages/journey', {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -90,6 +91,20 @@ app.get('/journey', function(req, res) {
         name: result.journeys[0].name,
         options: result.journeys
       });
+    }catch(err){
+      res.render('pages/journey', {
+        start: "No journey",
+        end: "No journey",
+        reg: "No journey",
+        fuel: "No journey",
+        mpg: "No journey",
+        pass: "No journey",
+        prof: "No journey",
+        rec: "No journey",
+        name: "No journey",
+        options: [0]
+      });
+    }
     });
   }
 });
@@ -197,6 +212,7 @@ app.post('/refreshJourney', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
+      try{
       var data = {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -208,6 +224,19 @@ app.post('/refreshJourney', function(req, res) {
         profit: result.journeys[0].profit,
         name: result.journeys[0].name
       };
+    }catch(err){
+      var data = {
+        start: "No journey",
+        end: "No journey",
+        pass: "No journey",
+        reg: "No journey",
+        fcost: "No journey",
+        mpg: "No journey",
+        rec: "No journey",
+        profit: "No journey",
+        name: "No journey"
+      };
+    }
       res.send(data);
     });
   }
@@ -460,6 +489,7 @@ app.post('/remjourney', function(req, res) {
       "login.username": currentUser
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
+      try{
       var data = {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -472,6 +502,20 @@ app.post('/remjourney', function(req, res) {
         name: result.journeys[0].name,
         options: result.journeys
       };
+    }catch(err){
+      var data = {
+        start: "No journey",
+        end: "No journey",
+        pass: "No journey",
+        reg: "No journey",
+        fcost: "No journey",
+        mpg: "No journey",
+        rec: "No journey",
+        profit: "No journey",
+        name: "No journey",
+        options: [0]
+      };
+    }
       res.send(data);
     });
   }

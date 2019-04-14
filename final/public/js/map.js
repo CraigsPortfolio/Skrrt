@@ -194,6 +194,7 @@ function postRemJny(){
     name: name,
   },function(data){
     console.log(data);
+    if(data.name!= "No journey"){
     document.getElementById("jny-name").innerHTML = data.name;
     document.getElementById("jny-start").innerHTML = data.start;
     document.getElementById("jny-end").innerHTML = data.end;
@@ -209,6 +210,9 @@ function postRemJny(){
     var option = $('<option></option>').text(data.options[i].name);
     $("#dropjourney").append(option);
   }
+}else{
+
+}
   });
 }
 
@@ -283,5 +287,19 @@ $(document).ready(function(){
       document.getElementById("dropgarage").hidden = true;
       document.getElementById("delcar").hidden = true;
       document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
+    }
+});
+
+$(document).ready(function(){
+    if(document.getElementById("jny-name").innerHTML == "No journey"){
+      document.getElementById("jny-name-row").hidden = true;
+      document.getElementById("jny-start-row").hidden = true;
+      document.getElementById("jny-end-row").hidden = true;
+      document.getElementById("jny-reg-row").hidden = true;
+      document.getElementById("jny-mpg-row").hidden = true;
+      document.getElementById("jny-pass-row").hidden = true;
+      document.getElementById("jny-fuel-row").hidden = true;
+      document.getElementById("deljourney").hidden = true;
+      document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });

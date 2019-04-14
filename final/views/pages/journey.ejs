@@ -18,44 +18,44 @@
 	<!-- Header section end -->
 
   <%include ../partials/logOut%>
-  
+
   <!--Calculated Journey -->
   <section id="saved" class="hero-section set-bg" data-setbg="img/saved-bg.jpg">
     <div class="container h-100" id="5">
       <div class="hero-content text-white">
         <div class="row" id="bigRow">
             <h2>Saved Journeys</h2>
-            <p>Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
+            <p id="jourey-blurb">Below is the calculated cost of your journey, Thanks for using Skrrt!</p>
             <select id="dropjourney">
               <% options.forEach(function(option) { %>
             <option><%= option.name %></option>
               <% }); %>
             </select>
-            <div class="calculatedRow">
+            <div id = "jny-name-row" class="calculatedRow">
               <h3>Journey Name:</h3>
               <h3 id="jny-name" class="calculatedH3"><%= name %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-start-row"class="calculatedRow">
               <h3>Starting location:</h3>
               <h3 id="jny-start" class="calculatedH3"><%= start %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-end-row" class="calculatedRow">
               <h3>End location:</h3>
               <h3 id="jny-end" class="calculatedH3"><%= end %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-reg-row"class="calculatedRow">
               <h3>Vehicle Reg:</h3>
               <h3 id="jny-reg" class="calculatedH3"><%= reg %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-mpg-row"class="calculatedRow">
               <h3>Miles Per Gallon:</h3>
               <h3 id="jny-mpg" class="calculatedH3"><%= mpg %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-pass-row"class="calculatedRow">
               <h3>No. Of Passengers:</h3>
               <h3 id="jny-pass" class="calculatedH3"><%= pass %></h3>
             </div>
-            <div class="calculatedRow">
+            <div id = "jny-fuel-row"class="calculatedRow">
               <h3>Cost Of Fuel:</h3>
               <h3 id="jny-fuel" class="calculatedH3"><%= fuel %></h3>
             </div>

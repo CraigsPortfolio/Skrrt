@@ -551,9 +551,9 @@ app.post('/dologin', function(req, res) {
       req.session.loggedin = true;
       currentUser = result.login.username;
       res.render('pages/profile', {
-        first:result.login.first,
-        surname:result.login.surname,
-        username:currentUser
+        First:result.login.first,
+        Last:result.login.surname,
+        Username:currentUser
       });
     }
     //if there is no result, redirect the user back to the login system as that username must not exist

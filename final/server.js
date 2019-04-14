@@ -157,7 +157,7 @@ app.post('/refresh', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      console.log(result.car[0].make)
+      try{
       var data = {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -166,6 +166,14 @@ app.post('/refresh', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       };
+    }catch(err){
+      make: "No car",
+      model: "No car",
+      reg: "No car",
+      ftype: "No car",
+      mpg: "No car",
+      options: [""]
+    }
       res.send(data);
     });
   }
@@ -187,7 +195,6 @@ app.post('/refreshJourney', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      try{
       var data = {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -199,17 +206,6 @@ app.post('/refreshJourney', function(req, res) {
         profit: result.journeys[0].profit,
         name: result.journeys[0].name
       };
-    }catch(err){
-      res.render('pages/garage', {
-        make: "No car",
-        model: "No car",
-        reg: "No car",
-        ftype: "No car",
-        mpg: "No car",
-        options: [""]
-      });
-    }
-    
       res.send(data);
     });
   }

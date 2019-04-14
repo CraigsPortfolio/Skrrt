@@ -264,9 +264,11 @@ function editProfile(){
 
 $(document).ready(function(){
     if(document.getElementById("car-reg").innerHTML == "No car"){
-      document.getElementById("car-make").hidden = true;
-      document.getElementById("car-model").hidden = true;
-      document.getElementById("car-mpg").hidden = true;
-      document.getElementById("car-ftype").hidden = true;
+      document.getElementById("car-make-row").hidden = true;
+      document.getElementById("car-model-row").hidden = true;
+      document.getElementById("car-mpg-row").hidden = true;
+      document.getElementById("car-fuel-row").hidden = true;
+      document.getElementById("car-reg-row").hidden = true;
+      document.getElementById("dropgarage").hidden = true;
     }
 });

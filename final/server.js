@@ -533,13 +533,12 @@ app.post('/dologin', function(req, res) {
   }, function(err, result) {
     if (result == null) {
       console.log("USERNAME INVALID");
-      // backURL = req.header('Referer');
-      // var x = backURL + "#loginError";
-      // console.log(x);
-      // res.redirect(x);
-      var data = {msg:"Username invalid"};
-      res.send(data);
-      res.redirect(req.header('Referer'));
+      backURL = req.header('Referer');
+      var x = backURL + "#loginError";
+      console.log(x);
+      res.redirect(x);
+      // var data = {msg:"Username invalid"};
+      // res.send(data);
       return;
     }
     if (err) {

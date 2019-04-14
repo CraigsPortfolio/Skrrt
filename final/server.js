@@ -28,38 +28,42 @@ MongoClient.connect(url, function(err, database) {
   console.log('listening on 8080');
 });
 
-
+//Displays the root page (Our landing page, 'index')
 app.get('/', function(req, res) {
   res.render('pages/index', {
     user: currentUser
   });
 });
 
+//Displays the main page
 app.get('/main', function(req, res) {
   res.render('pages/main', {
     user: currentUser
   });
 });
 
+//Displays the register page
 app.get('/register', function(req, res) {
   res.render('pages/register', {
-    msg: ""
+    msg: "" //Initialises the username present error message
   });
 });
 
+//Displays the profile page
 app.get('/profile', function(req, res) {
+  //Check if the user is logged-in
   if (currentUser == "") {
-    res.render('pages/main', {
+    //User is logged-out so forbidden page
+    res.render('pages/main', { //So, taking them back to the main page
       user: currentUser
     });
-  } else {
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, function(err, result) {
+  } else { //User is logged-in so we can display the profile page
+    db.collection('profiles').findOne({"login.username": currentUser}, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      console.log(result.fname);
-      first = result.fname;
+
+      //Displaying the profile page
       res.render('pages/profile', {
+        //Feeding the database content to the screen
         First: result.fname,
         Last: result.surname,
         Username: result.login.username

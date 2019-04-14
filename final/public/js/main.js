@@ -38,6 +38,11 @@ $('#editbtn').click(function() {
 	return false;
 });
 
+$('#editswitch').click(function(){
+	editSwitch();
+	return false;
+})
+
 // $('#log-btn').click(function() {
 // 	login();
 // 	return false;

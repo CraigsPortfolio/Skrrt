@@ -268,7 +268,7 @@ $(document).ready(function(){
 function editProfile(){
   var fname = document.getElementById("NewFirst").value;
   var surname = document.getElementById("NewLast").value;
-  var username = document.getElementById("NewUsert").value;
+  var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
 
   $.post('/editprofile',{

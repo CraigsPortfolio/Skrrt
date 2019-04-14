@@ -58,6 +58,8 @@ app.get('/profile', function(req, res) {
       user: currentUser
     });
   } else { //User is logged-in so we can display the profile page
+
+    //Getting the user's profile from the database
     db.collection('profiles').findOne({"login.username": currentUser}, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
 
@@ -72,18 +74,23 @@ app.get('/profile', function(req, res) {
   }
 });
 
+//Displays the journey page
 app.get('/journey', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking if the user is logged-in
+  if (currentUser == "") { //User is logged-out
+    res.render('pages/main', { //So, redirecting them to main page
       user: currentUser
     });
-  } else {
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, function(err, result) {
+  } else { //User is logged-in
+
+    //Getting the user's journeys from the database
+    db.collection('profiles').findOne({"login.username": currentUser}, function(err, result) {
       if (err) throw err; //if there is an error, throw the error;
-      try{
+
+      //Display the journeys on the screen
+      try{ //The user has saved journeys, display the first
       res.render('pages/journey', {
+        //Displaying the database content on the screen
         start: result.journeys[0].start,
         end: result.journeys[0].end,
         reg: result.journeys[0].reg,
@@ -95,8 +102,9 @@ app.get('/journey', function(req, res) {
         name: result.journeys[0].name,
         options: result.journeys
       });
-    }catch(err){
+    }catch(err){ //User has no journeys saved
       res.render('pages/journey', {
+        //Displaying the database content on the screen
         start: "No journey",
         end: "No journey",
         reg: "No journey",
@@ -113,27 +121,34 @@ app.get('/journey', function(req, res) {
   }
 });
 
+//Displays the new car page
 app.get('/newcar', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking if the user is logged-in
+  if (currentUser == "") { //User is logged-out
+    res.render('pages/main', { //So, redirect to the main page
       user: currentUser
     });
-  } else {
+  } else { //User is logged-in
+    //Display the new car page
     res.render('pages/newcar');
   }
 });
 
+//Displays the garage page
 app.get('/garage', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checks if the user is logged-in
+  if (currentUser == "") { //User is logged-out
+    res.render('pages/main', { //So, redirect to the main page
       user: currentUser
     });
-  } else {
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, function(err, result) {
+  } else { //User is logged-in
+
+    //Getting the user's cars from the database
+    db.collection('profiles').findOne({"login.username": currentUser}, function(err, result) {
       if (err) throw err; //if there is an error, throw the error;
-      try{
+
+      //Displaying the cars on the screen
+      try{ //User has saved cars, display the first
       res.render('pages/garage', {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -142,7 +157,7 @@ app.get('/garage', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       });
-    }catch(err){
+    }catch(err){ //User has no cars saved, display this
       res.render('pages/garage', {
         make: "No car",
         model: "No car",
@@ -156,19 +171,17 @@ app.get('/garage', function(req, res) {
   }
 });
 
+//Updates the garage page with the selected car data
 app.post('/refresh', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Check if the user is logged-in so they don't access this page early
+  if (currentUser == "") { //User is logged-out
+    res.render('pages/main', { //Redirect to the main page
       user: currentUser
     });
-  } else {
-    console.log(req.body.newreg);
-    console.log(currentUser);
+  } else { //User is logged-in
 
-    // db.collection('profiles').find({"login.username": "CraigRoberts0n"}, {car: {$elemMatch:{reg: "EM55 KEL"}}})
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, {
+    //Get the car data from the database
+    db.collection('profiles').findOne({"login.username": currentUser}, {
       car: {
         $elemMatch: {
           reg: req.body.newreg
@@ -176,7 +189,9 @@ app.post('/refresh', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      try{
+
+      //Display the database results on the screen
+      try{ //Car with this reg exists, display it
       var data = {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -185,7 +200,7 @@ app.post('/refresh', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       };
-    }catch(err){
+    }catch(err){//Car with this reg does not exist, display this
       var data ={
       make: "No car",
       model: "No car",
@@ -195,7 +210,7 @@ app.post('/refresh', function(req, res) {
       options: [""]
     };
     }
-      res.send(data);
+      res.send(data); //Sending the data back to the screen
     });
   }
 });

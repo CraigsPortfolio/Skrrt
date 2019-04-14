@@ -325,7 +325,11 @@ function login(){
     uname:uname,
     pword:pword
   }, function(data){
+    if(data.msg=""){
+      document.forms['loginform'].submit();
+    }
     document.getElementById("errorMSG").visible;
-      document.getElementById("errorMSG").innerHTML = data.msg;
+    document.getElementById("errorMSG").innerHTML = data.msg;
+
   });
 }

@@ -200,7 +200,6 @@ app.post('/refreshJourney', function(req, res) {
         name: result.journeys[0].name
       };
     }catch(err){
-    }catch(err){
       res.render('pages/garage', {
         make: "No car",
         model: "No car",

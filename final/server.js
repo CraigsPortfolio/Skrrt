@@ -555,10 +555,12 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     else {
       console.log("INCORRECT");
-      backURL = req.header('Referer');
-      var x = backURL + "#loginError";
-      console.log(x);
-      res.redirect(x);
+      // backURL = req.header('Referer');
+      // var x = backURL + "#loginError";
+      // console.log(x);
+      // res.redirect(x);
+      var data = {msg:"Password wrong"};
+      res.send(data);
     }
   });
 });

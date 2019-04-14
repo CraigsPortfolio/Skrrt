@@ -325,6 +325,9 @@ function login(){
     uname:uname,
     pword:pword
   }, function(data){
+    if(data.msg=""){
+      $.get('profiles');
+    }
     document.getElementById("errorMSG").visible;
     document.getElementById("errorMSG").innerHTML = data.msg;
   });

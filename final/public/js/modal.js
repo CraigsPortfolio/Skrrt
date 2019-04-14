@@ -1,6 +1,6 @@
 // Get the modal
 var modal = document.getElementById('id01');
-document.getElementById('errorMSG').style.visibility = "hidden"
+// document.getElementById('errorMSG').style.visibility = "hidden"
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

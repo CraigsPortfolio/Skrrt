@@ -38,10 +38,10 @@ $('#editbtn').click(function() {
 	return false;
 });
 
-// $('#log-btn').click(function() {
-// 	login();
-// 	return false;
-// });
+$('#log-btn').click(function() {
+	login();
+	return false;
+});
 
 
 

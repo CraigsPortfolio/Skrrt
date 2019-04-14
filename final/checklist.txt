@@ -3,7 +3,6 @@
 Edit profile page needs made or profile needs to be toggleable to be edited
 
 ###NOT-SO IMPORTANT###
-Some of the fields (eg the 'New Car' page) are really wide
 Fuel type drop down for new car
 
 ###BACKEND###
@@ -14,9 +13,6 @@ New car needs validated
 Check passwords on register and edit
 Choose from garage on the main page for logged in users
 ???Add return/oneway to DB???
-
-Main page validation could be improved
-Add fuel API if they email back
 
 
 ###GENERAL >>> CAN BE DONE AFTER PRESENTATION###

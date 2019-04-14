@@ -167,12 +167,14 @@ app.post('/refresh', function(req, res) {
         options: result.car
       };
     }catch(err){
+      var data ={
       make: "No car",
       model: "No car",
       reg: "No car",
       ftype: "No car",
       mpg: "No car",
       options: [""]
+    };
     }
       res.send(data);
     });

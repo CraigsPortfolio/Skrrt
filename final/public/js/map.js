@@ -325,7 +325,7 @@ function login(){
     uname:uname,
     pword:pword
   }, function(data){
-    if(data.msg=""){
+    if(data.msg==""){
       $.get('/profiles');
     }
     document.getElementById("errorMSG").visible;

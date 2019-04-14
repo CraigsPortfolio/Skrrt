@@ -326,7 +326,7 @@ function login(){
     pword:pword
   }, function(data){
     if(data.msg=""){
-      $.get('profiles');
+      $.get('/profiles');
     }
     document.getElementById("errorMSG").visible;
     document.getElementById("errorMSG").innerHTML = data.msg;

@@ -551,7 +551,7 @@ app.post('/dologin', function(req, res) {
       req.session.loggedin = true;
       currentUser = result.login.username;
       var data = {msg:""};
-      res.send(data);
+      res.redirect('back');
     }
     //if there is no result, redirect the user back to the login system as that username must not exist
     else {

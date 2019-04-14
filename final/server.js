@@ -533,12 +533,12 @@ app.post('/dologin', function(req, res) {
   }, function(err, result) {
     if (result == null) {
       console.log("USERNAME INVALID");
-      // backURL = req.header('Referer');
-      // var x = backURL + "#loginError";
-      // console.log(x);
-      // res.redirect(x);
-      var data = {msg:"Username invalid"};
-      res.send(data);
+      backURL = req.header('Referer');
+      var x = backURL + "#loginError";
+      console.log(x);
+      res.redirect(x);
+      // var data = {msg:"Username invalid"};
+      // res.send(data);
       return;
     }
     if (err) {
@@ -562,51 +562,6 @@ app.post('/dologin', function(req, res) {
     }
   });
 });
-
-// //the dologin route detasl with the data from the login screen.
-// //the post variables, username and password ceom from the form on the login page.
-// app.post('/dologin', function(req, res) {
-//   console.log(JSON.stringify(req.body))
-//   var uname = req.body.uname;
-//   var pword = req.body.pword;
-//
-//   db.collection('profiles').findOne({
-//     "login.username": uname
-//   }, function(err, result) {
-//     if (result == null) {
-//       console.log("USERNAME INVALID");
-//       // backURL = req.header('Referer');
-//       // var x = backURL + "#loginError";
-//       // console.log(x);
-//       // res.redirect(x);
-//       var data = {msg:"Username invalid"};
-//       res.send(data);
-//       return;
-//     }
-//     if (err) {
-//       console.log(err);
-//       res.redirect('back')
-//     } //if there is an error, throw the error
-//     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-//     if (result.login.pword == pword) {
-//       console.log("CORRECT");
-//       req.session.loggedin = true;
-//       currentUser = result.login.username;
-//       var data = {msg:""};
-//       res.send(data);
-//     }
-//     //if there is no result, redirect the user back to the login system as that username must not exist
-//     else {
-//       console.log("INCORRECT");
-//       // backURL = req.header('Referer');
-//       // var x = backURL + "#loginError";
-//       // console.log(x);
-//       // res.redirect(x);
-//       var data = {msg:"Password wrong"};
-//       res.send(data);
-//     }
-//   });
-// });
 
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login

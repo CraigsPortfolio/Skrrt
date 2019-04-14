@@ -367,14 +367,7 @@ app.post('/remcar', function(req, res) {
         options: result.car
       };
     }catch(err){
-      var data = {
-        make: "No car",
-        model: "No car",
-        reg: "No car",
-        ftype: "No car",
-        mpg: "No car",
-        options: [0]
-      };
+      var data = "";
     }
       res.send(data);
     });

@@ -1792,7 +1792,9 @@ input:checked + .slider3:before {
   word-spacing: 140px;
   margin-bottom: 20px;
 }
-
+#profile{
+  display: none;
+}
 #edit{
   visibility: hidden;
 }

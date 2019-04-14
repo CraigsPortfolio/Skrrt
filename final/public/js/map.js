@@ -297,9 +297,6 @@ function editSwitch(){
   $('html, body').animate({
         scrollTop: $("#2").offset().top
     }, 0);
-  document.getElementById("NewFirst").value=document.getElementById("pro-first").innerHTML;
-  document.getElementById("NewLast").value=document.getElementById("pro-last").innerHTML;
-  document.getElementById("NewUser").value=document.getElementById("pro-user").innerHTML;
 }
 
 $(document).ready(function(){

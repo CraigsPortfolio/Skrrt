@@ -290,7 +290,7 @@ function editProfile(){
     document.getElementById("msg").innerHTML = data.msg;
   }
   });
-//  location.reload();
+  location.reload();
 }
 function editSwitch(){
   $("#edit-profile").show(); //Showing recommendation section

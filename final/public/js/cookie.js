@@ -44,7 +44,7 @@ function checkCookie(){
     alert(document.referrer);
   //User is a returning visitor
       //If navigated from any other page on site then cancel redirect
-      if(document.referrer != main){
+      if(document.referrer != "main.ejs"){
       //Navigated externally so do not redirect
       document.location = "/main";
   	   }

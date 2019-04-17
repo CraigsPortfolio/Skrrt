@@ -40,5 +40,7 @@ slider2.oninput = function() {
       output2.innerHTML = "Taking The P**S";
       break;
     default:
+      output2.innerHTML = "Break Even";
+      break;
   }
 }

@@ -330,3 +330,33 @@ function editProfile(){
   });
   location.reload();
 }
+
+$(document).ready(function(){
+    if(document.getElementById("car-reg").innerHTML == "No car"){
+      document.getElementById("car-make-row").hidden = true;
+      document.getElementById("car-model-row").hidden = true;
+      document.getElementById("car-mpg-row").hidden = true;
+      document.getElementById("car-fuel-row").hidden = true;
+      document.getElementById("car-reg-row").hidden = true;
+      document.getElementById("dropgarage").hidden = true;
+      document.getElementById("delcar").hidden = true;
+      document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
+    }
+});
+
+$(document).ready(function(){
+    if(document.getElementById("jny-name").innerHTML == "No journey"){
+      document.getElementById("jny-name-row").hidden = true;
+      document.getElementById("jny-start-row").hidden = true;
+      document.getElementById("jny-end-row").hidden = true;
+      document.getElementById("jny-reg-row").hidden = true;
+      document.getElementById("jny-mpg-row").hidden = true;
+      document.getElementById("jny-pass-row").hidden = true;
+      document.getElementById("jny-fuel-row").hidden = true;
+      document.getElementById("jny-rec-row").hidden = true;
+      document.getElementById("jny-prof-row").hidden = true;
+      document.getElementById("dropjourney").hidden = true;
+      document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
+        document.getElementById("deljny").hidden=true;
+    }
+});

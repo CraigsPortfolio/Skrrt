@@ -35,6 +35,7 @@ function checkCookie(){
   //Checks if user attribute of cookie is blank
   //If so user is new
   if (user != "") {
+    alert(document.referrer);
   //User is a returning visitor
       //If navigated from any other page on site then cancel redirect
       if(referrer != "/main"){

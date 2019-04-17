@@ -263,11 +263,6 @@ app.post('/refreshJourney', function(req, res) {
   }
 });
 
-//Dont think this gets used
-// app.get('/adduser', function(req, res) {
-//   res.render('pages/main');
-// });
-
 //Registers a user
 app.post('/adduser', function(req, res) {
   //First, check that the username isn't taken

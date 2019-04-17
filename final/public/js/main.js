@@ -8,6 +8,8 @@
 
 'use strict';
 
+//Writing button handlers
+
 $('#sub1').click(function() {
 	T();
 	return false;
@@ -43,25 +45,24 @@ $('#edit-switch').click(function(){
 	return false;
 })
 
-// $('#log-btn').click(function() {
-// 	login();
-// 	return false;
-// });
-
-
-
+//Check if the 'Remove Car' button is clicked on the 'Garage' page
 $('#delcar').click(function() {
-	postRemCar();
+	//'Remove Car' is clicked
+	postRemCar(); //Run the script to remove the car from the database
 	return false;
 });
 
+//Check if the 'Remove Journey' button is clicked on the 'Saved Journeys' page
 $('#deljny').click(function() {
-	postRemJny();
+	//'Remove Journey' is clicked
+	postRemJny(); //Run the script to remove the journey from the database
 	return false;
 });
 
+//Check if the 'Calculate Journey' button is clicked on the 'Main' page
 $('#recbtn').click(function() {
-	calculateJourney();
+	//'Calculate Journey' is clicked
+	calculateJourney(); //Calculate the journey
 	return false;
 });
 

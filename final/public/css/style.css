@@ -1847,8 +1847,6 @@ input:checked + .slider3:before {
 }
 
 .details-form-2{
-  padding: 40px;
-  clear: both;
   width: 100%;
   box-sizing: border-box;
   height: 100%;

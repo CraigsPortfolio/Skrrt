@@ -14,7 +14,7 @@
 
   <!-- Header section -->
   <header class="header-section">
-
+    <!-- The following EJS script checks if the user is logged in to decide what header to display -->
     <% if (user != "") { %>
         <% include ../partials/profileHeader%>
 <% } else { %>

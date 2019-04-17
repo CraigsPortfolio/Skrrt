@@ -37,9 +37,9 @@ function checkCookie()
   if (user != "") {
   //User is a returning visitor
       //If navigated from any other page on site then cancel redirect
-      if(document.referrer != "main.html" document.referrer != "login.html" document.referrer != "register.html" document.referrer != "filenotfound.html"){
+      if(document.referrer != "/main" document.referrer != "login.html" document.referrer != "register.html" document.referrer != "filenotfound.html"){
       //Navigated externally so do not redirect
-      document.location = "main.html";
+      document.location = "/main";
   	}
   } else {
     //User is new

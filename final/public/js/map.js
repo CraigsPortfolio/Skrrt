@@ -331,8 +331,12 @@ function editProfile(){
   location.reload();
 }
 
+
+//This function runs when the garage page is loaded to check if there is any saved cars or not
 $(document).ready(function(){
-    if(document.getElementById("car-reg").innerHTML == "No car"){
+  //Checking for saved cars
+    if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
+      //Hide all the car fields
       document.getElementById("car-make-row").hidden = true;
       document.getElementById("car-model-row").hidden = true;
       document.getElementById("car-mpg-row").hidden = true;
@@ -340,12 +344,17 @@ $(document).ready(function(){
       document.getElementById("car-reg-row").hidden = true;
       document.getElementById("dropgarage").hidden = true;
       document.getElementById("delcar").hidden = true;
+
+      //Inform the user they have no saved cars
       document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
     }
 });
 
+//This function runs when the 'Saved Journeys' page is loaded
 $(document).ready(function(){
-    if(document.getElementById("jny-name").innerHTML == "No journey"){
+    //Check if the user has saved journeys
+    if(document.getElementById("jny-name").innerHTML == "No journey"){ //User has no saved Journeys
+      //Hide all the journey fields
       document.getElementById("jny-name-row").hidden = true;
       document.getElementById("jny-start-row").hidden = true;
       document.getElementById("jny-end-row").hidden = true;
@@ -356,7 +365,9 @@ $(document).ready(function(){
       document.getElementById("jny-rec-row").hidden = true;
       document.getElementById("jny-prof-row").hidden = true;
       document.getElementById("dropjourney").hidden = true;
+      document.getElementById("deljny").hidden=true;
+
+      //Inform the user they have no saved journeys
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
-        document.getElementById("deljny").hidden=true;
     }
 });

@@ -215,15 +215,16 @@ app.post('/refresh', function(req, res) {
   }
 });
 
+//Updates the journey page
 app.post('/refreshJourney', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking if the user is logged-in
+  if (currentUser == "") { //User not logged-in
+    res.render('pages/main', { //So redirecting to the main page
       user: currentUser
     });
-  } else {
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, {
+  } else { //User is logged-in
+    db.collection('profiles').findOne({ "login.username": currentUser}, { //Getting the user's journeys from the database
+      //Displaying journeys on screen
       journeys: {
         $elemMatch: {
           name: req.body.name
@@ -231,7 +232,7 @@ app.post('/refreshJourney', function(req, res) {
       }
     }, function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      try{
+      try{ //The user has journeys saved
       var data = {
         start: result.journeys[0].start,
         end: result.journeys[0].end,
@@ -243,7 +244,7 @@ app.post('/refreshJourney', function(req, res) {
         profit: result.journeys[0].profit,
         name: result.journeys[0].name
       };
-    }catch(err){
+    }catch(err){ //The user has no journeys saved
       var data = {
         start: "No journey",
         end: "No journey",
@@ -256,34 +257,37 @@ app.post('/refreshJourney', function(req, res) {
         name: "No journey"
       };
     }
+      //Send the data back to the client
       res.send(data);
     });
   }
 });
 
-app.get('/adduser', function(req, res) {
-  res.render('pages/main');
-});
+//Dont think this gets used
+// app.get('/adduser', function(req, res) {
+//   res.render('pages/main');
+// });
 
-
+//Registers a user
 app.post('/adduser', function(req, res) {
-  db.collection('profiles').findOne({
-    "login.username": req.body.username
-  }, function(err, user) {
-    if (err) {
-      console.log(err);
-    }
-    var message;
-    if (user) {
-      console.log(user)
-      message = "user exists";
-      console.log(message)
+  //First, check that the username isn't taken
+  db.collection('profiles').findOne({"login.username": req.body.username},
+  function(err, user) {
+    if (err) {console.log(err);} //If theres an error, log it
+
+    //Declaring  and initialising our message variable that will be sent to the client
+    var message ="";
+    if (user) { //A profile with this username exists
+      message = "user exists"; //This will be sent back to the client to inform the user of the error
+
+      //Redirecting the user back to the register page with the error message
       res.render('pages/register', {
         msg: "Username Taken"
       });
-    } else {
-      message = "user doesn't exist";
-      console.log(message)
+    } else { // The username is not exist
+      message = "user doesn't exist"; //This will be sent back to the user to inform the user that their username is valid
+
+      //Inputting the data into the object that will be saved in our database
       var datatostore = {
         "fname": req.body.fname,
         "surname": req.body.surname,
@@ -301,31 +305,27 @@ app.post('/adduser', function(req, res) {
         }]
       }
 
-
-      //once created we just run the data string against the database and all our new data will be saved/
+      //Saving our object to the database
       db.collection('profiles').save(datatostore, function(err, result) {
-        if (err) throw err;
-        console.log('saved to database')
-        //when complete redirect to the index
-        currentUser = datatostore.login.username;
-        res.redirect('/profile')
+        if (err) throw err; //Display and error if there is an error with saving the profile
+        currentUser = datatostore.login.username; //Current user is updated
+        res.redirect('/main')  //When complete redirect to the main page
       })
     }
-    //res.json({message: message});
   });
 });
 
-
+//Saves a car to the garage
 app.post('/addcar', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking if the user is logged-in
+  if (currentUser == "") { //User is logged-out
+    res.render('pages/main', { //Redirect to the main page as the 'New Car' page is forbidden
       user: currentUser
     });
-  } else {
-    var query = {
-      "login.username": currentUser
-    };
-    var newvalues = {
+  } else { //User is logged-in, so access to this route is allowed
+    //Setting up or update parameters
+    var query = {"login.username": currentUser}; //The profile to be updated
+    var newvalues = { //The car to be added
       $addToSet: {
         car: {
           make: req.body.make,
@@ -337,23 +337,26 @@ app.post('/addcar', function(req, res) {
         }
       }
     };
+
+    //Run the update
     db.collection('profiles').update(query, newvalues, function(err, result) {
-      if (err) throw err;
-      res.redirect('/garage');
+      if (err) throw err; //If there is an error with updating, display it
+      res.redirect('/garage'); //Once complete redirect back to the garage
     });
   }
 });
 
+//Saving a journey
 app.post('/addjourney', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking that the user is logged in
+  if (currentUser == "") { //User is logged-out, so this route is forbidden
+    res.render('pages/main', { //Redirecting back to main
       user: currentUser
     });
-  } else {
-    var query = {
-      "login.username": currentUser
-    };
-    var newvalues = {
+  } else { //User is logged-in so permission to this route is granted
+    //Setting up our update parameters
+    var query = {"login.username": currentUser}; //The profile to be updated
+    var newvalues = { //The journey to be added
       $addToSet: {
         journeys: {
           start: req.body.Start,
@@ -368,44 +371,48 @@ app.post('/addjourney', function(req, res) {
         }
       }
     };
+
+    //Running our update
     db.collection('profiles').update(query, newvalues, function(err, result) {
-      if (err) throw err;
-      console.log("Added");
-      res.redirect('/main');
+      if (err) throw err; //If there is an error with the update, display it
+      res.redirect('/main'); //Redirect to the main page once complete
     });
   }
 });
 
+//Checks if the user is logged in
 app.get('/userLoggedIn', function(req, res) {
-  console.log(currentUser);
-  res.send(currentUser)
+  res.send(currentUser); //Sends the current user to the client
 })
 
+//Removes a car from the database
 app.post('/remcar', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checks if the user is logged-in
+  if (currentUser == "") { //User is logged-out so this page is forbidden to them
+    res.render('pages/main', { //Redirecting them to the main page
       user: currentUser
     });
-  } else {
-    var query = {
-      "login.username": currentUser
-    };
-    var newvalues = {
+  } else { //User is logged-in
+    //Setting our update parameters
+    var query = {"login.username": currentUser}; //The profile to be updated
+    var newvalues = { //The car to be removed
       $pull: {
         car: {
           reg: req.body.reg
         }
       }
     };
+
+    //Running our update
     db.collection('profiles').update(query, newvalues, function(err, result) {
-      if (err) throw err;
-      console.log("del");
+      if (err) throw err; //If there is an error with the update, display it
     });
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, function(err, result) {
+
+    //Refresh the screen with the updated profile
+    db.collection('profiles').findOne({"login.username": currentUser}, //Gets the users profile
+    function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      try{
+      try{ //The user has cars saved, display the first
       var data = {
         make: result.car[0].make,
         model: result.car[0].model,
@@ -414,7 +421,7 @@ app.post('/remcar', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       };
-    }catch(err){
+    }catch(err){ //The user has no cars saved, display this
       var data = {
         make: "No car",
         model: "No car",
@@ -424,35 +431,31 @@ app.post('/remcar', function(req, res) {
         options: [0]
       };
     }
-      res.send(data);
+      res.send(data); //Sending our data back to the client to be displayed to the user
     });
   }
 });
 
+//Edits the profile
 app.post('/editprofile', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checks if the user is logged-in
+  if (currentUser == "") { //User is logged-out, so this page is forbideen
+    res.render('pages/main', { //So, redirect to the main page
       user: currentUser
     });
-  } else {
-    db.collection('profiles').findOne({
-      "login.username": req.body.username
-    }, function(err, profile) {
+  } else { //User is logged-in so access to this route is granted
+    db.collection('profiles').findOne({"login.username": req.body.username}, //Getting the profile to be updated
+    function(err, profile) {
       if (err) throw err; //if there is an error, throw the error
-      if (profile && req.body.username != profile.login.username) {
-        console.log(profile)
-        message = "user exists";
-        console.log(message)
-        var data = {
-          msg: "Username Taken"
-        };
-        res.send(data);
-      } else {
 
-        var query = {
-          "login.username": currentUser
-        };
-        var newvalues = {
+      //Checking that the username doesn't exist, if changed
+      if (profile && req.body.username != profile.login.username) { //The username is invalid
+        var data = { msg: "Username Taken"}; // The error message to be sent back to the user
+        res.send(data); //Sending the message to the client
+      } else {//The username is valid
+        //Setting our update parameters
+        var query = {"login.username": currentUser  }; //The profile to be updated
+        var newvalues = { //The new profile information
           $set: {
             login: {
               username: req.body.username,
@@ -462,54 +465,60 @@ app.post('/editprofile', function(req, res) {
             surname: req.body.surname
           }
         };
-        currentUser = req.body.username;
+
+        //Running our update
         db.collection('profiles').update(query, newvalues, function(err, result) {
-          if (err) throw err;
-          console.log("updated");
+          if (err) throw err; //If there is an error updating, then dislay it
+
+          //Changing the logged-in user
+          currentUser = req.body.username;
         });
-        db.collection('profiles').findOne({
-          "login.username": req.body.username
-        }, function(err, profile) {
+
+        //Refreshing the screen with the new profile
+        db.collection('profiles').findOne({"login.username": req.body.username}, function(err, profile) {
           if (err) throw err; //if there is an error, throw the error
-          var data = {
+          var data = { //The data to be sent and displayed
             fname: profile.fname,
             surname: profile.surname,
             username: profile.login.username,
             msg: ""
           };
-          res.send(data);
+          res.send(data); //Sending the data back to the client
         });
       }
     });
   }
 });
 
+//Removing a journey
 app.post('/remjourney', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checking that the user is logged-in
+  if (currentUser == "") { //User is logged-out, so this page is forbidden to them
+    res.render('pages/main', { //So, redirecting to the main page
       user: currentUser
     });
-  } else {
-    var query = {
-      "login.username": currentUser
-    };
-    var newvalues = {
+  } else { //User is logged-in so access to this route is granted
+    //Setting our update parameters
+    var query = {"login.username": currentUser}; //The profile to be updated
+    var newvalues = { //The journey to be removed
       $pull: {
         journeys: {
           name: req.body.name
         }
       }
     };
+
+    //Running our update
     db.collection('profiles').update(query, newvalues, function(err, result) {
-      if (err) throw err;
-      console.log("del");
+      if (err) throw err; //If there is an error updating then display this
     });
-    db.collection('profiles').findOne({
-      "login.username": currentUser
-    }, function(err, result) {
+
+    //Refreshing our journey screen
+    db.collection('profiles').findOne({"login.username": currentUser}, // Gets the user's profile
+    function(err, result) {
       if (err) throw err; //if there is an error, throw the error
-      try{
-      var data = {
+      try{ //User has journeys saved
+      var data = { //Display the journeys
         start: result.journeys[0].start,
         end: result.journeys[0].end,
         pass: result.journeys[0].pass,
@@ -521,8 +530,8 @@ app.post('/remjourney', function(req, res) {
         name: result.journeys[0].name,
         options: result.journeys
       };
-    }catch(err){
-      var data = {
+    }catch(err){ //User has no journeys saved
+      var data = { //Display that they have no journeys saved
         start: "No journey",
         end: "No journey",
         pass: "No journey",
@@ -535,68 +544,72 @@ app.post('/remjourney', function(req, res) {
         options: [0]
       };
     }
-      res.send(data);
+      res.send(data); //Sending this data back to the client
     });
   }
 });
 
-//the dologin route detasl with the data from the login screen.
-//the post variables, username and password ceom from the form on the login page.
+//Logs the user in
 app.post('/dologin', function(req, res) {
-  console.log(JSON.stringify(req.body))
+  //Getting our username and password from the client
   var uname = req.body.uname;
   var pword = req.body.pword;
 
-  db.collection('profiles').findOne({
-    "login.username": uname
-  }, function(err, result) {
-    if (result == null) {
-      console.log("USERNAME INVALID");
+  //Gets our profile for the given username
+  db.collection('profiles').findOne({"login.username": uname},
+  function(err, result) {
+    //Check if the user exists
+    if (result == null) { //No profile with that username exists
+      //Re-direct back to the same page
       backURL = req.header('Referer');
       var x = backURL + "#loginError";
-      console.log(x);
       res.redirect(x);
-      // var data = {msg:"Username invalid"};
-      // res.send(data);
+
+      //Cancel log-in
       return;
     }
     if (err) {
       console.log(err);
       res.redirect('back')
     } //if there is an error, throw the error
-    //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if (result.login.pword == pword) {
-      console.log("CORRECT");
+
+    //Check the given password against the saved one for that user
+    if (result.login.pword == pword) { //Passwords match
+      //Sets the user status to logged-in
       req.session.loggedin = true;
       currentUser = result.login.username;
-      res.redirect('back')
+
+      //Take them to the profile page
+      res.redirect('/profile')
     }
     //if there is no result, redirect the user back to the login system as that username must not exist
     else {
-      console.log("INCORRECT");
       backURL = req.header('Referer');
       var x = backURL + "#loginError";
-      console.log(x);
       res.redirect(x);
     }
   });
 });
 
-//logour route cause the page to Logout.
-//it sets our session.loggedin to false and then redirects the user to the login
+//Logging the user out
 app.get('/logout', function(req, res) {
-  if (currentUser == "") {
-    res.render('pages/main', {
+  //Checks if the user is logged-in
+  if (currentUser == "") { //User is logged-out already so this page is forbidden
+    res.render('pages/main', { //Redirect back to the main page
       user: currentUser
     });
-  } else {
+  } else { //User is logged-in, so log them out
+    //Logging the user out
     req.session.loggedin = false;
     req.session.destroy();
     currentUser = "";
+
+    //Taking them back to the main page
     res.redirect('/main');
   }
 });
 
+//Handles 404 page not found error
 app.use(function(req, res, next) {
-  res.status(404).render('pages/404');
+  res.status(404).render('pages/404'); //Display the custom 404 page
 })

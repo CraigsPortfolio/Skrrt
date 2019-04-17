@@ -28,7 +28,7 @@ function getCookie(cname) {
 
 //Main function
 //Checks cookies
-function checkCookie()
+function checkCookie(){
   //Gets the cookies
   var user=getCookie("username");
 
@@ -40,7 +40,7 @@ function checkCookie()
       if(document.referrer != "/main" document.referrer != "login.html" document.referrer != "register.html" document.referrer != "filenotfound.html"){
       //Navigated externally so do not redirect
       document.location = "/main";
-  	}
+  	   }
   } else {
     //User is new
      user = "visited";

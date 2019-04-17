@@ -41,6 +41,5 @@ slider2.oninput = function() {
       break;
     default:
       output2.innerHTML = "Break Even";
-      break;
   }
 }

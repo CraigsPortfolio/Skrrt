@@ -1803,6 +1803,10 @@ input:checked + .slider3:before {
   width: 40%;
 }
 
+.row .details-form-2{
+  width: 40%;
+}
+
 .editProfileTitle h2{
   color: white;
   font-size:40px;
@@ -1835,6 +1839,14 @@ input:checked + .slider3:before {
 /* css to align the contents of each tab and to alter their appearance */
 .details-form, .car-info-form, .location-form {
   background: #fff;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.details-form-2{
   padding: 40px;
   clear: both;
   width: 100%;

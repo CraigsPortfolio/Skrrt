@@ -23,23 +23,19 @@ output2.innerHTML = "Break Even";
 
 //Responding to manipulation of profit slider
 slider2.oninput = function() {
-  switch (this.value) {
-    case 1:
-      output2.innerHTML = "Break Even";
-      break;
-    case 2:
-      output2.innerHTML = "Reasonable";
-      break;
-    case 3:
-      output2.innerHTML = "Fair";
-      break;
-    case 4:
-      output2.innerHTML = "Greedy";
-      break;
-    case 5:
-      output2.innerHTML = "Taking The P**S";
-      break;
-    default:
-      output2.innerHTML = "Break Even";
+  if(this.value==1){
+    output2.innerHTML = "Break Even";
+  }
+  if(this.value==2){
+    output2.innerHTML = "Reasonable";
+  }
+  if(this.value==3){
+    output2.innerHTML = "Fair";
+  }
+  if(this.value==4){
+    output2.innerHTML = "Greedy";
+  }
+  if(this.value==5){
+    output2.innerHTML = "Taking The P**S";
   }
 }

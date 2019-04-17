@@ -32,7 +32,7 @@ function checkCookie(){
   //Gets the cookies
   var user=getCookie("username");
 
-  var main = "http://bermuda-legend-8080.codio.io/*";
+  var main = "http://bermuda-legend-8080.codio.io/[^ ]*";
   var profile = "http://bermuda-legend-8080.codio.io/profile";
   var garage = "http://bermuda-legend-8080.codio.io/garage";
   var journey = "http://bermuda-legend-8080.codio.io/journey";

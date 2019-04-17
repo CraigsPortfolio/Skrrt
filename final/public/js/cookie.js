@@ -32,7 +32,7 @@ function checkCookie(){
   //Gets the cookies
   var user=getCookie("username");
 
-  var main = "http://bermuda-legend-8080.codio.io/main";
+  var main = "http://bermuda-legend-8080.codio.io/(.*)";
   var profile = "http://bermuda-legend-8080.codio.io/profile";
   var garage = "http://bermuda-legend-8080.codio.io/garage";
   var journey = "http://bermuda-legend-8080.codio.io/journey";
@@ -44,7 +44,7 @@ function checkCookie(){
     alert(document.referrer);
   //User is a returning visitor
       //If navigated from any other page on site then cancel redirect
-      if(document.referrer != main && document.referrer != profile && document.referrer != garage && document.referrer != journey && document.referrer != newcar && document.referrer != register){
+      if(document.referrer != main){
       //Navigated externally so do not redirect
       document.location = "/main";
   	   }

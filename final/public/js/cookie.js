@@ -44,7 +44,7 @@ function checkCookie(){
     alert(document.referrer);
   //User is a returning visitor
       //If navigated from any other page on site then cancel redirect
-      if(document.referrer != main && document.referrer != profile document.referrer != garage && document.referrer != journey && document.referrer != newcar && document.referrer != register){
+      if(document.referrer != main && document.referrer != profile && document.referrer != garage && document.referrer != journey && document.referrer != newcar && document.referrer != register){
       //Navigated externally so do not redirect
       document.location = "/main";
   	   }

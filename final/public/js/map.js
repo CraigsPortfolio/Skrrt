@@ -342,6 +342,7 @@ $(document).ready(function(){
   //Checking for saved cars
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
+      alert($("car-reg").innerHTML);
       document.getElementById("car-make-row").hidden = true;
       document.getElementById("car-model-row").hidden = true;
       document.getElementById("car-mpg-row").hidden = true;
@@ -371,7 +372,7 @@ $(document).ready(function(){
       document.getElementById("jny-prof-row").hidden = true;
       document.getElementById("dropjourney").hidden = true;
       document.getElementById("deljny").hidden=true;
-      
+
       //Inform the user they have no saved journeys
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }

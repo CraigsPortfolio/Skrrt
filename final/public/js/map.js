@@ -376,7 +376,7 @@ $(document).ready(function(){
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });
-onClick="document.forms['newcarform'].submit();"
+
 function addCar(){
   var make = document.getElementById("newmake").innerHTML;
   var model = document.getElementById("newmodel").innerHTML;
@@ -387,6 +387,16 @@ function addCar(){
   var msg = "";
   if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
     msg = "Please check that no fields are left blank before submitting";
+    return;
   }
+document.getElementById("newmsg").innerHTML =msg;
+  $.post('checkreg', function(data){
+    if(data.msg!=""){
+      msg += data.msg;
+    }else{
+      msg="";
+      document.forms['newcarform'].submit();
+    }
+  })
   document.getElementById("newmsg").innerHTML =msg;
 }

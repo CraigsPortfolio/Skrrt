@@ -544,6 +544,27 @@ app.post('/remjourney', function(req, res) {
   }
 });
 
+app.post('checkreg', function(req,res){
+
+  //Check that the car with that reg doesn't already exit
+  db.collection('profiles').findOne({"login.username": currentUser}, {
+    car: {
+      $elemMatch: {
+        reg: req.body.newreg
+      }
+    }
+  }, function(err, result) {
+    if (err) throw err; //if there is an error, throw the error
+    var data;
+    if(result){
+      data = { msg : "A car with this reg already exists, please enter a different one."}
+    }else{
+      data = {msg :""}
+    }
+    res.send(data);
+})
+});
+
 //Logs the user in
 app.post('/dologin', function(req, res) {
   //Getting our username and password from the client
@@ -575,7 +596,7 @@ app.post('/dologin', function(req, res) {
       currentUser = result.login.username;
 
       //Take them to the profile page
-      res.redirect('/profile')
+      res.redirect('/main')
     }
     //if there is no result, redirect the user back to the login system as that username must not exist
     else {

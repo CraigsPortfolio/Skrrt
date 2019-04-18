@@ -218,15 +218,15 @@ function postRemJny(){
     //Check if the user has any saved journeys left
     if(data.name!= "No journey"){ //User has saved journeys
       //Display the first journey to the screen
-    document.getElementById("jny-name").innerHTML = data.name;
-    document.getElementById("jny-start").innerHTML = data.start;
-    document.getElementById("jny-end").innerHTML = data.end;
-    document.getElementById("jny-reg").innerHTML = data.reg;
-    document.getElementById("jny-mpg").innerHTML = data.mpg;
-    document.getElementById("jny-pass").innerHTML = data.pass;
-    document.getElementById("jny-fuel").innerHTML = data.fuel;
-    document.getElementById("jny-prof").innerHTML = data.prof;
-    document.getElementById("jny-rec").innerHTML = data.rec;
+    $("#jny-name").html(data.name);
+    $("#jny-start").html(data.start);
+    $("#jny-end").html(data.end);
+    $("#jny-reg").html(data.reg);
+    $("#jny-mpg").html(data.mpg);
+    $("#jny-pass").html(data.pass);
+    $("#jny-fuel").html(data.fuel);
+    $("#jny-prof").html(data.prof);
+    $("#jny-rec").html(data.rec);
 
     //Update the drop down box
     $("#dropjourney").empty(); //Remove old journeys from the drop down boxes
@@ -238,20 +238,20 @@ function postRemJny(){
   }
 }else{ //User has no saved journeys left
   //Hide all the journey fields on the journey page
-  document.getElementById("jny-name-row").hidden = true;
-  document.getElementById("jny-start-row").hidden = true;
-  document.getElementById("jny-end-row").hidden = true;
-  document.getElementById("jny-reg-row").hidden = true;
-  document.getElementById("jny-mpg-row").hidden = true;
-  document.getElementById("jny-pass-row").hidden = true;
-  document.getElementById("jny-fuel-row").hidden = true;
-  document.getElementById("jny-rec-row").hidden = true;
-  document.getElementById("jny-prof-row").hidden = true;
-  document.getElementById("dropjourney").hidden = true;
-  document.getElementById("deljny").hidden=true;
+  $("#jny-name-row").hide();
+  $("#jny-start-row").hide();
+  $("#jny-end-row").hide();
+  $("#jny-reg-row").hide();
+  $("#jny-mpg-row").hide();
+  $("#jny-pass-row").hide();
+  $("#jny-fuel-row").hide();
+  $("#jny-rec-row").hide();
+  $("#jny-prof-row").hide();
+  $("#dropjourney").hide();
+  $("#deljny").hide();
 
   //Inform the user they have no saved journeys left
-  document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
+  $("#journey-blurb").html("You have no saved journeys :(")
 }
   });
 }

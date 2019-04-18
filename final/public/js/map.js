@@ -376,10 +376,17 @@ $(document).ready(function(){
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });
-
+onClick="document.forms['newcarform'].submit();"
 function addCar(){
   var make = document.getElementById("newmake").innerHTML;
-  if(make==""){
-    document.getElementById("newmsg").innerHTML = "sadasd";
+  var model = document.getElementById("newmodel").innerHTML;
+  var year = document.getElementById("newyear").innerHTML;
+  var mpg = document.getElementById("newmpg").innerHTML;
+  var fuel = document.getElementById("newfuel").innerHTML;
+  var reg = document.getElementById("newreg").innerHTML;
+  var msg = "";
+  if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
+    msg = "Please check that no fields are left blank before submitting";
   }
+  document.getElementById("newmsg").innerHTML =msg;
 }

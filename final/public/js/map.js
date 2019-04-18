@@ -9,7 +9,7 @@ function initialize() {
     }
   }
 
-  var map = new google.maps.Map(document.getElementById('map'), options);
+  var map = new google.maps.Map($("#map"), options);
   // var map2 = new google.maps.Map(document.getElementById('map2'), options);
   directionsDisplay.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -20,7 +20,7 @@ function initialize() {
 function autoComp() {
   var coor1 = 0;
   var coor2 = 1;
-  var input = document.getElementById('Start');
+  var input = $("#Start").val();
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     var place = autocomplete.getPlace();
@@ -31,7 +31,7 @@ function autoComp() {
     initialize();
   });
 
-  var input2 = document.getElementById('End');
+  var input2 = $("#End").val();
   var autocomplete2 = new google.maps.places.Autocomplete(input2);
   google.maps.event.addListener(autocomplete2, 'place_changed', function() {
     var place2 = autocomplete2.getPlace();
@@ -47,8 +47,8 @@ function autoComp() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: document.getElementById("Start").value,
-    destination: document.getElementById("End").value,
+    origin:  $("#Start").val(),
+    destination: $("#End").val(),
     travelMode: 'DRIVING'
   }, function(response, status) {
     if (status === 'OK') {
@@ -376,17 +376,17 @@ $(document).ready(function(){
 //This function tells the server to add a car to the database
 function addCar(){
   //Get the data from the form
-  var make = document.getElementById("newmake").value;
-  var model = document.getElementById("newmodel").value;
-  var year = document.getElementById("newyear").value;
-  var mpg = document.getElementById("newmpg").value;
-  var fuel = document.getElementById("newfuel").value;
-  var reg = document.getElementById("newreg").value;
+  var make = $("#newmake").val();
+  var model = $("#newmodel").val();
+  var year = $("#newyear").val();
+  var mpg = $("#newmpg").val()
+  var fuel = $("#newfuel").val();
+  var reg = $("#newreg").val();
 
   //Check that no fields are empty
   if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){ //A field is empty
     //Display error message
-    document.getElementById("newmsg").innerHTML = "Please check that no fields are left blank before submitting";
+    $("#newmsg").html("Please check that no fields are left blank before submitting");
     return; //Stop the function
   }
 
@@ -395,9 +395,9 @@ function addCar(){
     reg:reg}, //Sending our reg to the server
   function(data){
     if(data.msg!=""){ //Reg is taken
-      document.getElementById("newmsg").innerHTML = data.msg; //Displaying error message
+      $("#newmsg").html(data.msg); //Displaying error message
     }else{ //Reg is available
-      document.getElementById("newmsg").innerHTML =""; //Clear error message
+      $("#newmsg").html("");; //Clear error message
       document.forms['newcarform'].submit(); //Add the car to the database
     }
   })

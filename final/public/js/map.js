@@ -395,7 +395,7 @@ function addCar(){
       reg:reg}, function(data){
         alert(data.msg);
     if(data.msg!=""){
-      msg += data.msg;
+      msg = data.msg;
     }else{
       msg="";
       document.forms['newcarform'].submit();

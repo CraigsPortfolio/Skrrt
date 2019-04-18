@@ -563,11 +563,6 @@ app.post('/checkreg', function(req,res){
     }catch(err){
             data = {msg :""};
     }
-    // if(result.car.reg!=""){
-    //   data = { msg : "A car with this reg already exists, please enter a different one."};
-    // }else{
-    //   data = {msg :""};
-    // }
     res.send(data);
 })
 });

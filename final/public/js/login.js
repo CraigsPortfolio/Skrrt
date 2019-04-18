@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //on load hide the Car info and Location forms.
-  $(".car-info-form").hide();
+  // $(".car-info-form").hide();
   $(".car-info").css("background", "#c4c4c4");
 
   //When details tab clicked show details and hide car info and location.

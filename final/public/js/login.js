@@ -32,9 +32,8 @@ $(document).ready(function() {
   $("#confirm_btn").click(function() {
     if (validate1.valid() === true){
       $(".details-form").show();
-      alert(validate1.valid())
+      document.forms['validate1'].submit();
       $(".details-form").hide();
-      // document.forms['validate1'].submit();
     } else {
       console.log("error");
     }

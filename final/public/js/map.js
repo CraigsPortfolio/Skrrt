@@ -79,15 +79,13 @@ function T() {
 //This function calculates the journey cost
 function calculateJourney() {
   //Get the input information from the page
-  var startDest = document.getElementById("Start").value;
-  var endDest = document.getElementById("End").value;
-  var fuelPrice = document.getElementById("fuelPrice-box").value;
-  var carDetails = document.getElementById("reg-box").value;
-  var passSlider = document.getElementById('myRange');
-  var passValue = passSlider.value;
-  var profitSlider = document.getElementById('myRange2');
-  var profValue = profitSlider.value;
-  var returned = document.getElementById("return").checked
+  var startDest = $("#Start").val();
+  var endDest = $("#End").val();
+  var fuelPrice = $("#fuelPrice-box").val();
+  var carDetails = $("#reg-box").val();
+  var passValue = $("#myRange").val();
+  var profValue = $("#myRange2").val();
+  var returned = $("#return").is(':checked');
 
   //Doing the calculation
   recommendedCost = parseInt(distance) / 1000; //Converting to km
@@ -99,23 +97,23 @@ function calculateJourney() {
   recommendedCost = Math.ceil(recommendedCost / 1) * 1; //Rounding to the nearest whole number
 
   //Displaying the information in the recommendation section
-  document.getElementById("startDest").innerHTML = startDest;
-  document.getElementById("endDest").innerHTML = endDest;
-  document.getElementById("vehicleDetail").innerHTML = carDetails;
-  document.getElementById("noPassengers").innerHTML = passValue;
-  document.getElementById("fuelCost").innerHTML = fuelPrice;
-  document.getElementById("prof").innerHTML = profValue;
+  $("#startDest").html(startDest);
+  $("#endDest").html(endDest);
+  $("#vehicleDetail").html(carDetails);
+  $("#noPassengers").html(passValue);
+  $("#fuelCost").html(fuelPrice);
+  $("#prof").html(profValue);
 
   //Checking if the journey is a return one or not
   if(returned){ //Journey is a return
     recommendedCost = recommendedCost * 2; //Multiply journey cost by 2
-    document.getElementById("type").innerHTML = "Return"; //Displaying the return journey type
+    $("#type").html("Return");//Displaying the return journey type
   }else{ //Journey is one-way
-    document.getElementById("type").innerHTML = "One Way"; //Displaying the return journey type
+    $("#type").html("One Way"); //Displaying the return journey type
   }
 
   //Displaying the recommended journey charge
-  document.getElementById("recommendedPrice").innerHTML = "£" + recommendedCost.toFixed(2) + "/pp";
+  $("#recommendedPrice").html("£" + recommendedCost.toFixed(2) + "/pp");
 }
 
 //This function makes an API call to UKVehicleData to get the MPG of a car given the registration number
@@ -124,7 +122,6 @@ function getMPG() {
     var reg = $("#reg-box").val();
     var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
     $.getJSON(url, function(jsondata) {
-      console.log(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg);
       mpg = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
       $("#vehicleMPG").html(mpg+"mpg");
       window.location.href = "/main#4";

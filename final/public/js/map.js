@@ -225,7 +225,7 @@ function postRemJny(){
     $("#jny-mpg").html(data.mpg);
     $("#jny-pass").html(data.pass);
     $("#jny-fuel").html(data.fuel);
-    $("#jny-prof").html(data.prof);
+    $("#jny-prof").html(data.profit);
     $("#jny-rec").html(data.rec);
 
     //Update the drop down box

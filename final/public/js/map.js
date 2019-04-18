@@ -308,7 +308,7 @@ function editProfile(){
   var surname = document.getElementById("NewLast").value;
   var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
-  var test = $("NewFirst").val;
+  var test = $("#NewFirst").val;
   alert(test);
   //Checking that no fields are blank
   if(fname==""||surname==""||username==""||pword==""){ //A field is blank
@@ -329,7 +329,7 @@ function editProfile(){
       //Display the edited profile on the screen
     document.getElementById("msg").innerHTML = "";
     document.getElementById("pro-first").innerHTML = "Name: " + data.fname + " " + data.surname;
-    document.getElementById("pro-user").innerHTML = "Username : " + data.username;
+    document.getElementById("pro-user").innerHTML = "Username: " + data.username;
   }else{ //Username is taken
     //Inform user that username is taken
     document.getElementById("msg").innerHTML = data.msg;

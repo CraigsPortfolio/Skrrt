@@ -304,16 +304,15 @@ $(document).ready(function(){
 //This function asks the server to edit the user's profile
 function editProfile(){
   //Get the input information from the profile page
-  var fname = document.getElementById("NewFirst").value;
-  var surname = document.getElementById("NewLast").value;
-  var username = document.getElementById("NewUser").value;
-  var pword = document.getElementById("NewPass").value;
-  var test = $("#NewFirst").val();
-  alert(test);
+  var fname = $("#NewFirst").val();
+  var surname = $("#NewLast").val();
+  var username = $("#NewUser").val();
+  var pword = $("#NewPass").val();
+
   //Checking that no fields are blank
   if(fname==""||surname==""||username==""||pword==""){ //A field is blank
     //Display error message
-    document.getElementById("msg").innerHTML = "Please check that all fields are filled in before submitting!";
+    $("#msg").html("Please check that all fields are filled in before submitting!");
     return; //Do not update profile
   }
   //Asks the server to run the '/editprofile' route to edit the profile
@@ -327,12 +326,12 @@ function editProfile(){
     //Checks if the username is taken or not
     if(data.msg == ""){ //Username is valid
       //Display the edited profile on the screen
-    document.getElementById("msg").innerHTML = "";
-    document.getElementById("pro-first").innerHTML = "Name: " + data.fname + " " + data.surname;
-    document.getElementById("pro-user").innerHTML = "Username: " + data.username;
+      $("#msg").html("");
+    $("#pro-first").html("Name: " + data.fname + " " + data.surname);
+     $("#pro-user").html("Username: " + data.username);
   }else{ //Username is taken
     //Inform user that username is taken
-    document.getElementById("msg").innerHTML = data.msg;
+    $("#msg").html(data.msg);
   }
   });
 }

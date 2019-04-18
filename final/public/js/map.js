@@ -288,15 +288,15 @@ $(document).ready(function(){
            name: name //Sends the name of the journey to the server
          },function(data){
            //Display the selected journey on the screen
-           document.getElementById("jny-name").innerHTML = data.name;
-           document.getElementById("jny-start").innerHTML = data.start;
-           document.getElementById("jny-end").innerHTML = data.end;
-           document.getElementById("jny-reg").innerHTML = data.reg;
-           document.getElementById("jny-pass").innerHTML = data.pass;
-           document.getElementById("jny-fuel").innerHTML = data.fcost;
-           document.getElementById("jny-rec").innerHTML = data.rec;
-           document.getElementById("jny-prof").innerHTML = data.profit;
-           document.getElementById("jny-mpg").innerHTML = data.mpg;
+           $("jny-name").html(data.name);
+           $("jny-start").html(data.start);
+           $("jny-end").html(data.end);
+           $("jny-reg").html(data.reg);
+           $("jny-pass").html(data.pass);
+           $("jny-fuel").html(data.fcost);
+           $("jny-rec").html(data.rec);
+           $("jny-prof").html(data.profit);
+           $("jny-mpg").html(data.mpg);
          });
     });
 });

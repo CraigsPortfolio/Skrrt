@@ -376,3 +376,10 @@ $(document).ready(function(){
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });
+
+function addCar(){
+  var make = $("newmake").innerHTML;
+  if(make = ""){
+    $("newmsg").innerHTML = "Field blank";
+  }
+}

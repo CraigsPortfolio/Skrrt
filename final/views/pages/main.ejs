@@ -192,6 +192,7 @@
   </section>
 
   <footer class="footer-section">
+    <!--  The following EJS script checks if the user is logged-in to decide what footer to display -->
     <% if (user != "") { %>
         <% include ../partials/profileFooter%>
 <% } else { %>

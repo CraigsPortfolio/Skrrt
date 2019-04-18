@@ -29,15 +29,16 @@
             <!-- inputs for the user details -->
             <form id="newcarform" action="/addcar" method="POST">
               <div class="details-form-2">
-                <input type="text" placeholder="Make" class="input" name="make"><br />
-                <input type="text" placeholder="Model" class="input" name="model"><br />
-                <input type="text" placeholder="Year" class="input" name="year"><br />
-                <input type="text" placeholder="Reg" class="input" name="reg"><br />
-                <input type="text" placeholder="Fuel Type" class="input" name="ftype"><br />
-                <input type="text" placeholder="Fuel Economy" class="input" name="mpg"><br />
+                <input id="newmake" type="text" placeholder="Make" class="input" name="make"><br />
+                <input id="newmodel" type="text" placeholder="Model" class="input" name="model"><br />
+                <input id="newyear" type="text" placeholder="Year" class="input" name="year"><br />
+                <input id="newreg" type="text" placeholder="Reg" class="input" name="reg"><br />
+                <input id="newfuel" type="text" placeholder="Fuel Type" class="input" name="ftype"><br />
+                <input id="newmpg" type="text" placeholder="Fuel Economy" class="input" name="mpg"><br />
+                <p id="newmsg"></p>
               </div>
 
-            <a href="#nothing" class="site-btn" onClick="document.forms['newcarform'].submit();">Add Car</a>
+            <a href="#nothing" class="site-btn" onclick="addCar()" onClick="document.forms['newcarform'].submit();">Add Car</a>
             <a href="/garage" class="site-btn">Return To Garage</a>
             </form>
             </div>

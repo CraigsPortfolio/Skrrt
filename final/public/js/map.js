@@ -371,16 +371,16 @@ $(document).ready(function(){
       // document.getElementById("jny-prof-row").hidden = true;
       // document.getElementById("dropjourney").hidden = true;
       // document.getElementById("deljny").hidden=true;
-      $("jny-name-row").hide();
-      $("jny-start-row").hide();
-      $("jny-end-row").hide();
-      $("jny-reg-row").hide();
-      $("jny-mpg-row").hide();
-      $("jny-fuel-row").hide();
-      $("jny-rec-row").hide();
-      $("jny-prof-row").hide();
-      $("dropjourney").hide();
-      $("deljny").hide();
+      $("#jny-name-row").hide();
+      $("#jny-start-row").hide();
+      $("#jny-end-row").hide();
+      $("#jny-reg-row").hide();
+      $("#jny-mpg-row").hide();
+      $("#jny-fuel-row").hide();
+      $("#jny-rec-row").hide();
+      $("#jny-prof-row").hide();
+      $("#dropjourney").hide();
+      $("#deljny").hide();
 
       //Inform the user they have no saved journeys
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";

@@ -360,17 +360,27 @@ $(document).ready(function(){
     //Check if the user has saved journeys
     if(document.getElementById("jny-name").innerHTML == "No journey"){ //User has no saved Journeys
       //Hide all the journey fields
-      document.getElementById("jny-name-row").hidden = true;
-      document.getElementById("jny-start-row").hidden = true;
-      document.getElementById("jny-end-row").hidden = true;
-      document.getElementById("jny-reg-row").hidden = true;
-      document.getElementById("jny-mpg-row").hidden = true;
-      document.getElementById("jny-pass-row").hidden = true;
-      document.getElementById("jny-fuel-row").hidden = true;
-      document.getElementById("jny-rec-row").hidden = true;
-      document.getElementById("jny-prof-row").hidden = true;
-      document.getElementById("dropjourney").hidden = true;
-      document.getElementById("deljny").hidden=true;
+      // document.getElementById("jny-name-row").hidden = true;
+      // document.getElementById("jny-start-row").hidden = true;
+      // document.getElementById("jny-end-row").hidden = true;
+      // document.getElementById("jny-reg-row").hidden = true;
+      // document.getElementById("jny-mpg-row").hidden = true;
+      // document.getElementById("jny-pass-row").hidden = true;
+      // document.getElementById("jny-fuel-row").hidden = true;
+      // document.getElementById("jny-rec-row").hidden = true;
+      // document.getElementById("jny-prof-row").hidden = true;
+      // document.getElementById("dropjourney").hidden = true;
+      // document.getElementById("deljny").hidden=true;
+      $('jny-name-row').hide();
+      $('jny-start-row').hide();
+      $('jny-end-row').hide();
+      $('jny-reg-row').hide();
+      $('jny-mpg-row').hide();
+      $('jny-fuel-row').hide();
+      $('jny-rec-row').hide();
+      $('jny-prof-row').hide();
+      $('dropjourney').hide();
+      $('deljny').hide();
 
       //Inform the user they have no saved journeys
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";

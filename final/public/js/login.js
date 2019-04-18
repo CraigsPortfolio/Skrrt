@@ -36,7 +36,7 @@ $(document).ready(function() {
       $(".details-form").hide();
     } else {
       $(".details-form").hide();
-      $(".details-form").click();
+      $(".details").click();
       console.log("error");
     }
   });

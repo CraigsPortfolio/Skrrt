@@ -36,7 +36,7 @@ $(document).ready(function() {
       $(".details-form").hide();
     } else {
       $(".details-form").hide();
-      console.log("error");
+      alert("Please supply correct information");
     }
   });
 

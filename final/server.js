@@ -550,16 +550,16 @@ app.post('/checkreg', function(req,res){
   db.collection('profiles').findOne({"login.username": currentUser}, {
     car: {
       $elemMatch: {
-        reg: req.body.newreg
+        reg: req.body.reg
       }
     }
   }, function(err, result) {
     if (err) throw err; //if there is an error, throw the error
     var data;
     if(result){
-      data = { msg : "A car with this reg already exists, please enter a different one."}
+      data = { msg : "A car with this reg already exists, please enter a different one."};
     }else{
-      data = {msg :""}
+      data = {msg :""};
     }
     res.send(data);
 })

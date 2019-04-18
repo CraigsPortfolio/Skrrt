@@ -378,12 +378,12 @@ $(document).ready(function(){
 });
 
 function addCar(){
-  var make = document.getElementById("newmake").innerHTML;
-  var model = document.getElementById("newmodel").innerHTML;
-  var year = document.getElementById("newyear").innerHTML;
-  var mpg = document.getElementById("newmpg").innerHTML;
-  var fuel = document.getElementById("newfuel").innerHTML;
-  var reg = document.getElementById("newreg").innerHTML;
+  var make = document.getElementById("newmake").value;
+  var model = document.getElementById("newmodel").value;
+  var year = document.getElementById("newyear").value;
+  var mpg = document.getElementById("newmpg").value;
+  var fuel = document.getElementById("newfuel").value;
+  var reg = document.getElementById("newreg").value;
   var msg = "";
   if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
     msg = "Please check that no fields are left blank before submitting";

@@ -35,6 +35,7 @@ $(document).ready(function() {
       alert(validate1.valid())
       // document.forms['validate1'].submit();
     } else {
+      $(".details-form").hide();
       console.log("error");
     }
   });

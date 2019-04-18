@@ -7,62 +7,74 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+  <!-- Page Preloder -->
+  <div id="preloder">
+    <div class="loader"></div>
+  </div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<% include ../partials/profileHeader %>
-	</header>
-	<!-- Header section end -->
-<%include ../partials/logOut%>
+  <!-- Header section -->
+  <header class="header-section">
+    <% include ../partials/profileHeader %>
+  </header>
+  <!-- Header section end -->
+  <%include ../partials/logOut%>
   <!--Calculated Journey -->
   <section id="garage" class="hero-section set-bg" data-setbg="/img/garage.jpg">
-  <div class="container h-100" id="5">
-    <div class="hero-content text-white">
-      <div class="row" id="bigRow">
-        <h2>Garage</h2>
-        <p id="garage-blurb">Below is the details of cars you have in your Skrrt garage.</p>
+    <div class="container h-100" id="5">
+      <div class="hero-content text-white">
+        <div class="row" id="bigRow">
+          <h2>Garage</h2>
+          <p id="garage-blurb">Below is the details of cars you have in your Skrrt garage.</p>
 
 
-        <select id="dropgarage">
-          <% options.forEach(function(option) { %>
-        <option><%= option.reg %></option>
-          <% }); %>
-        </select>
-        <div id="car-reg-row" class="calculatedRow">
-              <h3>Registration Number:</h3>
-              <h3 id="car-reg" class="calculatedH3"><%= reg %></h3>
-            </div>
-            <div id="car-make-row" class="calculatedRow">
-              <h3>Make: </h3>
-              <h3 id="car-make" class="calculatedH3"><%= make %></h3>
-            </div>
-            <div id="car-model-row" class="calculatedRow">
-              <h3>Model:</h3>
-              <h3 id="car-model" class="calculatedH3"><%= model %></h3>
-            </div>
-            <div id="car-mpg-row" class="calculatedRow">
-              <h3>MPG: </h3>
-              <h3 id="car-mpg" class="calculatedH3"><%= mpg %></h3>
-            </div>
-            <div id="car-fuel-row" class="calculatedRow">
-              <h3>Fuel Type: </h3>
-              <h3 id="car-fuel" class="calculatedH3"><%= ftype %></h3>
-            </div>
-            <a href="/remcar" id="delcar" class="site-btn">Remove Car</a>
-						<a href="/newcar" class="site-btn">Park New Car</a>
-            <a href="/profile" class="site-btn">Back To Profile</a>
-      </div>
-
-
-
-
-
+          <select id="dropgarage">
+            <% options.forEach(function(option) { %>
+            <option>
+              <%= option.reg %>
+            </option>
+            <% }); %>
+          </select>
+          <div id="car-reg-row" class="calculatedRow">
+            <h3>Registration Number:</h3>
+            <h3 id="car-reg" class="calculatedH3">
+              <%= reg %>
+            </h3>
+          </div>
+          <div id="car-make-row" class="calculatedRow">
+            <h3>Make: </h3>
+            <h3 id="car-make" class="calculatedH3">
+              <%= make %>
+            </h3>
+          </div>
+          <div id="car-model-row" class="calculatedRow">
+            <h3>Model:</h3>
+            <h3 id="car-model" class="calculatedH3">
+              <%= model %>
+            </h3>
+          </div>
+          <div id="car-mpg-row" class="calculatedRow">
+            <h3>MPG: </h3>
+            <h3 id="car-mpg" class="calculatedH3">
+              <%= mpg %>
+            </h3>
+          </div>
+          <div id="car-fuel-row" class="calculatedRow">
+            <h3>Fuel Type: </h3>
+            <h3 id="car-fuel" class="calculatedH3">
+              <%= ftype %>
+            </h3>
+          </div>
+          <a href="/remcar" id="delcar" class="site-btn">Remove Car</a>
+          <a href="/newcar" class="site-btn">Park New Car</a>
+          <a href="/profile" class="site-btn">Back To Profile</a>
         </div>
+
+
+
+
+
       </div>
+    </div>
   </section>
   <!--Calculated Journey Section End-->
 
@@ -70,15 +82,16 @@
 
 
 
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<% include ../partials/profileFooter %>
-	</footer>
-	<!-- Footer top section end -->
+  <!-- Footer section -->
+  <footer class="footer-section">
+    <% include ../partials/profileFooter %>
+  </footer>
+  <!-- Footer top section end -->
 
 
-	<!--====== Javascripts & Jquery ======-->
-	<% include ../partials/footerScripts %>
+  <!--====== Javascripts & Jquery ======-->
+  <% include ../partials/footerScripts %>
 
-	</body>
+</body>
+
 </html>

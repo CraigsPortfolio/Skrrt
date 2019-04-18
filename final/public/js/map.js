@@ -309,9 +309,11 @@ function editProfile(){
   var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
 
-  if(fname==""||surname==""||username==""||pword==""){
+  //Checking that no fields are blank
+  if(fname==""||surname==""||username==""||pword==""){ //A field is blank
+    //Display error message
     document.getElementById("msg").innerHTML = "Please check that all fields are filled in before submitting!";
-    return;
+    return; //Do not update profile
   }
   //Asks the server to run the '/editprofile' route to edit the profile
   $.post('/editprofile',{

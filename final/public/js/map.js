@@ -349,7 +349,7 @@ function garage(){
       //Inform the user they have no saved cars
       document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
     }
-};
+}
 
 //This function runs when the 'Saved Journeys' page is loaded
 function savedJourneys(){

@@ -391,7 +391,8 @@ function addCar(){
     return;
   }
 
-  $.post('checkreg', function(data){
+  $.post('checkreg', {
+      reg:reg}, function(data){
     if(data.msg!=""){
       msg += data.msg;
     }else{

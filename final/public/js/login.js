@@ -30,13 +30,12 @@ $(document).ready(function() {
   });
 
   $("#confirm_btn").click(function() {
-    alert("1: "+validate1.valid());
+    $(".details-form").show();
     if (validate1.valid() === true){
-      $(".details-form").show();
       document.forms['validate1'].submit();
       alert("2: "+validate1.valid());
-      $(".details-form").hide();
     } else {
+      $(".details-form").hide();
       console.log("error");
     }
   });

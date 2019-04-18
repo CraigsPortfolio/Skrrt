@@ -33,6 +33,7 @@ $(document).ready(function() {
     if (validate1.valid() === true){
       $(".details-form").show();
       document.forms['validate1'].submit();
+      alert(validate1.valid());
       $(".details-form").hide();
     } else {
       console.log("error");

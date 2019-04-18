@@ -384,10 +384,9 @@ function addCar(){
   var mpg = document.getElementById("newmpg").value;
   var fuel = document.getElementById("newfuel").value;
   var reg = document.getElementById("newreg").value;
-  var msg = "";
+
   if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
-    msg = "Please check that no fields are left blank before submitting";
-    document.getElementById("newmsg").innerHTML =msg;
+    document.getElementById("newmsg").innerHTML = "Please check that no fields are left blank before submitting";
     return;
   }
 
@@ -395,11 +394,10 @@ function addCar(){
       reg:reg}, function(data){
         alert(data.msg);
     if(data.msg!=""){
-      msg = data.msg;
+      document.getElementById("newmsg").innerHTML = data.msg;
     }else{
-      msg="";
+      document.getElementById("newmsg").innerHTML ="";
       document.forms['newcarform'].submit();
     }
   })
-  document.getElementById("newmsg").innerHTML =msg;
 }

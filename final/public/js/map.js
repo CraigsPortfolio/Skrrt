@@ -398,7 +398,7 @@ function addCar(){
       $("#newmsg").html(data.msg); //Displaying error message
     }else{ //Reg is available
       $("#newmsg").html("");; //Clear error message
-      document.forms['newcarform'].submit(); //Add the car to the database
+      $("#newcarform").submit(); //Add the car to the database
     }
   })
 }

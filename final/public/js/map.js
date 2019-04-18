@@ -328,7 +328,6 @@ function editProfile(){
     document.getElementById("msg").innerHTML = data.msg;
   }
   });
-  location.reload();
 }
 
 

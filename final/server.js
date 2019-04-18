@@ -544,7 +544,7 @@ app.post('/remjourney', function(req, res) {
   }
 });
 
-app.post('checkreg', function(req,res){
+app.post('/checkreg', function(req,res){
 
   //Check that the car with that reg doesn't already exit
   db.collection('profiles').findOne({"login.username": currentUser}, {

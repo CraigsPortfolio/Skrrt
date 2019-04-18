@@ -308,7 +308,7 @@ function editProfile(){
   var surname = document.getElementById("NewLast").value;
   var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
-
+  alert($("NewFirst").text);
   //Checking that no fields are blank
   if(fname==""||surname==""||username==""||pword==""){ //A field is blank
     //Display error message
@@ -342,7 +342,6 @@ $(document).ready(function(){
   //Checking for saved cars
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
-      alert($("car-reg").innerHTML);
       document.getElementById("car-make-row").hidden = true;
       document.getElementById("car-model-row").hidden = true;
       document.getElementById("car-mpg-row").hidden = true;

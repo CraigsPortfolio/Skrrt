@@ -308,7 +308,8 @@ function editProfile(){
   var surname = document.getElementById("NewLast").value;
   var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
-  alert($("NewFirst").val);
+  var test = $("NewFirst").val;
+  alert(test);
   //Checking that no fields are blank
   if(fname==""||surname==""||username==""||pword==""){ //A field is blank
     //Display error message

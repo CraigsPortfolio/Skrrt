@@ -387,9 +387,10 @@ function addCar(){
   var msg = "";
   if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
     msg = "Please check that no fields are left blank before submitting";
+    document.getElementById("newmsg").innerHTML =msg;
     return;
   }
-document.getElementById("newmsg").innerHTML =msg;
+
   $.post('checkreg', function(data){
     if(data.msg!=""){
       msg += data.msg;

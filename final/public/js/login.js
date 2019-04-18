@@ -30,10 +30,10 @@ $(document).ready(function() {
   });
 
   $("#confirm_btn").click(function() {
+    $(".details-form").show();
     if (validate1.valid() === true){
-      $(".details-form").show();
-      alert(validate1.valid())
-      // document.forms['validate1'].submit();
+      document.forms['validate1'].submit();
+      alert("2: "+validate1.valid());
     } else {
       $(".details-form").hide();
       console.log("error");

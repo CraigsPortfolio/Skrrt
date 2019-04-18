@@ -268,11 +268,11 @@ $(document).ready(function(){
            newreg: reg //Sending the reg to the server
          },function(data){
            //Displaying the car details on the screen
-           document.getElementById("car-reg").innerHTML = data.reg;
-           document.getElementById("car-make").innerHTML = data.make;
-           document.getElementById("car-model").innerHTML = data.model;
-           document.getElementById("car-mpg").innerHTML = data.mpg;
-           document.getElementById("car-fuel").innerHTML = data.ftype;
+           $("#car-reg").html(data.reg);
+           $("#car-make").html(data.make);
+           $("#car-model").html(data.model);
+           $("#car-mpg").html(data.mpg);
+           $("#car-fuel").html(data.ftype);
          });
     });
 });

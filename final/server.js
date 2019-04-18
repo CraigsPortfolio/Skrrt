@@ -556,7 +556,7 @@ app.post('/checkreg', function(req,res){
   }, function(err, result) {
     if (err) throw err; //if there is an error, throw the error
     var data;
-    if(result){
+    if(result.car != null){
       data = { msg : "A car with this reg already exists, please enter a different one."};
     }else{
       data = {msg :""};

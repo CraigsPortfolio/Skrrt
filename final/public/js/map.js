@@ -378,10 +378,8 @@ $(document).ready(function(){
 });
 
 function addCar(){
-  $(document).ready(function(){
-  var make = $("newmake").innerHTML;
-  if(make = ""){
-    $("#newmsg").innerHTML = "Field blank";
+  var make = document.getElementById("newmake").innerHTML;
+  if(make==""){
+    document.getElementById("newmsg").innerHTML = "sadasd";
   }
-});
 }

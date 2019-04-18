@@ -143,7 +143,7 @@ function postJourney(){
   mpg = $("#vehicleMPG").html();
   recommendedPrice = $("#recommendedPrice").html();
   profitSlider = $("#myRange2");
-  profValue = profitSlider.value;
+  profValue = $("#myRange2").val();
   name = $("#jny-box").val();
 
   //Send the data to the server

@@ -557,11 +557,17 @@ app.post('/checkreg', function(req,res){
     if (err) throw err; //if there is an error, throw the error
     var data;
     console.log(result);
-    if(result.car.reg!=""){
+    try{
+      var crash = result.car.reg;
       data = { msg : "A car with this reg already exists, please enter a different one."};
-    }else{
-      data = {msg :""};
+    }catch(err){
+            data = {msg :""};
     }
+    // if(result.car.reg!=""){
+    //   data = { msg : "A car with this reg already exists, please enter a different one."};
+    // }else{
+    //   data = {msg :""};
+    // }
     res.send(data);
 })
 });

@@ -444,7 +444,7 @@ app.post('/editprofile', function(req, res) {
       if (err) throw err; //if there is an error, throw the error
 
       //Checking that the username doesn't exist, if changed
-      if (profile && req.body.username != profile.login.username) { //The username is invalid
+      if (profile && currenUser != profile.login.username) { //The username is invalid
         var data = { msg: "Username Taken"}; // The error message to be sent back to the user
         res.send(data); //Sending the message to the client
       } else {//The username is valid

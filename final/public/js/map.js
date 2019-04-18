@@ -321,8 +321,8 @@ function editProfile(){
     if(data.msg == ""){ //Username is valid
       //Display the edited profile on the screen
     document.getElementById("msg").innerHTML = "";
-    document.getElementById("pro-first").innerHTML = data.fname + " " + data.surname;
-    document.getElementById("pro-user").innerHTML = data.username;
+    document.getElementById("pro-first").innerHTML = "Name: " + data.fname + " " + data.surname;
+    document.getElementById("pro-user").innerHTML = "Username : " + data.username;
   }else{ //Username is taken
     //Inform user that username is taken
     document.getElementById("msg").innerHTML = data.msg;

@@ -309,6 +309,10 @@ function editProfile(){
   var username = document.getElementById("NewUser").value;
   var pword = document.getElementById("NewPass").value;
 
+  if(fname==""||surname==""||username==""||pword==""){
+    document.getElementById("msg").innerHTML = "Please check that all fields are filled in before submitting!";
+    return;
+  }
   //Asks the server to run the '/editprofile' route to edit the profile
   $.post('/editprofile',{
     //Sending the users edited first name, surname, username and password to the server

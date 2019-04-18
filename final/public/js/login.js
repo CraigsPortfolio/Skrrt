@@ -33,9 +33,9 @@ $(document).ready(function() {
     if (validate1.valid() === true){
       $(".details-form").show();
       alert(validate1.valid())
+      $(".details-form").hide();
       // document.forms['validate1'].submit();
     } else {
-      $(".details-form").hide();
       console.log("error");
     }
   });

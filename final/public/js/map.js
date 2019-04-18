@@ -62,8 +62,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 function T() {
   var directionsService = new google.maps.DirectionsService();
   var directionsRequest = {
-    origin: document.getElementById("Start").value,
-    destination: document.getElementById("End").value,
+    origin: $("#Start").val(),
+    destination: $("#End").val(),
     travelMode: google.maps.DirectionsTravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC
   };

@@ -135,16 +135,16 @@ function getMPG() {
 //This function sends data to the server to save a journey
 function postJourney(){
   //Get the input information from the main page
-  startDest = document.getElementById("startDest").innerHTML;
-  endDest = document.getElementById("endDest").innerHTML;
-  reg = document.getElementById("vehicleDetail").innerHTML;
-  passValue = document.getElementById("noPassengers").innerHTML;
-  fuelPrice = document.getElementById("fuelCost").innerHTML;
-  mpg = document.getElementById("vehicleMPG").innerHTML;
-  recommendedPrice = document.getElementById("recommendedPrice").innerHTML;
-  profitSlider = document.getElementById('myRange2');
+  startDest = $("#startDest").html();
+  endDest = $("#endDest").html();
+  reg = $("#vehicleDetail").html();
+  passValue = $("#noPassengers").html();
+  fuelPrice = $("#fuelCost").html();
+  mpg = $("#vehicleMPG").html();
+  recommendedPrice = $("#recommendedPrice").html();
+  profitSlider = $("#myRange2");
   profValue = profitSlider.value;
-  name = document.getElementById("jny-box").value;
+  name = $("#jny-box").val();
 
   //Send the data to the server
   $.post('/addjourney',{ //Tells the server to run the '/addjourney' route
@@ -161,7 +161,7 @@ function postJourney(){
   });
 
   //Display a confirmation message to the user
-  document.getElementById("msg").innerHTML = "Journey saved succesfully";
+  $("#msg").html("Journey saved succesfully");
 }
 
 //This function tells the server to delete a car from a profile

@@ -334,7 +334,7 @@ function editProfile(){
 
 
 //This function runs when the garage page is loaded to check if there is any saved cars or not
-function garage(){
+$(document).ready(function(){
   //Checking for saved cars
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
@@ -349,28 +349,27 @@ function garage(){
       //Inform the user they have no saved cars
       document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
     }
-}
+});
 
 //This function runs when the 'Saved Journeys' page is loaded
-function savedJourneys(){
+$(document).ready(function(){
     //Check if the user has saved journeys
-    if($("#jny-name").html == "No journey"){ //User has no saved Journeys
+    if(document.getElementById("jny-name").innerHTML == "No journey"){ //User has no saved Journeys
       //Hide all the journey fields
-      $("#jny-name-row").hide();
-      $("#jny-start-row").hide();
-      $("#jny-end-row").hide();
-      $("#jny-reg-row").hide();
-      $("#jny-mpg-row").hide();
-      $("#jny-pass-row").hide();
-      $("#jny-fuel-row").hide();
-      $("#jny-rec-row").hide();
-      $("#jny-prof-row").hide();
-      $("#dropjourney").hide();
-      $("#deljny").hide();
-
+      document.getElementById("jny-name-row").hidden = true;
+      document.getElementById("jny-start-row").hidden = true;
+      document.getElementById("jny-end-row").hidden = true;
+      document.getElementById("jny-reg-row").hidden = true;
+      document.getElementById("jny-mpg-row").hidden = true;
+      document.getElementById("jny-pass-row").hidden = true;
+      document.getElementById("jny-fuel-row").hidden = true;
+      document.getElementById("jny-rec-row").hidden = true;
+      document.getElementById("jny-prof-row").hidden = true;
+      document.getElementById("dropjourney").hidden = true;
+      document.getElementById("deljny").hidden=true;
 
       //Inform the user they have no saved journeys
-      $("#journey-blurb").html("You have no saved journeys :(");
+      document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }
 });
 

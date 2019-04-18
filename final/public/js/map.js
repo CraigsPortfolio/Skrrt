@@ -371,7 +371,7 @@ $(document).ready(function(){
       document.getElementById("jny-prof-row").hidden = true;
       document.getElementById("dropjourney").hidden = true;
       document.getElementById("deljny").hidden=true;
-      alert($("jny-name").innerHTML);
+      
       //Inform the user they have no saved journeys
       document.getElementById("journey-blurb").innerHTML = "You have no saved journeys :(";
     }

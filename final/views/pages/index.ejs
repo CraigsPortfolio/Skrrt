@@ -4,8 +4,8 @@
 <head>
   <% include ../partials/head %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -18,10 +18,10 @@
   <header class="header-section">
     <!-- The following EJS script checks if the user is logged in to decide what header to display -->
     <% if (user != "") { %>
-        <% include ../partials/profileHeader%>
-<% } else { %>
-  <% include ../partials/header%>
-<% } %>
+    <% include ../partials/profileHeader%>
+    <% } else { %>
+    <% include ../partials/header%>
+    <% } %>
   </header>
   <!-- Header section end -->
 
@@ -115,13 +115,14 @@
   <footer class="footer-section">
     <!--  The following EJS script checks if the user is logged-in to decide what footer to display -->
     <% if (user != "") { %>
-        <% include ../partials/profileFooter%>
-<% } else { %>
-  <% include ../partials/footer%>
-<% } %>
+    <% include ../partials/profileFooter%>
+    <% } else { %>
+    <% include ../partials/footer%>
+    <% } %>
   </footer>
 
   <% include ../partials/footerScripts %>
 
 </body>
+
 </html>

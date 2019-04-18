@@ -464,9 +464,6 @@ app.post('/editprofile', function(req, res) {
         //Running our update
         db.collection('profiles').update(query, newvalues, function(err, result) {
           if (err) throw err; //If there is an error updating, then dislay it
-
-          //Changing the logged-in user
-          currentUser = req.body.username;
         });
 
         //Refreshing the screen with the new profile
@@ -480,6 +477,8 @@ app.post('/editprofile', function(req, res) {
           };
           res.send(data); //Sending the data back to the client
         });
+        //Changing the logged-in user
+        currentUser = req.body.username;
       }
     });
   }

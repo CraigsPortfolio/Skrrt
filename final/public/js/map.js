@@ -121,12 +121,12 @@ function calculateJourney() {
 //This function makes an API call to UKVehicleData to get the MPG of a car given the registration number
 function getMPG() {
   $(document).ready(function() {
-    var reg = document.getElementById("reg-box").value;
+    var reg = $("reg-box").val();
     var url = "https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1&auth_apikey=7c455d3e-d468-4a9b-9486-82b6c82b1a32&user_tag=&key_VRM="+reg;
     $.getJSON(url, function(jsondata) {
       console.log(jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg);
       mpg = jsondata.Response.DataItems.TechnicalDetails.Consumption.Combined.Mpg;
-      document.getElementById("vehicleMPG").innerHTML = mpg+"mpg";
+      $("#vehicleMPG").html(mpg+"mpg");
       window.location.href = "/main#4";
     });
   });
@@ -142,7 +142,6 @@ function postJourney(){
   fuelPrice = $("#fuelCost").html();
   mpg = $("#vehicleMPG").html();
   recommendedPrice = $("#recommendedPrice").html();
-  profitSlider = $("#myRange2");
   profValue = $("#myRange2").val();
   name = $("#jny-box").val();
 

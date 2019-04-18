@@ -544,9 +544,9 @@ app.post('/remjourney', function(req, res) {
   }
 });
 
+//Checks if the reg is taken
 app.post('/checkreg', function(req,res){
-
-  //Check that the car with that reg doesn't already exit
+  //Check that the car with that reg doesn't already exist for the user
   db.collection('profiles').findOne({"login.username": currentUser}, {
     car: {
       $elemMatch: {
@@ -555,15 +555,16 @@ app.post('/checkreg', function(req,res){
     }
   }, function(err, result) {
     if (err) throw err; //if there is an error, throw the error
-    var data;
-    console.log(result);
-    try{
-      var crash = result.car.reg;
-      data = { msg : "A car with this reg already exists, please enter a different one."};
-    }catch(err){
-            data = {msg :""};
+    var data; // The data we will sent back to the user
+
+    //If there is an error then there are no cars with that reg
+    try{ //There is no error so reg is taken
+      var crash = result.car.reg; //Testing for error
+      data = { msg : "A car with this reg already exists, please enter a different one."}; //Displaying error message
+    }catch(err){ //There is an error so no reg exists
+            data = {msg :""}; //Clearing error message
     }
-    res.send(data);
+    res.send(data); //Sending the data back to the client
 })
 });
 

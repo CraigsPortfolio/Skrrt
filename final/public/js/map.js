@@ -377,7 +377,9 @@ $(document).ready(function(){
     }
 });
 
+//This function tells the server to add a car to the database
 function addCar(){
+  //Get the data from the form
   var make = document.getElementById("newmake").value;
   var model = document.getElementById("newmodel").value;
   var year = document.getElementById("newyear").value;
@@ -385,19 +387,22 @@ function addCar(){
   var fuel = document.getElementById("newfuel").value;
   var reg = document.getElementById("newreg").value;
 
-  if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){
+  //Check that no fields are empty
+  if(make==""||model==""||year==""||mpg==""||fuel==""||reg==""){ //A field is empty
+    //Display error message
     document.getElementById("newmsg").innerHTML = "Please check that no fields are left blank before submitting";
-    return;
+    return; //Stop the function
   }
 
-  $.post('/checkreg', {
-      reg:reg}, function(data){
-        alert(data.msg);
-    if(data.msg!=""){
-      document.getElementById("newmsg").innerHTML = data.msg;
-    }else{
-      document.getElementById("newmsg").innerHTML ="";
-      document.forms['newcarform'].submit();
+  //Fields are not empty so check that the reg isn't in use
+  $.post('/checkreg', { //Asking our server to run the '/checkreg' route
+    reg:reg}, //Sending our reg to the server
+  function(data){
+    if(data.msg!=""){ //Reg is taken
+      document.getElementById("newmsg").innerHTML = data.msg; //Displaying error message
+    }else{ //Reg is available
+      document.getElementById("newmsg").innerHTML =""; //Clear error message
+      document.forms['newcarform'].submit(); //Add the car to the database
     }
   })
 }

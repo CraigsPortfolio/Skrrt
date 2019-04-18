@@ -463,14 +463,14 @@ app.post('/editprofile', function(req, res) {
 
         //Changing the logged-in user
         currentUser = req.body.username;
-        
+
         //Running our update
         db.collection('profiles').update(query, newvalues, function(err, result) {
           if (err) throw err; //If there is an error updating, then dislay it
         });
 
         //Refreshing the screen with the new profile
-        db.collection('profiles').findOne({"login.username": req.body.username}, function(err, profile) {
+        db.collection('profiles').findOne({"login.username": currentUser}, function(err, profile) {
           if (err) throw err; //if there is an error, throw the error
           var data = { //The data to be sent and displayed
             fname: profile.fname,

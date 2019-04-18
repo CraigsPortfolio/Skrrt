@@ -33,9 +33,10 @@ $(document).ready(function() {
     $(".details-form").show();
     if (validate1.valid() === true){
       document.forms['validate1'].submit();
-      alert("2: "+validate1.valid());
+      $(".details-form").hide();
     } else {
       $(".details-form").hide();
+      $(".details").click();
       console.log("error");
     }
   });

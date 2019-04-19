@@ -461,9 +461,9 @@ function isValidPath(str, path) {
   return (str.indexOf(path) == 0);
 }
 
-var url = window.location.href;
+var url2 = window.location.href;
 $(document).ready(function(){
-  if (isValidPath(url, 'loginError') == true){
+  if (isValidPath(url2, 'loginError') == true){
     document.getElementById('id01').style.display = "block";
     document.getElementById('errorMSG').style.visibility = "visible";
     document.getElementById('errorMSG').style.color = "red";

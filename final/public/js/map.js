@@ -338,6 +338,7 @@ function getGarage(){
   //Checking for saved cars
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
+      alert(document.getElementById("car-reg").innerHTML);
       document.getElementById("car-make-row").hidden = true;
       document.getElementById("car-model-row").hidden = true;
       document.getElementById("car-mpg-row").hidden = true;

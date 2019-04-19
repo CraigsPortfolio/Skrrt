@@ -1,6 +1,6 @@
 // Get the modal
-var modal = $("#id01");
-$("#errorMSG").hide();
+var modal = document.getElementById('id01');
+document.getElementById('errorMSG').style.visibility = "hidden";
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -19,7 +19,7 @@ var url = window.location.href;
 $(document).ready(function(){
   if (isValidPath(url, 'loginError') == true){
     document.getElementById('id01').style.display = "block";
-    $("errorMSG").show();
+    document.getElementById('errorMSG').style.visibility = "visible";
     document.getElementById('errorMSG').style.color = "red";
   }
 });

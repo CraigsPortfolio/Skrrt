@@ -545,82 +545,61 @@ $(document).ready(function() {
     }
   });
 });
-'use strict';
 
-$(window).on('load', function() {
-	/*------------------
-		Preloder
-	--------------------*/
-	$(".loader").fadeOut();
-	$("#preloder").delay(400).fadeOut("slow");
+//Writing button handlers
 
+$('#sub1').click(function() {
+	T();
+	return false;
 });
 
-(function($) {
-	/*------------------
-		Navigation
-	--------------------*/
-	$('.nav-switch').on('click', function(event) {
-		$(this).toggleClass('active');
-		$('.nav-warp').slideToggle(400);
-		event.preventDefault();
-	});
+$('#sub2').click(function() {
+	getMPG();
+	return false;
+});
 
+$('#addj').click(function() {
+	$.get( "/userLoggedIn", function(data) {
+			if(data == ""){
+				document.getElementById("msg").innerHTML = "Please Login";
+			} else {
+				var jnyBox = document.getElementById('jny-box').value
+				if(jnyBox == ""){
+					document.getElementById("msg").innerHTML = "Please supply a journey name";
+				} else {
+					postJourney();
+				}
+      }});
+	return false;
+});
 
-	/*------------------
-		Background Set
-	--------------------*/
-	$('.set-bg').each(function() {
-		var bg = $(this).data('setbg');
-		$(this).css('background-image', 'url(' + bg + ')');
-	});
+$('#editbtn').click(function() {
+	editProfile();
+	return false;
+});
 
+$('#edit-switch').click(function(){
+	editSwitch();
+	return false;
+})
 
-	/*------------------
-		Progress Bar
-	--------------------*/
-	$('.progress-bar-style').each(function() {
-		var progress = $(this).data("progress");
-		var bgcolor = $(this).data("bgcolor");
-		var prog_width = progress + '%';
-		if (progress <= 100) {
-			$(this).append('<div class="bar-inner" style="width:' + prog_width + '; background: '+ bgcolor +';"><span>' + prog_width + '</span></div>');
-		}
-		else {
-			$(this).append('<div class="bar-inner" style="width:100%; background: '+ bgcolor +';"><span>100%</span></div>');
-		}
-	});
+//Check if the 'Remove Car' button is clicked on the 'Garage' page
+$('#delcar').click(function() {
+	//'Remove Car' is clicked
+	postRemCar(); //Run the script to remove the car from the database
+	return false;
+});
 
-	/*------------------
-		Circle progress
-	--------------------*/
-	$('.circle-progress').each(function() {
-		var cpvalue = $(this).data("cpvalue");
-		var cpcolor = $(this).data("cpcolor");
-		var cptitle = $(this).data("cptitle");
-		var cpid 	= $(this).data("cpid");
+//Check if the 'Remove Journey' button is clicked on the 'Saved Journeys' page
+$('#deljny').click(function() {
+	//'Remove Journey' is clicked
+	postRemJny(); //Run the script to remove the journey from the database
+	return false;
+});
 
-		$(this).append('<div class="'+ cpid +' loader-circle"></div><div class="progress-info"><h2>'+ cpvalue +'%</h2><p>'+ cptitle +'</p></div>');
-
-		if (cpvalue < 100) {
-
-			$('.' + cpid).circleProgress({
-				value: '0.' + cpvalue,
-				size: 110,
-				thickness: 7,
-				fill: cpcolor,
-				emptyFill: "rgba(0, 0, 0, 0)"
-			});
-		} else {
-			$('.' + cpid).circleProgress({
-				value: 1,
-				size: 110,
-				thickness: 7,
-				fill: cpcolor,
-				emptyFill: "rgba(0, 0, 0, 0)"
-			});
-		}
-
-	});
-
-})(jQuery);
+//Check if the 'Calculate Journey' button is clicked on the 'Main' page
+$('#recbtn').click(function() {
+	//'Calculate Journey' is clicked
+	calculateJourney(); //Calculate the journey
+	return false;
+});

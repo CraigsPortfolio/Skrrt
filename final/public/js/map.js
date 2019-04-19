@@ -334,7 +334,7 @@ function editProfile(){
 
 
 //This function runs when the garage page is loaded to check if there is any saved cars or not
-function getGarage(){
+$(document).ready(function(){
   //Checking for saved cars
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
@@ -349,7 +349,7 @@ function getGarage(){
       //Inform the user they have no saved cars
       document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
     }
-}
+});
 
 //This function runs when the 'Saved Journeys' page is loaded
 $(document).ready(function(){

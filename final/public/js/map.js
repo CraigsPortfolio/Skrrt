@@ -172,11 +172,11 @@ function postRemCar(){
     //Check if there are any cars left saved for the user
     if(data.reg!="No car"){ //The user has saved cars
     //Display the first car on the screen
-    $("#car-reg").html(data.reg);
-    $("#car-make").html(data.make);
-    $("#car-model").html(data.model);
-    $("#car-mpg").html(data.mpg);
-    $("#car-fuel").html(data.ftype);
+    document.getElementById("car-reg").innerHTML = data.reg;
+    document.getElementById("car-make").innerHTML = data.make;
+    document.getElementById("car-model").innerHTML = data.model;
+    document.getElementById("car-mpg").innerHTML = data.mpg;
+    document.getElementById("car-fuel").innerHTML = data.ftype;
 
     //Update the drop down box on the 'Garage' page
     $("#dropgarage").empty(); //Empty the drop down box of the old cars
@@ -188,19 +188,20 @@ function postRemCar(){
     }
 }else{ //User has no saved cars left
   //Hide all the car fields
-  $("#car-make-row").hide();
-  $("#car-model-row").hide();
-  $("#car-mpg-row").hide();
-  $("#car-fuel-row").hide();
-  $("#car-reg-row").hide();
-  $("#dropgarage").hide();
-  $("#delcar").hide();
+  document.getElementById("car-make-row").hidden = true;
+  document.getElementById("car-model-row").hidden = true;
+  document.getElementById("car-mpg-row").hidden = true;
+  document.getElementById("car-fuel-row").hidden = true;
+  document.getElementById("car-reg-row").hidden = true;
+  document.getElementById("dropgarage").hidden = true;
+  document.getElementById("delcar").hidden = true;
 
   //Display that the user has no cars saved
-  $("#garage-blurb").html("You have no cars saved in your garage :(");
+  document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
 }
   });
 }
+
 
 //This function tells the server to delete a journey for a user
 function postRemJny(){

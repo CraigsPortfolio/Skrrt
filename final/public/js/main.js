@@ -58,12 +58,3 @@ $('#recbtn').click(function() {
 	calculateJourney(); //Calculate the journey
 	return false;
 });
-
-$(window).on('load', function() {
-	/*------------------
-		Preloder
-	--------------------*/
-	$(".loader").fadeOut();
-	$("#preloder").delay(400).fadeOut("slow");
-
-});

@@ -336,6 +336,7 @@ function editProfile(){
 //This function runs when the garage page is loaded to check if there is any saved cars or not
 $(document).ready(function(){
   //Checking for saved cars
+  alert("dasds");
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
       document.getElementById("car-make-row").hidden = true;

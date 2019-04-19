@@ -28,12 +28,14 @@
 
 
           <select id="dropgarage">
+            <!-- Add each option into the drop box-->
             <% options.forEach(function(option) { %>
             <option>
               <%= option.reg %>
             </option>
             <% }); %>
           </select>
+
           <div id="car-reg-row" class="calculatedRow">
             <h3>Registration Number:</h3>
             <h3 id="car-reg" class="calculatedH3">

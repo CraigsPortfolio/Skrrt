@@ -40,6 +40,7 @@ $('#edit-switch').click(function(){
 
 //Check if the 'Remove Car' button is clicked on the 'Garage' page
 $('#delcar').click(function() {
+	alert("delcar clicked");
 	//'Remove Car' is clicked
 	postRemCar(); //Run the script to remove the car from the database
 	return false;

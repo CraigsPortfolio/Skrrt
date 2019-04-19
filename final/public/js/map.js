@@ -207,7 +207,7 @@ function postRemCar(){
 function postRemJny(){
   //Gets the name of the journey to be deleted from the users journeys
   name= $("#dropjourney option:selected").text();
-
+  alert("in postRemJny");
   //Tells the server to run the 'remjourney' route to delete the journey
   $.post('/remjourney',{
     name: name, //Sends the name of the journey to the server
@@ -224,7 +224,7 @@ function postRemJny(){
     $("#jny-fuel").html(data.fuel);
     $("#jny-prof").html(data.profit);
     $("#jny-rec").html(data.rec);
-
+    alert("car");
     //Update the drop down box
     $("#dropjourney").empty(); //Remove old journeys from the drop down boxes
 
@@ -246,7 +246,7 @@ function postRemJny(){
   $("#jny-prof-row").hide();
   $("#dropjourney").hide();
   $("#deljny").hide();
-
+  alert("no car");
   //Inform the user they have no saved journeys left
   $("#journey-blurb").html("You have no saved journeys :(")
 }

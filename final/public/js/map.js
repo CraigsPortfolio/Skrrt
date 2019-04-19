@@ -574,11 +574,6 @@ $('#editbtn').click(function() {
 	return false;
 });
 
-$('#edit-switch').click(function(){
-	editSwitch();
-	return false;
-})
-
 //Check if the 'Remove Car' button is clicked on the 'Garage' page
 $('#delcar').click(function() {
 	//'Remove Car' is clicked

@@ -9,7 +9,7 @@ function initialize() {
     }
   }
 
-  var map = new google.maps.Map($("#map"), options);
+  var map = new google.maps.Map(document.getElementById('map'), options);
   // var map2 = new google.maps.Map(document.getElementById('map2'), options);
   directionsDisplay.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsDisplay);

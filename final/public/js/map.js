@@ -20,7 +20,7 @@ function initialize() {
 function autoComp() {
   var coor1 = 0;
   var coor2 = 1;
-  var input = $("#Start").val();
+  var input = document.getElementById('Start');
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     var place = autocomplete.getPlace();
@@ -31,7 +31,7 @@ function autoComp() {
     initialize();
   });
 
-  var input2 = $("#End").val();
+  var input2 = document.getElementById('End');
   var autocomplete2 = new google.maps.places.Autocomplete(input2);
   google.maps.event.addListener(autocomplete2, 'place_changed', function() {
     var place2 = autocomplete2.getPlace();
@@ -47,8 +47,8 @@ function autoComp() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin:  $("#Start").val(),
-    destination: $("#End").val(),
+    origin: document.getElementById("Start").value,
+    destination: document.getElementById("End").value,
     travelMode: 'DRIVING'
   }, function(response, status) {
     if (status === 'OK') {
@@ -62,8 +62,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 function T() {
   var directionsService = new google.maps.DirectionsService();
   var directionsRequest = {
-    origin: $("#Start").val(),
-    destination: $("#End").val(),
+    origin: document.getElementById("Start").value,
+    destination: document.getElementById("End").value,
     travelMode: google.maps.DirectionsTravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC
   };
@@ -402,3 +402,29 @@ function addCar(){
     }
   })
 }
+
+// Get the modal
+var modal = document.getElementById('id01');
+document.getElementById('errorMSG').style.visibility = "hidden";
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function isValidPath(str, path) {
+  str = str.substring(str.indexOf('://') + 3);
+  str = str.substring(str.indexOf('#') + 1);
+  return (str.indexOf(path) == 0);
+}
+
+var url = window.location.href;
+$(document).ready(function(){
+  if (isValidPath(url, 'loginError') == true){
+    document.getElementById('id01').style.display = "block";
+    document.getElementById('errorMSG').style.visibility = "visible";
+    document.getElementById('errorMSG').style.color = "red";
+  }
+});

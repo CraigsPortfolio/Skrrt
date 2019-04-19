@@ -416,8 +416,8 @@ app.post('/remcar', function(req, res) {
         ftype: result.car[0].ftype,
         mpg: result.car[0].mpg,
         options: result.car
-        console.log("sending car")
       };
+      console.log("sending car")
     }catch(err){ //The user has no cars saved, display this
       var data = {
         make: "No car",
@@ -426,8 +426,8 @@ app.post('/remcar', function(req, res) {
         ftype: "No car",
         mpg: "No car",
         options: [0]
-        console.log("sending no car");
       };
+        console.log("sending no car");
     }
       res.send(data); //Sending our data back to the client to be displayed to the user
     });

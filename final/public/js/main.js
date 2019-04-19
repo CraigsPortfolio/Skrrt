@@ -1,11 +1,5 @@
 
 'use strict';
-//Check if the 'Remove Car' button is clicked on the 'Garage' page
-$('#delcar').click(function() {
-	//'Remove Car' is clicked
-	postRemCar(); //Run the script to remove the car from the database
-	return false;
-});
 
 
 

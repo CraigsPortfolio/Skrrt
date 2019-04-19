@@ -3,7 +3,7 @@
 function showRecommendation(){
 $(document).ready(function(){ //Waiting until document is fully loaded
   //Checking that the fields aren't blank
-  if(document.getElementById("Start").value !="" && document.getElementById("End").value !=""  && document.getElementById("fuelPrice-box").value !="" && document.getElementById("reg-box").value !=""){
+  if( $("#Start").val()!="" && $("#End").val() !=""  && $("#fuelPrice-box".)val()!="" && $("#reg-box").val()!=""){
     //Fields are valid
   $("#recommendation").show(); //Showing recommendation section
   //Scrolling to the recommendation
@@ -12,7 +12,7 @@ $(document).ready(function(){ //Waiting until document is fully loaded
     }, 0);
   }else{ //Fields are invalid
     //Show error message
-    document.getElementById("msg-show").innerHTML = "Please make sure all data is entered correctly before calculating!";
+    $("#msg-show").html("Please make sure all data is entered correctly before calculating!");
   }
 });
 }

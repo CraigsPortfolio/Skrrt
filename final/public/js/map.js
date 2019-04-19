@@ -578,12 +578,6 @@ $('#editbtn').click(function() {
 	return false;
 });
 
-//Check if the 'Remove Car' button is clicked on the 'Garage' page
-$('#delcar').click(function() {
-	//'Remove Car' is clicked
-	postRemCar(); //Run the script to remove the car from the database
-	return false;
-});
 
 //Check if the 'Remove Journey' button is clicked on the 'Saved Journeys' page
 $('#deljny').click(function() {

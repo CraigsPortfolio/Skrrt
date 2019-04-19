@@ -322,7 +322,7 @@ function editProfile(){
     //Checks if the username is taken or not
     if(data.msg == ""){ //Username is valid
       //Display the edited profile on the screen
-      $("#msg").html("");
+      $("#msg").html("Profile Changed");
     $("#pro-first").html("Name: " + data.fname + " " + data.surname);
      $("#pro-user").html("Username: " + data.username);
   }else{ //Username is taken

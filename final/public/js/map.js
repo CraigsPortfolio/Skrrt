@@ -254,7 +254,7 @@ function postRemJny(){
 
 
 //This function runs every time the user changes the selection in the 'Garage' drop down box
-$(document).ready(function(){
+function getGarage(){
     $('#dropgarage').change(function(){
          //Get the registration plate of the car selected
          var reg= this.value;
@@ -271,7 +271,7 @@ $(document).ready(function(){
            $("#car-fuel").html(data.ftype);
          });
     });
-});
+}
 
 //This function runs every time the user changes the selection in the 'Saved Journeys' drop down box
 $(document).ready(function(){
@@ -336,7 +336,6 @@ function editProfile(){
 //This function runs when the garage page is loaded to check if there is any saved cars or not
 $(document).ready(function(){
   //Checking for saved cars
-  alert("dasds");
     if(document.getElementById("car-reg").innerHTML == "No car"){ //User has no saved cars
       //Hide all the car fields
       document.getElementById("car-make-row").hidden = true;

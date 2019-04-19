@@ -403,6 +403,7 @@ function addCar(){
   })
 }
 
+$(document).ready(function(){
 //This JavaScript section changes the number of passengers selected being displayed
 //According to the passenger range slider
 
@@ -419,7 +420,6 @@ slider.oninput = function() {
 
 //This JavaScript section changes the profit multiplier selected being displayed
 //According to the profit range slider
-
 var slider2 = document.getElementById("myRange2"); //Gets profit slider element and stores it in local variable
 var output2 = document.getElementById("demo2"); //Gets text element and stores it in local variable
 
@@ -444,3 +444,4 @@ slider2.oninput = function() {
     output2.innerHTML = "Taking The P**S";
   }
 }
+});

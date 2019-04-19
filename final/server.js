@@ -401,7 +401,6 @@ app.post('/remcar', function(req, res) {
     //Running our update
     db.collection('profiles').update(query, newvalues, function(err, result) {
       if (err) throw err; //If there is an error with the update, display it
-      console.log("deleted car");
     });
 
     //Refresh the screen with the updated profile
@@ -417,7 +416,6 @@ app.post('/remcar', function(req, res) {
         mpg: result.car[0].mpg,
         options: result.car
       };
-      console.log("sending car")
     }catch(err){ //The user has no cars saved, display this
       var data = {
         make: "No car",
@@ -427,7 +425,6 @@ app.post('/remcar', function(req, res) {
         mpg: "No car",
         options: [0]
       };
-        console.log("sending no car");
     }
       res.send(data); //Sending our data back to the client to be displayed to the user
     });

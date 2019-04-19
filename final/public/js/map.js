@@ -164,7 +164,7 @@ function postJourney(){
 function postRemCar(){
   //Get the registration plate of the car to be deleted from the drop down box in the 'Garage' page
   reg= $("#dropgarage option:selected").text();
-  alert("r" + reg);
+
   //Tell the server to run the 'remcar' route to delete the car
   $.post('/remcar',{
     reg: reg, //Sending the reg to the server
@@ -177,7 +177,7 @@ function postRemCar(){
     document.getElementById("car-model").innerHTML = data.model;
     document.getElementById("car-mpg").innerHTML = data.mpg;
     document.getElementById("car-fuel").innerHTML = data.ftype;
-    alert("car");
+
     //Update the drop down box on the 'Garage' page
     $("#dropgarage").empty(); //Empty the drop down box of the old cars
 
@@ -195,7 +195,7 @@ function postRemCar(){
   document.getElementById("car-reg-row").hidden = true;
   document.getElementById("dropgarage").hidden = true;
   document.getElementById("delcar").hidden = true;
-alert("nocar");
+
   //Display that the user has no cars saved
   document.getElementById("garage-blurb").innerHTML = "You have no cars saved in your garage :(";
 }

@@ -36,7 +36,7 @@ $(document).ready(function() {
       $(".details-form").hide();
     } else {
       $(".details-form").hide();
-      $("#reg-error").html("Please ensure you leave no fields blank before pressing submit!");
+      $("#reg-error").html("Please ensure you leave no fields blank before pressing submit! These may be on the other tab.");
     }
   });
 

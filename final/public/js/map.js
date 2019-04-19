@@ -164,7 +164,7 @@ function postJourney(){
 function postRemCar(){
   //Get the registration plate of the car to be deleted from the drop down box in the 'Garage' page
   reg= $("#dropgarage option:selected").text();
- alert("in rem car");
+  alert("r" + reg);
   //Tell the server to run the 'remcar' route to delete the car
   $.post('/remcar',{
     reg: reg, //Sending the reg to the server

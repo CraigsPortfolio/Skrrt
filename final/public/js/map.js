@@ -72,7 +72,7 @@ function T() {
       distance = response['routes'][0]['legs'][0]['distance']['value'];
       window.location.href = "/main#2";
     } else
-      alert("F")
+      alert("Please make sure location isn't blank")
   })
 }
 
